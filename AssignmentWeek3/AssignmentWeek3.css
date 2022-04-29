@@ -25,6 +25,7 @@ body {
 
 .container {
     background-color: grey;
+    width: 100%;
 }
 
 .text-center {
