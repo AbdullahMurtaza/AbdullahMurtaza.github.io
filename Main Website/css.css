@@ -117,7 +117,13 @@
      height: 50vh;
  }
  
- #mainContent {}
+ #mainContentLeft {}
+ 
+ #mainContentRight {}
+ 
+ #mainContentRight>img {
+     height: 50vh;
+ }
  /*
   
 >Footer-------------------
