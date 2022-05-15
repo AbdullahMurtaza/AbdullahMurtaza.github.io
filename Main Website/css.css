@@ -47,9 +47,14 @@
                 
                 #online {
                     font-family: Georgia, 'Times New Roman', Times, serif;
-                    font-size: 20px;
+                    font-size: 28px;
                     color: orange;
-                    padding: left 100px;
+                    padding-left: 175px;
+                }
+                
+                #dot {
+                    color: yellowgreen;
+                    font-size: 250;
                 }
                 /*
 
