@@ -1,5 +1,5 @@
  * {
-     border: 1px dotted rgb(146, 18, 18);
+     border: 1px dotted red;
  }
  /*
 > Header
@@ -100,10 +100,6 @@
      background-repeat: no-repeat;
      background-position: top;
      background-color: black;
- }
- 
- #content {
-     height: ;
  }
  /*
  
