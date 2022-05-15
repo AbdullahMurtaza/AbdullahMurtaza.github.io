@@ -1,4 +1,4 @@
- {
+ * {
      border: 1px dotted rgb(146, 18, 18);
  }
  /*
@@ -105,6 +105,15 @@
  #content {
      height: ;
  }
+ /*
+ 
+ >> Mian Body Content
+
+ */
+ 
+ .mainContent {}
+ 
+ #mainContent {}
  /*
   
 >Footer-------------------
