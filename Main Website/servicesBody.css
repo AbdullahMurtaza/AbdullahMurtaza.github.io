@@ -4,7 +4,7 @@ body {
 
 #mainWrapper {
     margin: 3%;
-    height: 200vh;
+    height: 100vh;
 }
 
 #mainWrapper>h1 {
@@ -12,7 +12,23 @@ body {
 }
 
 .services {
+    width: 24%;
+    height: 45vh;
     color: yellowgreen;
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 3%;
+    position: relative;
+    top: 0%;
+}
+
+@media only screen and (min-width: 600px) {
+    .services {
+        display: block;
+        width: 100%;
+        height: 20vh;
+    }
+}
+
+{
+    border: 1px solid red;
 }
