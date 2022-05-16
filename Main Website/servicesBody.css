@@ -16,24 +16,3 @@ body {
     /*  display: inline-block;
     */
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    color: yellowgreen;
-    height: 30vh;
-    width: 40%;
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    top: 0px;
-    left: 0px;
-}
