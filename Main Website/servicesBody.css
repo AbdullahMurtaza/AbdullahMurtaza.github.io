@@ -13,6 +13,6 @@ body {
 
 .services {
     color: yellowgreen;
-    /*  display: inline-block;
-    */
+    display: inline-block;
+    margin-left: 20px;
 }
