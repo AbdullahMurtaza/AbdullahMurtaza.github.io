@@ -1,4 +1,16 @@
 body {
     background-color: black;
+}
+
+#mainWrapper {
+    margin: 3%;
     height: 100vh;
+}
+
+#mainWrapper>h1 {
+    color: yellowgreen;
+}
+
+.services {
+    color: yellowgreen;
 }
