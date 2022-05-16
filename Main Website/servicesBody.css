@@ -34,4 +34,6 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    top: 0px;
+    left: 0px;
 }
