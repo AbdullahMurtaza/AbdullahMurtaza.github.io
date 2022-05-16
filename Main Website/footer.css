@@ -13,10 +13,11 @@
                     width: 32.9%;
                     height: 25vh;
                     display: inline-block;
-                    background-color: gray;
+                    background-color: greenyellow;
                     margin-bottom: 0px;
                     opacity: 0.5;
                     text-align: center;
+                    color: black;
                 }
                 
                 #div1 {
@@ -24,14 +25,27 @@
                     left: 4px;
                 }
                 
+                #div1>address {
+                    padding-top: 10%;
+                    font-size: 25px;
+                }
+                
                 #div2 {
                     position: absolute;
                     left: 33.5%;
                 }
                 
+                #div2>p {
+                    padding: 2%;
+                }
+                
                 #div3 {
                     position: absolute;
                     right: 4px;
+                }
+                
+                #div3>ul>li>a {
+                    font-size: 22px;
                 }
                 
                 #numberTaker {
