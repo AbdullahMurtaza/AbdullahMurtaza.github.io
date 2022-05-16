@@ -19,12 +19,12 @@
  */
                 
                 #mainWrapper {
-                    position: relative;
+                    position: ;
                 }
                 
                 .mainContent {
                     display: inline-block;
-                    height: 80vh;
+                    height: 40vh;
                 }
                 
                 #mainContentLeft {
@@ -57,6 +57,6 @@
                 }
                 
                 #profilePic {
-                    height: 65vh;
+                    height: 60vh;
                     z-index: 1;
                 }
