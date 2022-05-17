@@ -7,7 +7,7 @@
                 footer {
                     height: 25vh;
                     position: relative;
-                    top: 80vh;
+                    top: 1vh;
                 }
                 
                 .footerDiv {
@@ -37,6 +37,7 @@
                 
                 #div2>p {
                     padding: 2%;
+                    overflow: auto;
                 }
                 
                 #div3 {
@@ -49,24 +50,47 @@
                     font-weight: 500;
                 }
                 
+                #div3>ul>li> {
+                    list-style: none;
+                }
+                
                 #numberTaker {
                     color: rgb(25, 255, 25);
                 }
                 
-                @media only screen and (max-width: 900px) {
-                    .footerDiv {
-                        background-color: lightblue;
+                @media only screen and (max-width: 800px) {
+                    #div1>address {
+                        padding-top: 20%;
+                        font-size: 20px;
+                    }
+                    #div2>h1 {
+                        font-size: 20px;
+                    }
+                    #div3 {
+                        right: 4px;
+                    }
+                    #div3>ul>li>a {
+                        font-size: 20px;
+                        font-weight: 500;
                     }
                 }
                 
                 @media only screen and (max-width: 800px) {
                     .footerDiv {
-                        background-color: lightgreen;
+                        display: block;
+                        position: static;
+                        width: 99%;
+                        margin: 1%;
                     }
-                }
-                
-                @media only screen and (max-width: 600px) {
-                    .footerDiv {
-                        background-color: lightcoral;
+                    #div1>address {
+                        padding-top: 10%;
+                        font-size: 20px;
+                    }
+                    #div2>h1 {
+                        padding-top: 5px;
+                        font-size: 25px;
+                    }
+                    #div3>ul>li {
+                        padding: 2px;
                     }
                 }
