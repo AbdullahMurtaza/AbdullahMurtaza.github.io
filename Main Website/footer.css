@@ -16,7 +16,7 @@
                     display: inline-block;
                     background-color: greenyellow;
                     margin-bottom: 0px;
-                    opacity: 0.5;
+                    opacity: 1;
                     text-align: center;
                     color: black;
                     position: absolute;
@@ -37,7 +37,6 @@
                 
                 #div2>p {
                     padding: 2%;
-                    overflow: auto;
                 }
                 
                 #div3 {
