@@ -1,5 +1,5 @@
-                s
-                /*  {
+                    s
+                    /*  {
      border: 1px dotted rgb(255, 25, 25);
  }#
  
@@ -8,55 +8,77 @@
 >Body---------------------
 
   */
-                
-                body {
-                    background-color: rgb(0, 0, 0);
-                }
-                /*
+                    
+                    body {
+                        background-color: rgb(0, 0, 0);
+                    }
+                    /*
  
  >> Mian Body Contents
 
  */
-                
-                #mainWrapper {
-                    position: ;
-                }
-                
-                .mainContent {
-                    display: inline-block;
-                    height: 40vh;
-                }
-                
-                #mainContentLeft {
-                    color: yellowgreen;
-                    width: 60%;
-                    padding-top: 5%;
-                    padding-left: 5%;
-                }
-                
-                #mainContentLeft>h2 {
-                    text-align: left;
-                }
-                
-                #mainContentLeft>p {
-                    font-size: 17px;
-                }
-                
-                #mainContentLeft>ul>li {
-                    font-size: 24px;
-                    padding-left: 3%;
-                }
-                
-                #clickServices {
-                    color: red;
-                }
-                
-                #mainContentRight {
-                    position: absolute;
-                    width: 38%;
-                }
-                
-                #profilePic {
-                    height: 60vh;
-                    z-index: 1;
-                }
+                    
+                    #mainWrapper {
+                        position: ;
+                    }
+                    
+                    .mainContent {
+                        display: inline-block;
+                        /*height: 40vh;*/
+                    }
+                    
+                    #mainContentLeft {
+                        color: yellowgreen;
+                        width: 60%;
+                        padding-top: 5%;
+                        padding-left: 5%;
+                    }
+                    
+                    #mainContentLeft>h2 {
+                        text-align: left;
+                    }
+                    
+                    #mainContentLeft>p {
+                        font-size: 17px;
+                    }
+                    
+                    #mainContentLeft>ul>li {
+                        font-size: 24px;
+                        padding-left: 3%;
+                    }
+                    
+                    #clickServices {
+                        color: red;
+                    }
+                    
+                    #mainContentRight {
+                        position: absolute;
+                        width: 38%;
+                    }
+                    
+                    #profilePic {
+                        height: 60vh;
+                        z-index: 1;
+                    }
+                    
+                    @media only screen and (max-width: 800px) {
+                        #mainWrapper {
+                            height: 30vh;
+                            /*border: dashed 1px rgb(0, 255, 13);*/
+                        }
+                        #mainContentLeft {
+                            position: relative;
+                            top: 33%;
+                            width: 95%;
+                        }
+                        #mainContentRight {
+                            top: 1%;
+                            left: 25%;
+                        }
+                        #profilePic {
+                            height: 50vh;
+                        }
+                        {
+                            border: dashed 1px red;
+                        }
+                    }
