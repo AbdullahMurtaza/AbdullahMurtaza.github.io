@@ -4,7 +4,7 @@ body {
 
 #mainWrapper {
     margin: 1%;
-    height: ;
+    height: 100vh;
     /* border: dotted 1px greenyellow;*/
     position: relative;
 }
@@ -40,10 +40,24 @@ body {
     left: 75%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .services {
-        display: block;
-        width: 100%;
+        width: 43%;
+        height: 60vh;
         text-align: center;
+    }
+    #fullStack {
+        left: -2%;
+    }
+    #digitalMarketing {
+        left: 48%;
+    }
+    #softwareEngineer {
+        top: 60%;
+        left: -2%;
+    }
+    #technicalSupport {
+        top: 60%;
+        left: 48%;
     }
 }

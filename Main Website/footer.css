@@ -53,8 +53,20 @@
                     color: rgb(25, 255, 25);
                 }
                 
+                @media only screen and (max-width: 900px) {
+                    .footerDiv {
+                        background-color: lightblue;
+                    }
+                }
+                
+                @media only screen and (max-width: 800px) {
+                    .footerDiv {
+                        background-color: lightgreen;
+                    }
+                }
+                
                 @media only screen and (max-width: 600px) {
                     .footerDiv {
-                        display: block;
+                        background-color: lightcoral;
                     }
                 }
