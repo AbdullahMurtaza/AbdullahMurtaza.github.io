@@ -1,11 +1,9 @@
-*/
 /*
 > Header
 > Naigation Bar
 > logo
 > List items
 -----------------------
-
 */
 
 header {
@@ -18,7 +16,12 @@ nav {
     height: 25vh;
     margin: 0px;
 }
-
+/*
+.border{
+width: 30px;
+border: 1px dashed yellowgreen;
+}
+*/
 
 /*
 
@@ -81,11 +84,14 @@ nav {
 
 #navListItemsWrapper>li>a {
     float: left;
+    width: 80px;
     padding: 10px;
     font-family: Georgia;
     color: greenyellow;
     text-align: center;
-    margin: 0px;
+    margin: 5px;
+    border: 1px dashed yellowgreen;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 800px) {
