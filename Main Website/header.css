@@ -107,7 +107,7 @@ border: 1px dashed yellowgreen;
     }
     #navListItemsWrapper {
         width: 150px;
-        top: 1vh;
+        top: 2vh;
         right: -45%;
     }
     #navListItemsWrapper>li {
