@@ -83,7 +83,7 @@ border: 1px dashed yellowgreen;
     color: greenyellow;
     text-align: center;
     margin: 5px;
-    border: 1px dashed yellowgreen;
+    border: 2px dashed yellowgreen;
     border-radius: 5px;
 }
 #navListItemsWrapper>li>a:hover {
