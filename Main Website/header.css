@@ -38,28 +38,21 @@ border: 1px dashed yellowgreen;
 }
 
 #logo {
-    font-family: 'Tangerine';
+    font-family: 'Caveat Brush', cursive;
     font-weight: 40;
     font-size: 55px;
     color: greenyellow;
     padding: 20px;
+    padding-left: 100px;
     margin-top: 0px;
 }
 
 #online {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 28px;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 35px;
     color: orange;
     vertical-align: top;
-    padding-left: 175px;
-}
-
-#dot {
-    color: yellowgreen;
-    font-size: 50px;
-    position: relative;
-    top: -105px;
-    left: 271px;
+    padding-left: 265px;
 }
 
 
@@ -92,6 +85,9 @@ border: 1px dashed yellowgreen;
     margin: 5px;
     border: 1px dashed yellowgreen;
     border-radius: 5px;
+}
+#navListItemsWrapper>li>a:hover {
+    border: 3px solid yellowgreen;
 }
 
 @media only screen and (max-width: 800px) {
