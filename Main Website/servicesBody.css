@@ -26,13 +26,14 @@ body {
     box-shadow: 1px 2px yellowgreen;
 }
 
-#fullStack {
-    top: ;
+#digitalMarketing {
+    /*left: 25%;*/
 }
 
-#digitalMarketing {
+#fullStack {
     left: 25%;
 }
+
 
 #softwareEngineer {
     left: 50%;
