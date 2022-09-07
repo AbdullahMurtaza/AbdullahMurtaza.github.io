@@ -5,7 +5,9 @@
 > List items
 -----------------------
 */
-
+{
+    border: 1px dashed red;
+}
 header {
     margin: 0px;
 }
@@ -40,7 +42,7 @@ border: 1px dashed yellowgreen;
 #logo {
     font-family: 'Caveat Brush', cursive;
     font-weight: 40;
-    font-size: 55px;
+    font-size: 45px;
     color: greenyellow;
     padding: 20px;
     padding-left: 100px;
@@ -49,10 +51,10 @@ border: 1px dashed yellowgreen;
 
 #online {
     font-family: 'Caveat Brush', cursive;
-    font-size: 35px;
+    font-size: 24px;
     color: orange;
     vertical-align: top;
-    padding-left: 265px;
+    padding-left: 300px;
 }
 
 
