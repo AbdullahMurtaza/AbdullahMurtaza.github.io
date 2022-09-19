@@ -58,6 +58,7 @@ body {
 #profilePic {
   height: 60vh;
   z-index: 1;
+  border: 3px dashed yellowgreen;
   border-radius: 15px;
 }
 
