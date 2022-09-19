@@ -58,6 +58,7 @@ body {
 #profilePic {
   height: 60vh;
   z-index: 1;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 800px) {
