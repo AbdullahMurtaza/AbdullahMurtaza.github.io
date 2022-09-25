@@ -40,6 +40,7 @@ body {
 #mainContentLeft > p {
   width: 70%;
   font-size: 22px;
+  text-shadow: 2px 2px wheat;
 
 }
 
