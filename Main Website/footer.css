@@ -8,14 +8,14 @@
 }
 
 footer {
-  height: 25vh;
+  height: vh;
   position: relative;
   top: 1px;
 }
 
 .footerDiv {
   width: 32.9%;
-  height: 27vh;
+  height: 20vh;
   display: inline-block;
   background-color: #877666;
   margin-bottom: 0px;
