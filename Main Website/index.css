@@ -47,6 +47,7 @@ body {
 #mainContentLeft > ul > li {
   font-size: 24px;
   padding-left: 3%;
+  text-shadow: 2px 2px wheat;
 }
 
 #clickServices {
