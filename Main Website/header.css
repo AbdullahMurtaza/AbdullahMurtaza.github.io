@@ -1,0 +1,127 @@
+/*
+> Header
+> Naigation Bar
+> logo
+> List items
+-----------------------
+
+{
+    border: 1px dashed red;
+}
+*/
+header {
+    margin: 0px;
+}
+
+nav {
+    display: block;
+    background-color: #877666;
+    opacity: 1;
+    height: 17vh;
+    margin: 0px;
+}
+/*
+.border{
+width: 30px;
+border: 1px dashed yellowgreen;
+}
+*/
+
+/*
+
+>Logo------------------------
+
+*/
+
+#logoWrapper {
+    display: inline-block;
+    width: 30%;
+    height: 25vh;
+    position: absolute;
+    left: 0px;
+}
+
+#logo {
+    font-family: 'Caveat Brush';
+    font-weight: 35;
+    font-size: 50px;
+    color: wheat;
+    padding: 20px;
+    padding-left: 100px;
+    margin-top: 23px;
+    text-decoration: none;
+    
+}
+
+
+#online {
+    font-family: 'Caveat Brush';
+    font-size: 24px;
+    color: wheat;
+    vertical-align: top;
+    padding-left: 300px;
+}
+
+
+/*
+
+> Navigation List------------------------
+
+*/
+
+#navListItemsWrapper {
+    list-style: none;
+    display: inline-block;
+    width: 70%;
+    height: 25vh;
+    margin: auto;
+    margin-top: 30px;
+    vertical-align: top;
+    align-items: center;
+    position: absolute;
+    left: 38%;
+}
+
+#navListItemsWrapper>li>a {
+    float: left;
+    width: 80px;
+    padding: 10px;
+    font-family: Georgia;
+    color: wheat;
+    text-align: center;
+    margin: 5px; 
+    border: 2px dashed wheat;
+    border-radius: 5px;
+}
+#navListItemsWrapper>li>a:hover {
+    border: 3px solid wheat;
+}
+/*
+@media only screen and (max-width: 800px) {
+    #logoWrapper {
+        width: 100%;
+        display: inline-block;
+        height: 25vh;
+        position: absolute;
+        left: 0px;
+    }
+    #logoWrapper>h1 {
+        text-align: center;
+    }
+    #navListItemsWrapper {
+        width: 150px;
+        top: 2vh;
+        right: -45%;
+    }
+    #navListItemsWrapper>li {
+        text-align: right;
+        padding: 10px;
+        margin: 3px;
+    }
+    #navListItemsWrapper>li>a {
+        float: none;
+        color: black;
+        background-color: yellowgreen;
+    }
+    
+}
