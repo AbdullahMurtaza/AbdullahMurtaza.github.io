@@ -47,9 +47,12 @@ border: 1px dashed yellowgreen;
     font-size: 50px;
     color: wheat;
     padding: 20px;
-    padding-left: 60px;
-    margin-top: 20px;
+    padding-left: 100px;
+    margin-top: 23px;
+    text-decoration: none;
+    text-shadow: 1px wheat;
 }
+
 
 #online {
     font-family: 'Caveat Brush';
@@ -76,7 +79,7 @@ border: 1px dashed yellowgreen;
     vertical-align: top;
     align-items: center;
     position: absolute;
-    left: 36%;
+    left: 38%;
 }
 
 #navListItemsWrapper>li>a {

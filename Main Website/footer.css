@@ -2,11 +2,11 @@
   
 >Footer-------------------
 
-  */
+  
 {
     border: 1px dotted red;
 }
-
+*/
 footer {
   height: vh;
   position: relative;
@@ -53,6 +53,9 @@ footer {
   font-weight: 500;
   text-decoration: none;
 }
+
+#div3 > ul > li > a:hover {
+  
 
 #div3 > ul > li > {
   list-style: none;
