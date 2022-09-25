@@ -9,7 +9,7 @@
   */
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: snow;
 }
 /*
  
@@ -18,19 +18,19 @@ body {
  */
 
 #mainWrapper {
-  /*height: ;*/
+  
 }
 
 .mainContent {
   display: inline-block;
-  /*height: 40vh;*/
+  
 }
 
 #mainContentLeft {
-  color: yellowgreen;
+  color: #877666;
   width: 60%;
   padding-top: 5%;
-  padding-left: 5%;
+  padding-left: 9%;
 }
 
 #mainContentLeft > h2 {
@@ -38,7 +38,9 @@ body {
 }
 
 #mainContentLeft > p {
-  font-size: 17px;
+  width: 70%;
+  font-size: 22px;
+
 }
 
 #mainContentLeft > ul > li {
@@ -58,14 +60,14 @@ body {
 #profilePic {
   height: 60vh;
   z-index: 1;
-  border: 3px dashed yellowgreen;
+  border: 1px solid dimgray;
   border-radius: 15px;
 }
 
 @media only screen and (max-width: 800px) {
   #mainWrapper {
     height: 30vh;
-    /*border: dashed 1px rgb(0, 255, 13);*/
+    border: dashed 1px rgb(0, 255, 13);
   }
   #mainContentLeft {
     position: relative;

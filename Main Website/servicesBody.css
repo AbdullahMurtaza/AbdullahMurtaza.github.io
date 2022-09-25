@@ -1,5 +1,5 @@
-body {
-    background-color: black;
+#servicesBody {
+    background-color: snow;
 }
 
 #mainWrapper {
@@ -9,21 +9,21 @@ body {
 }
 
 #mainWrapper>h1 {
-    color: yellowgreen;
+    color: #877666;
 }
 
 .services {
     width: 20%;
     height: 55vh;
-    color: yellowgreen;
+    color: #877666;
     display: inline-block;
     margin-left: 2px;
     position: absolute;
     padding: 2%;
-    border-right: dashed 1px yellowgreen;
-    border-bottom: dashed 1px yellowgreen;
+    border-right: dashed 1px #877666;
+    border-bottom: dashed 1px #877666;
     border-radius: 15px;
-    box-shadow: 1px 2px yellowgreen;
+    box-shadow: 2px 4px #877666;
 }
 
 #digitalMarketing {
@@ -33,7 +33,6 @@ body {
 #fullStack {
     left: 25%;
 }
-
 
 #softwareEngineer {
     left: 50%;

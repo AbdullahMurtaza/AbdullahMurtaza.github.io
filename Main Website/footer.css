@@ -17,11 +17,11 @@ footer {
   width: 32.9%;
   height: 27vh;
   display: inline-block;
-  background-color: greenyellow;
+  background-color: #877666;
   margin-bottom: 0px;
   opacity: 1;
   text-align: center;
-  color: black;
+  color: wheat;
   position: absolute;
   border-radius: 0px, 10px, 0px, 10px;
 }
@@ -60,7 +60,7 @@ footer {
 #numberTaker {
   color: rgb(25, 255, 25);
 }
-
+/*11111
 @media only screen and (max-width: 800px) {
   #div1 > address {
     padding-top: 20%;
