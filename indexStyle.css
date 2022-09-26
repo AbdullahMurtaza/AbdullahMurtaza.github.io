@@ -82,10 +82,12 @@ body {
     width: 93%;
   }
   #mainContentRight {
-    top: 3%;
-    left: 10%;
+   /* top: 3%;
+    left: 10%;*/
   }
   #profilePic {
     height: 50vh;
+    display: flex;
+    justify-content: center;
   }
 }
