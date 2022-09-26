@@ -61,6 +61,7 @@ body {
 }
 
 #profilePic {
+ margin-top: 5vh;
   height: 60vh;
   z-index: 1;
   border: 1px solid dimgray;

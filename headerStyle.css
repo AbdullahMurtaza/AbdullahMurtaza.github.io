@@ -96,7 +96,7 @@ nav {
 @media only screen and (max-width: 900px) {
     
     nav{
-        height: 25vh;
+        height: 30vh;
         display: block;
     }
 
@@ -104,28 +104,35 @@ nav {
         /*display: block;*/
         height: 15vh;
         width: 80%;
-        position: absolute;
+        /*position: absolute;
         left: 14%;
-        top: 5%;
+        top: 5%;*/
+        display: flex;
+        justify-content: center;
+        border: 1px dashed red;
 
     }
     #logo{
 
             font-family: 'Caveat Brush';
             font-weight: 35;
-            font-size: 45px;
+            font-size: 40px;
             color: wheat;
             padding: 0px;
             padding-left: 0px;
             margin-top: 10px;
             text-decoration: none;
             width: fit-content;
+            display: flex;
+            justify-content: center;
     }
     #online {
         font-family: 'Caveat Brush';
         font-size: 15px;
         color: wheat;
         vertical-align: top;
+        /*display: flex;
+        justify-content: center;*/
         padding-top: 10%;
         padding-left: 44%;
     }
