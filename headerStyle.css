@@ -208,7 +208,7 @@ nav {
 @media only screen and (max-width: 900px) {
     
     nav{
-        height: 30vh;
+        height: 25vh;
         display: block;
     }
 
@@ -232,7 +232,7 @@ nav {
             color: wheat;
             /*padding: 0px;
             padding-left: 0px;*/
-            margin-top: 20%;
+            margin-top: 25%;
             text-decoration: none;
             width: 99%;
             display: flex;
