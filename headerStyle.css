@@ -92,7 +92,119 @@ nav {
 #navListItemsWrapper>li>a:hover {
     border: 3px solid wheat;
 }
+@media only screen and (max-width: 1500px) {
+    nav{
+        height: 20vh;
+        /*display: block;*/
+    }
+    #logoWrapper {
+        /*display: block;*/
+        height: 15vh;
+        /*width: 98%;*/
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+        
+        
 
+    }
+    #logo{
+
+        font-family: 'Caveat Brush';
+        font-weight: 35;
+        font-size: 40px;
+        color: wheat;
+        padding-left: 10px;
+        margin-top: 10px;
+        text-decoration: none;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        border: 1px green;
+
+
+
+    }
+}
+    /*
+
+> Navigation List------------------------
+
+*/
+
+#navListItemsWrapper {
+    list-style: none;
+    display: inline-block;
+    width: 70%;
+    height: 25vh;
+    margin: auto;
+    margin-top: 30px;
+    vertical-align: top;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+}
+
+#navListItemsWrapper>li>a {
+    float: left;
+    width: 80px;
+    padding: 10px;
+    font-family: Georgia;
+    color: wheat;
+    text-align: center;
+    margin: 5px; 
+    border: 2px dashed wheat;
+    border-radius: 5px;
+}
+#navListItemsWrapper>li>a:hover {
+    border: 3px solid wheat;
+*/
+}
+}
+@media only screen and (max-width: 1150px) {
+    nav{
+        height: 20vh;
+        display: block;
+    }
+    #logoWrapper {
+        display: block;
+        height: 15vh;
+        width: 98%;
+        position: absolute;
+        left: 14%;
+        top: 5%;
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    #logo{
+
+        font-family: 'Caveat Brush';
+        font-weight: 35;
+        font-size: 350px;
+        color: wheat;
+        /*padding: 0px;
+        padding-left: 0px;*/
+        margin-top: 10px;
+        text-decoration: none;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+}
+#online {
+    font-family: 'Caveat Brush';
+    font-size: 15px;
+    color: wheat;
+    vertical-align: middle;
+    /*display: flex;
+    justify-content: center;*/
+    padding-top: 50%;
+    /*padding-left: %;*/
+}
+}
 @media only screen and (max-width: 900px) {
     
     nav{
@@ -103,40 +215,39 @@ nav {
     #logoWrapper {
         /*display: block;*/
         height: 15vh;
-        width: 80%;
+        width: 85%;
         /*position: absolute;
         left: 14%;
         top: 5%;*/
         display: flex;
         justify-content: center;
-        border: 1px dashed red;
+        
 
     }
     #logo{
 
             font-family: 'Caveat Brush';
             font-weight: 35;
-            font-size: 40px;
+            font-size: 30px;
             color: wheat;
-            padding: 0px;
-            padding-left: 0px;
+            /*padding: 0px;
+            padding-left: 0px;*/
             margin-top: 10px;
             text-decoration: none;
-            width: fit-content;
+            width: 99%;
             display: flex;
             justify-content: center;
     }
-    #online {
+    /*#online {
         font-family: 'Caveat Brush';
         font-size: 15px;
         color: wheat;
         vertical-align: top;
-        /*display: flex;
-        justify-content: center;*/
+        display: flex;
+        justify-content: center;
         padding-top: 10%;
-        padding-left: 44%;
     }
-    
+    */
     #navListItemsWrapper {
         list-style: none;
         width: 94%;
