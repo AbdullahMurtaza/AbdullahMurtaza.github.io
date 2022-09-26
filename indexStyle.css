@@ -82,6 +82,13 @@ body {
     top: 60%;
     width: 93%;
   }
+  #mainContentLeft > p {
+    width: 80%;
+    font-size: 15px;
+    
+  
+  
+
   #mainContentRight {
     top: 3%;
     left: 10%;
