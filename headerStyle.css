@@ -21,10 +21,6 @@ nav {
     margin: 0px;
 }
 /*
-.border{
-width: 30px;
-border: 1px dashed yellowgreen;
-}
 */
 
 /*
@@ -96,32 +92,75 @@ border: 1px dashed yellowgreen;
 #navListItemsWrapper>li>a:hover {
     border: 3px solid wheat;
 }
-/*
+
 @media only screen and (max-width: 800px) {
-    #logoWrapper {
-        width: 100%;
-        display: inline-block;
+    {
+        border: 1px dashed red;
+    }
+    nav{
         height: 25vh;
+        display: block;
+    }
+
+    #logoWrapper {
+        /*display: block;*/
+        height: 15vh;
+        width: 80%;
         position: absolute;
-        left: 0px;
+        left: 14%;
+        top: 5%;
+        
+        
+        border: 1px dashed red;
     }
-    #logoWrapper>h1 {
-        text-align: center;
+    #logo{
+
+            font-family: 'Caveat Brush';
+            font-weight: 35;
+            font-size: 45px;
+            color: wheat;
+            padding: 0px;
+            padding-left: 0px;
+            margin-top: 10px;
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            border: 1px dashed greenyellow;
     }
-    #navListItemsWrapper {
-        width: 150px;
-        top: 2vh;
-        right: -45%;
-    }
-    #navListItemsWrapper>li {
-        text-align: right;
-        padding: 10px;
-        margin: 3px;
-    }
-    #navListItemsWrapper>li>a {
-        float: none;
-        color: black;
-        background-color: yellowgreen;
+    #online {
+        font-family: 'Caveat Brush';
+        font-size: 15px;
+        color: wheat;
+        vertical-align: top;
+        padding-top: 10%;
+        padding-left: 44%;
     }
     
+    #navListItemsWrapper {
+        list-style: none;
+        /*display: inline-block;*/
+        width: 98%;
+        height: 5vh;
+    
+        margin-top: 25%;
+        
+        align-items: center;
+        /*position: absolute;*/
+        border: 1px dashed blue;
+        top: 7%;
+        left: 10px;
+    }
+    
+    #navListItemsWrapper>li>a {
+        float: left;
+        width: 80px;
+        padding: 4px;
+        font-family: Georgia;
+        color: wheat;
+        text-align: center;
+        margin: 3px; 
+        border: 2px dashed wheat;
+        border-radius: 5px;
+    }
+
 }

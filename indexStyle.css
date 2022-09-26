@@ -68,18 +68,22 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+  
+
+  
   #mainWrapper {
-    height: 30vh;
-    border: dashed 1px rgb(0, 255, 13);
+    /*height: 30vh;
+    border: dashed 1px rgb(0, 255, 13);*/
   }
+  
   #mainContentLeft {
     position: relative;
     top: 33%;
     width: 95%;
   }
   #mainContentRight {
-    top: 1%;
-    left: 27%;
+    top: 3%;
+    left: 10%;
   }
   #profilePic {
     height: 50vh;
