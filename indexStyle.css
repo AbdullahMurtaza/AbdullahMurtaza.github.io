@@ -72,14 +72,14 @@ body {
 
   
   #mainWrapper {
-    /*height: 30vh;
+    /*height: 200vh;
     border: dashed 1px rgb(0, 255, 13);*/
   }
   
   #mainContentLeft {
     position: relative;
-    top: 33%;
-    width: 95%;
+    top: 60%;
+    width: 93%;
   }
   #mainContentRight {
     top: 3%;

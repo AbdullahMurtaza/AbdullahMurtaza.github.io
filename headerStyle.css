@@ -93,10 +93,8 @@ nav {
     border: 3px solid wheat;
 }
 
-@media only screen and (max-width: 800px) {
-    {
-        border: 1px dashed red;
-    }
+@media only screen and (max-width: 900px) {
+    
     nav{
         height: 25vh;
         display: block;
@@ -121,7 +119,6 @@ nav {
             padding-left: 0px;
             margin-top: 10px;
             text-decoration: none;
-            display: block;
             width: fit-content;
     }
     #online {
@@ -135,22 +132,22 @@ nav {
     
     #navListItemsWrapper {
         list-style: none;
-        /*display: inline-block;*/
-        width: 98%;
+        width: 94%;
         height: 5vh;
-    
         margin-top: 25%;
-        
-        align-items: center;
-        /*position: absolute;*/
+        display: flex;
+        justify-content: center;
+
         top: 7%;
         left: 10px;
+        
     }
     
     #navListItemsWrapper>li>a {
         float: left;
-        width: 80px;
-        padding: 4px;
+        font-size: 12px;
+        width: 60px;
+        padding: 5px;
         font-family: Georgia;
         color: #877666;
         text-align: center;
