@@ -24,7 +24,6 @@ body {
 
 .mainContent {
   display: inline-block;
-  
 }
 
 #mainContentLeft {
@@ -42,7 +41,6 @@ body {
   width: 70%;
   font-size: 22px;
   text-shadow: 2px 2px wheat;
-
 }
 
 #mainContentLeft > ul > li {
@@ -61,7 +59,7 @@ body {
 }
 
 #profilePic {
- margin-top: 5vh;
+  margin-top: 5vh;
   height: 60vh;
   z-index: 1;
   border: 1px solid dimgray;
@@ -69,14 +67,11 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  
-
-  
   #mainWrapper {
     /*height: 200vh;
     border: dashed 1px rgb(0, 255, 13);*/
   }
-  
+
   #mainContentLeft {
     position: relative;
     top: 60%;
@@ -84,18 +79,23 @@ body {
   }
   #mainContentLeft > p {
     width: 80%;
-    font-size: 15px;
-    
-  
-  
+    font-size: 16px;
+  }
+  #mainContentLeft > ul > li {
+    font-size: 19px;
+  }
 
   #mainContentRight {
+    border: 1px dashed greenyellow;
+    width: fit-content;
     top: 3%;
     left: 10%;
   }
+
   #profilePic {
     height: 50vh;
-    display: flex;
-    justify-content: center;
+    /*display: flex;
+    justify-content: center;*/
+    padding: auto;
   }
 }
