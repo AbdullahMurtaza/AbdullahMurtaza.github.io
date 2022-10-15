@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="headerStyle.css">
     <link rel="stylesheet" href="servicesBodyStyle.css">
+    <link rel="stylesheet" href="galleryStyle.css">
     <link rel="stylesheet" href="footerStyle.css">
+    <script src="certificateCollage.js"></script>
     <title>Gallery</title>
 
 
@@ -36,9 +38,39 @@
 </header>
 
 <body>
-    <h1 style="color: #877666; text-align: center; margin-top: 10%; margin-bottom: 15%;">
-        This Page is Underconstruction.
+    <h1 style="color: #877666; text-align: center; margin-top: 5%; margin-bottom: 5%;">
+        My Certifications
     </h1>
+
+<!-- The grid: four columns -->
+<div class="row">
+    <div class="column">
+      <img src="SMM.png" alt="Meta Social Media Marketing Certificate" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="Html CSS JavaScript.png" alt="Html, CSS, JavaScript for Developers Certificate" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="Technical Support.png" alt="Technical Support Fundamentals By Certificate" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="Project Managemnet.png" alt="Project Management Fundamentals By Certificate" onclick="myFunction(this);">
+    </div>
+  </div>
+  
+  <!-- The expanding image container -->
+  <div class="container">
+    <!-- Close the image -->
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  
+    <!-- Expanded image -->
+    <img id="expandedImg">
+  
+    <!-- Image text -->
+    <div id="imgtext"></div>
+  </div>
+
+
 </body>
 <!--
 <footer>
