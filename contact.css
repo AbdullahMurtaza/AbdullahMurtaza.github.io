@@ -1,0 +1,27 @@
+body{
+    background-color: snow;
+}
+.mainContent{
+border: 1px dashed red;
+}
+.mainContent > ul > li {
+    float: left;
+    background-color: wheat;
+    height: 100px;
+    width: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    list-style-type: none;
+    margin: 1%;
+    
+}
+.mainContent > ul > li > a{
+
+    vertical-align: middle;
+}
+
+.mainContent > ul > li > a:hover{
+
+    border: 3px solid #181818;
+}
+

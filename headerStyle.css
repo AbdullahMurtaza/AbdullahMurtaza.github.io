@@ -162,7 +162,7 @@ nav {
     border: 3px solid wheat;
 
 }
-}
+
 @media only screen and (max-width: 1150px) {
     nav{
         height: 20vh;
