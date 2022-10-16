@@ -1,3 +1,11 @@
+h1{
+  color: #877666;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+        
+}
+
 .container {
   display: grid;
   grid-template-columns:auto auto auto auto;
@@ -12,7 +20,7 @@
 }
 
 #no1{
-  width: 30%;
+  width: 20%;
   grid-column: 1/span 4;
   margin: auto;
   padding: 5%;
