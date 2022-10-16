@@ -142,10 +142,13 @@ h1 {
     width: 100%;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .container {
-    display: grid;
-    grid-template-columns: auto;
+    display: block;
+  } 
+
+  #no1{
+    width: 90%;
   }
   .column {
   }
