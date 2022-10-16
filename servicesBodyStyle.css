@@ -30,18 +30,40 @@
 
 #digitalMarketing {
     /*left: 25%;*/
+    animation: left 1s;
 }
 #fullStack {
     left: 25%;
+    animation: top 1s;
 }
 
 #softwareEngineer {
     left: 50%;
+    animation: bottom 1s;
 }
 
 #technicalSupport {
     left: 75%;
+    animation: right 1s;
 }
+@keyframes top {
+    from {top: -200px;}
+    to{top:0px}
+  }
+  @keyframes left {
+    from {left: -200px;}
+    to{left:0px}
+  }
+  
+  @keyframes right {
+    from {right: -200px;}
+    to{right:0px}
+  }
+  
+  @keyframes bottom {
+    from {bottom: -200px;}
+    to{bottom:0px;}
+  }
 
 @media only screen and (max-width: 1150px) {
     #mainWrapper {
