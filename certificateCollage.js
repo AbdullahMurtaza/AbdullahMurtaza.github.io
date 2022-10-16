@@ -1,4 +1,4 @@
-function myFunction(imgs) {
+/*function myFunction(imgs) {
     // Get the expanded image
     var expandImg = document.getElementById("expandedImg");
     // Get the image text
@@ -10,3 +10,4 @@ function myFunction(imgs) {
     // Show the container element (hidden with CSS)
     expandImg.parentElement.style.display = "block";
   }
+  
