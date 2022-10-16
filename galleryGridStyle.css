@@ -27,10 +27,34 @@
 #no1>a>p{
   opacity: 1;
 }
+.column{
+  position: relative;
+}
+#no3{
+  animation: top 2s;
+}
+#no4{
+  animation: top 5s;
+}
+#no2{
+  animation: left 2s;
+}
+#no6{
+  animation: left 4s;
+}
+#no5{
+  animation: right 2s;
+}
+#no7{
+  animation: bottom 3s;
+}
+#no8{
+  animation: bottom 4s;
+}
 .column > a > p {
   background-color: black;
   position: relative;
-  padding:3% 0% 3% 0% ;
+  padding:3% 0% 3% 0%;
   bottom: 5%;
   color: wheat;
   font-size: 30px;
@@ -49,13 +73,27 @@
   
   
 }
+@keyframes top {
+  from {top: -100px;}
+  to{top:0px}
+}
+@keyframes left {
+  from {left: -100px;}
+  to{left:0px}
+}
+
+@keyframes right {
+  from {right: -100px;}
+  to{right:0px}
+}
+
+@keyframes bottom {
+  from {bottom: -100px;}
+  to{bottom:0px;}
+}
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
   
 @keyframes rounder {
