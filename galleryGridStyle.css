@@ -79,7 +79,7 @@ h1 {
 }
 @keyframes top {
   from {
-    top: -100px;
+    top: -500px;
   }
   to {
     top: 0px;
@@ -87,7 +87,7 @@ h1 {
 }
 @keyframes left {
   from {
-    left: -100px;
+    left: -500px;
   }
   to {
     left: 0px;
@@ -96,7 +96,7 @@ h1 {
 
 @keyframes right {
   from {
-    right: -100px;
+    right: -500px;
   }
   to {
     right: 0px;
@@ -105,7 +105,7 @@ h1 {
 
 @keyframes bottom {
   from {
-    bottom: -100px;
+    bottom: 500px;
   }
   to {
     bottom: 0px;
@@ -148,10 +148,9 @@ h1 {
   } 
 
   #no1{
-    width: 90%;
+    width: 95%;
   }
-  .column {
-  }
+
   .column > a > p {
     font-size: 10px;
   }
