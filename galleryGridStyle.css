@@ -105,7 +105,7 @@ h1 {
 
 @keyframes bottom {
   from {
-    bottom: 500px;
+    bottom: -500px;
   }
   to {
     bottom: 0px;
