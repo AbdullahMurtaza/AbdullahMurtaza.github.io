@@ -44,24 +44,24 @@
 
 #technicalSupport {
     left: 75%;
-    animation: right 1s;
+    animation: top 1s;
 }
 @keyframes top {
-    from {top: -200px;}
+    from {top: -500px;}
     to{top:0px}
   }
   @keyframes left {
-    from {left: -200px;}
+    from {left: -500px;}
     to{left:0px}
   }
   
   @keyframes right {
-    from {right: -200px;}
+    from {right: -500px;}
     to{right:0px}
   }
   
   @keyframes bottom {
-    from {bottom: -200px;}
+    from {bottom: -500px;}
     to{bottom:0px;}
   }
 
