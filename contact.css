@@ -31,7 +31,7 @@ body{
     opacity: 0.8;
 }
 #twitter>a>img:hover{
-    animation: spin 1s 1;
+    animation: vibrater 1.5s ease-in-out;
     opacity: 1;
 }
 
@@ -39,7 +39,7 @@ body{
     animation: left 1s;
 }
 #linkedin>a>img:hover{
-    animation: spin 1s 1;
+    animation: vibrater 1.5s ease-in-out;
     opacity: 1;
 }
 
@@ -47,7 +47,7 @@ body{
     animation: bottom 1s;
 }
 #github>a>img:hover{
-    animation: spin 1s 1;
+    animation: vibrater 1.5s ease-in-out;
     opacity: 1;
 }
 
@@ -55,7 +55,7 @@ body{
     animation: right 0.5s;
 }
 #wa>a>img:hover{
-    animation: spin 1s 1;
+    animation: vibrater 1.5s ease-in-out;
     opacity: 1;
 }
 
@@ -93,12 +93,39 @@ body{
       bottom: 0px;
     }
   }
-  @keyframes spin {
+  @keyframes vibrater {
     0% {
       transform: rotate(0deg);
     }
+    10% {
+      transform: rotate(5deg);
+    }
+    20% {
+        transform: rotate(-5deg);
+      }
+    30% {
+      transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+      }
+    50% {
+        transform: rotate(15deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+      }
+    80% {
+        transform: rotate(-5deg);
+    }
+    90% {
+        transform: rotate(5deg);
+      }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(0deg);
     }
   }
 @media screen and (max-width: 800px) {
