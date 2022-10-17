@@ -2,6 +2,7 @@ body{
     background-color: snow;
 }
 .contactContainer{
+    padding-top: 10vh;
     display: grid;
     grid-template-columns: auto auto;
     
@@ -26,7 +27,7 @@ body{
 }
 
 #twitter{
-    animation: top 3s;
+    animation: top 1s;
     opacity: 0.8;
 }
 #twitter>a>img:hover{
@@ -35,7 +36,7 @@ body{
 }
 
 #linkedin{
-    animation: left 2s;
+    animation: left 1s;
 }
 #linkedin>a>img:hover{
     animation: spin 1s 1;
@@ -43,7 +44,7 @@ body{
 }
 
 #github{
-    animation: right 3s;
+    animation: bottom 1s;
 }
 #github>a>img:hover{
     animation: spin 1s 1;
@@ -51,7 +52,7 @@ body{
 }
 
 #wa{
-    animation: bottom 2s;
+    animation: right 0.5s;
 }
 #wa>a>img:hover{
     animation: spin 1s 1;
