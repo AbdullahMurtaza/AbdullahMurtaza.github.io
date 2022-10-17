@@ -68,7 +68,7 @@ nav {
 #navListItemsWrapper {
     list-style: none;
     display: inline-block;
-    width: 70%;
+    width: 50%;
     height: 25vh;
     margin: auto;
     margin-top: 30px;

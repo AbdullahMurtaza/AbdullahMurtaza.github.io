@@ -1,50 +1,111 @@
 body{
     background-color: snow;
 }
-#container{
-    margin: 20%;
-}
 .contactContainer{
     display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
-    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    
     position: relative;
-    /*margin: 0% 20% 0% 20%;*/
-    
-    
+    margin: auto;
+    width: 60%;    
     /*border: 1px dashed red;*/
+    height: 30vh;
 
 }
-
+.contactContainer>div{
+    position: relative;
+    /*border: 1px dashed yellow;*/
+}
 .contactContent>a{
-    /*float: left;*/
-    display: block;
 
-    height: 100px;
-    
-    font-family: Georgia;
-    text-align: center;
-    
-    padding-top: 0px;
-    list-style-type: none;
-    margin: 0px;
-   
+}
+.contactContent>a>img{
+    width: 100%;
+    opacity: 0.7;
+
 }
 
 #twitter{
-    background-color:#00acee;
+    animation: top 3s;
+    opacity: 0.8;
+}
+#twitter>a>img:hover{
+    animation: spin 1s 1;
+    opacity: 1;
 }
 
 #linkedin{
-    background-color: #0072b1;
+    animation: left 2s;
+}
+#linkedin>a>img:hover{
+    animation: spin 1s 1;
+    opacity: 1;
 }
 
 #github{
-    background-color: #171515;
+    animation: right 3s;
+}
+#github>a>img:hover{
+    animation: spin 1s 1;
+    opacity: 1;
 }
 
 #wa{
+    animation: bottom 2s;
+}
+#wa>a>img:hover{
+    animation: spin 1s 1;
+    opacity: 1;
+}
+
+@keyframes top {
+    from {
+      top: -500px;
+    }
+    to {
+      top: 0px;
+    }
+  }
+  @keyframes left {
+    from {
+      left: -500px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  
+  @keyframes right {
+    from {
+      right: -500px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+  
+  @keyframes bottom {
+    from {
+      bottom: -500px;
+    }
+    to {
+      bottom: 0px;
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+@media screen and (max-width: 800px) {
+    .contactContainer{
+        display: block;
+    }
+    .contactContent>a>img{
+        width: 300px;
+    }
     
-    background-color: green;
-    width: 100%;
 }
