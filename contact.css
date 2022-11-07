@@ -31,7 +31,7 @@ body{
     opacity: 0.8;
 }
 #twitter>a>img:hover{
-    animation: vibrater 1.5s ease-in-out;
+    animation: vibrater 1.5s ease-in-out; 
     opacity: 1;
 }
 
