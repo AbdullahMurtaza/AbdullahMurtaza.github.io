@@ -10,15 +10,15 @@
 }
 */
 header {
-    margin: 0px;
+  margin: 0px;
 }
 
 nav {
-    display: block;
-    background-color: #877666;
-    opacity: 1;
-    height: 17vh;
-    margin: 0px;
+  display: block;
+  background-color: #877666;
+  opacity: 1;
+  height: 17vh;
+  margin: 0px;
 }
 /*
 */
@@ -30,34 +30,31 @@ nav {
 */
 
 #logoWrapper {
-    display: inline-block;
-    width: 30%;
-    height: 25vh;
-    position: absolute;
-    left: 0px;
+  display: inline-block;
+  width: 30%;
+  height: 25vh;
+  position: absolute;
+  left: 0px;
 }
 
 #logo {
-    font-family: 'Caveat Brush';
-    font-weight: 35;
-    font-size: 50px;
-    color: wheat;
-    padding: 20px;
-    padding-left: 100px;
-    margin-top: 23px;
-    text-decoration: none;
-    
+  font-family: "Caveat Brush";
+  font-weight: 35;
+  font-size: 50px;
+  color: wheat;
+  padding: 20px;
+  padding-left: 100px;
+  margin-top: 23px;
+  text-decoration: none;
 }
-
 
 #online {
-    font-family: 'Caveat Brush';
-    font-size: 24px;
-    color: wheat;
-    vertical-align: top;
-    padding-left: 300px;
+  font-family: "Caveat Brush";
+  font-size: 24px;
+  color: wheat;
+  vertical-align: top;
+  padding-left: 300px;
 }
-
 
 /*
 
@@ -66,136 +63,125 @@ nav {
 */
 
 #navListItemsWrapper {
-    list-style: none;
-    display: inline-block;
-    width: 50%;
-    height: 25vh;
-    margin: auto;
-    margin-top: 30px;
-    vertical-align: top;
-    align-items: center;
-    position: absolute;
-    left: 38%;
+  list-style: none;
+  display: inline-block;
+  width: 50%;
+  height: 25vh;
+  margin: auto;
+  margin-top: 30px;
+  vertical-align: top;
+  align-items: center;
+  position: absolute;
+  left: 38%;
 }
 
-#navListItemsWrapper>li>a {
-    float: left;
-    width: 150px;
-    padding: 10px;
-    font-family: Georgia;
-    color: wheat;
-    text-align: center;
-    margin: 5px; 
-    border: 2px dashed wheat;
-    border-radius: 5px;
+#navListItemsWrapper > li > a {
+  float: left;
+  width: 100px;
+  padding: 50px;
+  font-family: Georgia;
+  color: wheat;
+  text-align: center;
+  margin: 5px;
+  border: 2px dashed wheat;
+  border-radius: 5px;
 }
-#navListItemsWrapper>li>a:hover {
-    border: 3px solid wheat;
+#navListItemsWrapper > li > a:hover {
+  border: 3px solid wheat;
 }
 @media only screen and (max-width: 1500px) {
-    nav{
-        height: 20vh;
-        /*display: block;*/
-    }
-    #logoWrapper {
-        /*display: block;*/
-        height: 15vh;
-        /*width: 98%;*/
-        position: absolute;
-        left: 5%;
-        top: 2%;
-        display: flex;
-        justify-content: center;
-        
-        
-
-    }
-    #logo{
-
-        font-family: 'Caveat Brush';
-        font-weight: 35;
-        font-size: 40px;
-        color: wheat;
-        padding-left: 10px;
-        margin-top: 10px;
-        text-decoration: none;
-        width: fit-content;
-        display: flex;
-        justify-content: center;
-        border: 1px green;
-
-
-
-    }
+  nav {
+    height: 20vh;
+    /*display: block;*/
+  }
+  #logoWrapper {
+    /*display: block;*/
+    height: 15vh;
+    /*width: 98%;*/
+    position: absolute;
+    left: 5%;
+    top: 2%;
+    display: flex;
+    justify-content: center;
+  }
+  #logo {
+    font-family: "Caveat Brush";
+    font-weight: 35;
+    font-size: 40px;
+    color: wheat;
+    padding-left: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    border: 1px green;
+  }
 }
-    /*
+/*
 
 > Navigation List------------------------
 
 */
 
 #navListItemsWrapper {
-    list-style: none;
-    display: inline-block;
-    width: 70%;
-    height: 25vh;
-    margin: auto;
-    margin-top: 30px;
-    vertical-align: top;
-    align-items: center;
-    position: absolute;
-    right: 2%;
+  list-style: none;
+  display: inline-block;
+  width: 70%;
+  height: 25vh;
+  margin: auto;
+  margin-top: 30px;
+  vertical-align: top;
+  align-items: center;
+  position: absolute;
+  right: 2%;
 }
 
-#navListItemsWrapper>li>a {
-    float: left;
-    width: 80px;
-    padding: 10px;
-    font-family: Georgia;
-    color: wheat;
-    text-align: center;
-    margin: 5px; 
-    border: 2px dashed wheat;
-    border-radius: 5px;
+#navListItemsWrapper > li > a {
+  float: left;
+  width: 80px;
+  padding: 10px;
+  font-family: Georgia;
+  color: wheat;
+  text-align: center;
+  margin: 5px;
+  border: 2px dashed wheat;
+  border-radius: 5px;
 }
-#navListItemsWrapper>li>a:hover {
-    border: 3px solid wheat;
-
+#navListItemsWrapper > li > a:hover {
+  border: 3px solid wheat;
 }
 
 @media only screen and (max-width: 1150px) {
-    nav{
-        height: 20vh;
-        display: block;
-    }
-    #logoWrapper {
-        display: block;
-        height: 15vh;
-        width: 98%;
-        position: absolute;
-        left: 14%;
-        top: 2%;
-        display: flex;
-        justify-content: center;
-        
-
-    }
-    #logo{
-
-        font-family: 'Caveat Brush';
-        font-weight: 35;
-        font-size: 350px;
-        color: wheat;
-        /*padding: 0px;
+  nav {
+    height: 20vh;
+    display: block;
+  }
+  #logoWrapper {
+    display: block;
+    height: 15vh;
+    width: 98%;
+    position: absolute;
+    left: 14%;
+    top: 2%;
+    display: flex;
+    justify-content: center;
+  }
+  #logo {
+    font-family: "Caveat Brush";
+    font-weight: 35;
+    font-size: 350px;
+    color: wheat;
+    /*padding: 0px;
         padding-left: 0px;*/
-        margin-top: 10px;
-        text-decoration: none;
-        width: fit-content;
-        display: flex;
-        justify-content: center;
-}
-#online {
-    font-family: 'Caveat Brush';
+    margin-top: 10px;
+    text-decoration: none;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+  #online {
+    font-family: "Caveat Brush";
     font-size: 15px;
     color: wheat;
     vertical-align: middle;
@@ -203,42 +189,38 @@ nav {
     justify-content: center;*/
     padding-top: 50%;
     /*padding-left: %;*/
-}
+  }
 }
 @media only screen and (max-width: 900px) {
-    
-    nav{
-        height: 25vh;
-        display: block;
-    }
+  nav {
+    height: 25vh;
+    display: block;
+  }
 
-    #logoWrapper {
-        /*display: block;*/
-        height: 15vh;
-        width: 85%;
-        /*position: absolute;
+  #logoWrapper {
+    /*display: block;*/
+    height: 15vh;
+    width: 85%;
+    /*position: absolute;
         left: 14%;
         top: 5%;*/
-        display: flex;
-        justify-content: center;
-        
-
-    }
-    #logo{
-
-            font-family: 'Caveat Brush';
-            font-weight: 35;
-            font-size: 30px;
-            color: wheat;
-            /*padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  #logo {
+    font-family: "Caveat Brush";
+    font-weight: 35;
+    font-size: 30px;
+    color: wheat;
+    /*padding: 0px;
             padding-left: 0px;*/
-            margin-top: 25%;
-            text-decoration: none;
-            width: 99%;
-            display: flex;
-            justify-content: center;
-    }
-    /*#online {
+    margin-top: 25%;
+    text-decoration: none;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+  }
+  /*#online {
         font-family: 'Caveat Brush';
         font-size: 15px;
         color: wheat;
@@ -248,30 +230,28 @@ nav {
         padding-top: 10%;
     }
     */
-    #navListItemsWrapper {
-        list-style: none;
-        width: 94%;
-        height: 5vh;
-        margin-top: 25%;
-        display: flex;
-        justify-content: center;
+  #navListItemsWrapper {
+    list-style: none;
+    width: 94%;
+    height: 5vh;
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
 
-        top: 7%;
-        left: 10px;
-        
-    }
-    
-    #navListItemsWrapper>li>a {
-        float: left;
-        font-size: 12px;
-        width: 60px;
-        padding: 5px;
-        font-family: Georgia;
-        color: #877666;
-        text-align: center;
-        margin: 3px; 
-        border-radius: 5px;
-        background-color: wheat;
-    }
+    top: 7%;
+    left: 10px;
+  }
 
+  #navListItemsWrapper > li > a {
+    float: left;
+    font-size: 12px;
+    width: 60px;
+    padding: 5px;
+    font-family: Georgia;
+    color: #877666;
+    text-align: center;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: wheat;
+  }
 }
