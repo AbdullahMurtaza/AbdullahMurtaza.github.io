@@ -1,0 +1,47 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    width: auto;
+    padding: 10px; 
+    margin: auto;
+  }
+.divClass{
+/*width: 45%;*/
+padding: 10% 0% 10% 3%;
+
+}
+
+#heading{
+    height: 10%;
+    padding: 2% 0% 4% 4%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: ;
+}
+.divClass>ul>li{
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+
+padding: 1%;
+}
+.divClass>h2{
+    text-align: center;
+}
+#compSci {
+    background-color: lightskyblue;
+    grid-row: 1/ span 2;
+    
+}
+#english{
+    background-color: lightyellow;
+    
+}
+#management {
+    background-color: lightsalmon;
+}
+#maths{
+    background-color: lightgreen;
+}
+#physics{
+    background-color: lightgrey;
+}
