@@ -5,6 +5,11 @@ h1 {
   margin-bottom: 2%;
 }
 
+h2{
+  color: wheat;
+  margin: 3%;
+}
+
 .containerBadges {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
@@ -14,9 +19,25 @@ h1 {
   position: relative;
 }
 
-.containerCertificate {
+.containerProfessionalCertificate{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25% ;
+  width: 80%;
+  padding: 0px; 
+  margin: auto;
+}
+
+.containerIndividualCertificate{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  width: 80%;
+  padding: 0px; 
+  margin: auto;
+}
+
+.containerGuidedProjectCertificate{
+  display: grid;
+  grid-template-columns: 25% 25%;
   width: 80%;
   padding: 0px; 
   margin: auto;
@@ -70,14 +91,13 @@ h1 {
   background-color: black;
   position: relative;
   padding: 3% 0% 3% 0%;
-  bottom: 5%;
   color: wheat;
   font-size: 30px;
   width: 80%;
   margin: auto;
   border-radius: 10px;
   text-align: center;
-  bottom: 28%;
+  bottom: 20%;
   opacity: 0.4;
   z-index: 1;
 }
