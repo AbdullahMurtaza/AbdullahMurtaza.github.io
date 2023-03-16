@@ -1,5 +1,5 @@
 body{
-
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 .container {
     display: grid;
