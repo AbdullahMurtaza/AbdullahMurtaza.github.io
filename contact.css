@@ -1,6 +1,6 @@
 body{
     background-color: snow;
-
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 .contactContainer{
     padding-top: 10vh;
