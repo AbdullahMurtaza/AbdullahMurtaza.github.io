@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}
