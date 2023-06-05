@@ -122,7 +122,7 @@
             const textContent = await page.getTextContent();
 
             // Convert the text content items into a single string
-            const text = textContent.items.map(item => item.str).join(' ');
+            const text = textContent.items.map(item => item.str).join('');
 
             // Check if any of the keywords exist in the page text
             const foundKeywords = keywords.filter(keyword => text.includes(keyword));
