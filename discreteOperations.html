@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Set Operations</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .btn {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Set Operations</h1>
+    <div id="inputFields">
+      <label for="set1">Set 1:</label>
+      <input type="text" class="set-input" id="set1" placeholder="Enter numbers separated by commas">
+      <br>
+    </div>
+    <button class="btn" onclick="addInputField()">Add Set</button>
+    <br>
+    <button class="btn" onclick="performUnion()">Union</button>
+    <button class="btn" onclick="performIntersection()">Intersection</button>
+    <button class="btn" onclick="performOR()">OR</button>
+    <button class="btn" onclick="performXOR()">XOR</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    let inputCount = 1;
+
+    function addInputField() {
+      inputCount++;
+      const inputFields = document.getElementById('inputFields');
+      const newInputField = document.createElement('div');
+      newInputField.innerHTML = `<label for="set${inputCount}">Set ${inputCount}:</label>
+                                  <input type="text" class="set-input" id="set${inputCount}" placeholder="Enter numbers separated by commas">
+                                  <br>`;
+      inputFields.appendChild(newInputField);
+    }
+
+    function getSetValues() {
+      const setValues = [];
+      const inputElements = document.getElementsByClassName('set-input');
+      for (let i = 0; i < inputElements.length; i++) {
+        const inputSet = inputElements[i].value.split(',').map(Number);
+        setValues.push(inputSet);
+      }
+      return setValues;
+    }
+
+    function performUnion() {
+      const setValues = getSetValues();
+      const result = Array.from(new Set(setValues.flat()));
+      document.getElementById('result').innerHTML = "Union: " + result;
+    }
+
+    function performIntersection() {
+      const setValues = getSetValues();
+      const result = setValues.reduce((a, b) => a.filter(value => b.includes(value)));
+      document.getElementById('result').innerHTML = "Intersection: " + result;
+    }
+
+    function performOR() {
+      const setValues = getSetValues();
+      const result = setValues.reduce((a, b) => a.concat(b.filter(value => !a.includes(value))));
+      document.getElementById('result').innerHTML = "OR: " + result;
+    }
+
+    function performXOR() {
+      const setValues = getSetValues();
+      const result = setValues.reduce((a, b) => a.filter(value => !b.includes(value)).concat(b.filter(value => !a.includes(value))));
+      document.getElementById('result').innerHTML = "XOR: " + result;
+    }
+  </script>
+</body>
+</html>
