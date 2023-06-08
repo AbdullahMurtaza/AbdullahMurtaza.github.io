@@ -6,70 +6,135 @@
   <title>PDF Search</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
 
-    h1 {
-      text-align: center;
-      margin: 20px 0;
-    }
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+.form-group {
+  margin-bottom: 20px;
+}
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
-    input[type="file"],
-    input[type="text"],
-    .btn-search {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+input[type="file"],
+input[type="text"],
+.btn-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
-    .btn-search {
-      background-color: #4caf50;
-      color: #fff;
-      cursor: pointer;
-    }
+.btn-search {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
 
-    #results {
-      margin-top: 20px;
-    }
+#results {
+  margin-top: 20px;
+}
 
-    h2 {
-      margin-bottom: 10px;
-    }
+h2 {
+  margin-bottom: 10px;
+}
 
-    p {
-      margin: 5px 0;
-    }
+.keyword-result {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-    span {
-      font-weight: bold;
-      color: #4caf50;
-    }
+.keyword-result p {
+  margin: 0;
+}
 
-    .no-results {
-      color: #f44336;
-    }
+.keyword-result p strong {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.keyword-result span {
+  font-weight: bold;
+  color: #000;
+}
+
+.copy-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.copy-all-button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.copy-all-button:hover {
+  background-color: #45a049;
+}
+
+.no-results {
+  color: #f44336;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input[type="file"],
+  input[type="text"],
+  .btn-search {
+    font-size: 14px;
+  }
+
+  .copy-button {
+    font-size: 12px;
+  }
+
+  .copy-all-button {
+    font-size: 14px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -89,6 +154,24 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
   <script>
+    // JavaScript code
+
+    // Function to copy the text content of a given element
+    function copyText(element) {
+      const range = document.createRange();
+      range.selectNode(element);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+
+    // Function to copy all search results
+    function copyAllResults() {
+      const resultsDiv = document.getElementById("results");
+      copyText(resultsDiv);
+    }
+
     // Function to handle the search functionality
     async function searchPDF() {
       // Get the selected PDF file and search keywords from the inputs
@@ -122,7 +205,7 @@
             const textContent = await page.getTextContent();
 
             // Convert the text content items into a single string
-             const text = textContent.items.map(item => item.str).join('');
+            const text = textContent.items.map(item => item.str).join('');
 
             // Check if any of the keywords exist in the page text
             const foundKeywords = keywords.filter(keyword => text.includes(keyword));
@@ -173,6 +256,10 @@
             const pageNumbers = keywordData[keyword].pageNumbers;
             const totalCount = keywordData[keyword].totalCount;
 
+            // Create a div for the keyword result
+            const keywordDiv = document.createElement("div");
+            keywordDiv.classList.add("keyword-result");
+
             // Create a paragraph for the keyword
             const keywordParagraph = document.createElement("p");
             keywordParagraph.innerHTML = `<strong>${keyword}:</strong>`;
@@ -188,10 +275,31 @@
             // Append the span to the keyword paragraph
             keywordParagraph.appendChild(span);
 
-            // Append the keyword paragraph to the results container
-            resultsDiv.appendChild(keywordParagraph);
+            // Append the keyword paragraph to the keyword div
+            keywordDiv.appendChild(keywordParagraph);
+
+            // Create a copy button for the individual keyword result
+            const copyButton = document.createElement("button");
+            copyButton.textContent = "Copy";
+            copyButton.addEventListener("click", () => {
+              copyText(keywordParagraph);
+            });
+
+            // Append the copy button to the keyword div
+            keywordDiv.appendChild(copyButton);
+
+            // Append the keyword div to the results container
+            resultsDiv.appendChild(keywordDiv);
           }
         }
+
+        // Create a copy all button
+        const copyAllButton = document.createElement("button");
+        copyAllButton.textContent = "Copy All";
+        copyAllButton.addEventListener("click", copyAllResults);
+
+        // Append the copy all button to the results container
+        resultsDiv.appendChild(copyAllButton);
       } else {
         // Display a message if no pages were found
         const noResultsMsg = document.createElement("p");
