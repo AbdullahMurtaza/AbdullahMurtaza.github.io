@@ -20,12 +20,20 @@
     }
     .result {
       margin-top: 20px;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    .copy-btn {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Discrete Math Operations</h1>
+    <h1>Set Operations</h1>
     <div id="inputFields">
       <label for="set1">Set 1:</label>
       <input type="text" class="set-input" id="set1" placeholder="Enter numbers separated by commas">
@@ -38,6 +46,7 @@
     <button class="btn" onclick="performOR()">OR</button>
     <button class="btn" onclick="performXOR()">XOR</button>
     <div class="result" id="result"></div>
+    <button class="btn copy-btn" onclick="copyOutput()">Copy</button>
   </div>
 
   <script>
@@ -66,25 +75,41 @@
     function performUnion() {
       const setValues = getSetValues();
       const result = Array.from(new Set(setValues.flat()));
-      document.getElementById('result').innerHTML = "Union: " + result;
+      displayResult("Union", result);
     }
 
     function performIntersection() {
       const setValues = getSetValues();
       const result = setValues.reduce((a, b) => a.filter(value => b.includes(value)));
-      document.getElementById('result').innerHTML = "Intersection: " + result;
+      displayResult("Intersection", result);
     }
 
     function performOR() {
       const setValues = getSetValues();
       const result = setValues.reduce((a, b) => a.concat(b.filter(value => !a.includes(value))));
-      document.getElementById('result').innerHTML = "OR: " + result;
+      displayResult("OR", result);
     }
 
     function performXOR() {
       const setValues = getSetValues();
       const result = setValues.reduce((a, b) => a.filter(value => !b.includes(value)).concat(b.filter(value => !a.includes(value))));
-      document.getElementById('result').innerHTML = "XOR: " + result;
+      displayResult("XOR", result);
+    }
+
+    function displayResult(operation, result) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `<strong>${operation}:</strong><br>${result.join(',')}`;
+    }
+
+    function copyOutput() {
+      const resultDiv = document.getElementById('result');
+      const range = document.createRange();
+      range.selectNode(resultDiv);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      alert("Output copied to clipboard!");
     }
   </script>
 </body>
