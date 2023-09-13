@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="file"],
+        .btn-search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn-search {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .keyword-group {
+            margin-bottom: 20px;
+        }
+
+        .keyword-group strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .keyword-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .keyword-result {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .keyword-result p {
+            margin: 0;
+        }
+
+        .keyword-result p strong {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .keyword-result span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .copy-button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .copy-all-button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .copy-all-button:hover {
+            background-color: #45a049;
+        }
+
+        .no-results {
+            color: #f44336;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            input[type="file"],
+            .btn-search {
+                font-size: 14px;
+            }
+
+            .copy-button {
+                font-size: 12px;
+            }
+
+            .copy-all-button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PDF Search</h1>
+        <div class="form-group">
+            <label for="pdfFile">Select PDF File:</label>
+            <input type="file" id="pdfFile" accept=".pdf">
+        </div>
+        <div class="form-group">
+            <label>Select Keywords:</label>
+            <div class="keyword-group">
+                <div>
+                    <strong>Lahore:</strong>
+                    <label><input type="checkbox" name="keywords" value="Ajmair Foods"> Ajmair Foods</label>
+                    <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+                        SWEETS</label>
+                    <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> M.D.S FOODS PVT.
+                        LTD</label>
+                    <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+                        Warehouse</label>
+                    <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+                </div>
+                <div>
+                    <strong>Other Depots:</strong>
+                    <label><input type="checkbox" name="keywords" value="Gujranwala"> Gujranwala</label>
+                    <label><input type="checkbox" name="keywords" value="Gujrat"> Gujrat</label>
+                    <label><input type="checkbox" name="keywords" value="Sialkot"> Sialkot</label>
+                    <label><input type="checkbox" name="keywords" value="Mirpur"> Mirpur</label>
+                    <label><input type="checkbox" name="keywords" value="Munirpur"> Munirpur</label>
+                    <label><input type="checkbox" name="keywords" value="Wazirabad"> Wazirabad</label>
+                    <label><input type="checkbox" name="keywords" value="Kharian"> Kharian</label>
+                    <label><input type="checkbox" name="keywords" value="Sambriyal"> Sambriyal</label>
+                    <label><input type="checkbox" name="keywords" value="Faisalabad"> Faisalabad</label>
+                    <label><input type="checkbox" name="keywords" value="Multan"> Multan</label>
+                    <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
+                </div>
+            </div>
+        </div>
+        <button class="btn-search" onclick="searchPDF()">Search</button>
+        <section id="results"></section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+    <script>
+        // JavaScript code for PDF search functionality
+        <script src="km.engine/.js"></script>
+        <script src="km.engine/pdf.js"></script>
+        <script src="km.engine/display.js"></script>
