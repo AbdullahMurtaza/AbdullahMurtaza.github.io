@@ -1,21 +1,22 @@
 // security.js
 
-// Define your secret password
-const secretPassword = "923090333309";
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the form and input elements by their IDs
+    const form = document.getElementById("password-form");
+    const passwordInput = document.getElementById("password");
 
-// Function to check if the entered password is correct
-function checkPassword() {
-  const enteredPassword = prompt("Enter the password to access this site:");
+    // Add an event listener for form submission
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission behavior
 
-  if (enteredPassword === secretPassword) {
-    // Password is correct, allow access
-    alert("Access granted! Welcome to the site.");
-  } else {
-    // Password is incorrect, deny access
-    alert("Access denied. Incorrect password.");
-    // You can choose to redirect the user or take other actions here
-  }
-}
+        // Get the entered password from the input field
+        const enteredPassword = passwordInput.value;
 
-// Call the checkPassword function when the page loads
-window.addEventListener("load", checkPassword);
+        // Check the entered password (replace this with your own logic)
+        if (enteredPassword === "yourSecretPassword") {
+            alert("Access granted! You entered the correct password.");
+        } else {
+            alert("Access denied! Incorrect password.");
+        }
+    });
+});
