@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Search</title>
+  <style>
+    /* Your CSS styles here */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PDF Search</h1>
+    <div class="form-group">
+      <label for="pdfFile">Select PDF File:</label>
+      <input type="file" id="pdfFile" accept=".pdf">
+    </div>
+    <div class="form-group">
+      <label>Select Keywords:</label>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="keywords" value="Keyword1"> Keyword 1
+        </label>
+        <label>
+          <input type="checkbox" name="keywords" value="Keyword2"> Keyword 2
+        </label>
+        <!-- Add more checkboxes as needed -->
+      </div>
+    </div>
+    <button class="btn-search" onclick="searchPDF()">Search</button>
+    <section id="results"></section>
+  </div>
+
+  <script src="pdf.min.js"></script>
+  <script>
+    // Your JavaScript code here
+
+    // Function to handle the search functionality
+    async function searchPDF() {
+      // Get the selected PDF file from the input
+      const fileInput = document.getElementById("pdfFile");
+      const file = fileInput.files[0];
+
+      // Get all the checkbox elements with the name "keywords"
+      const checkboxes = document.querySelectorAll('input[name="keywords"]:checked');
+
+      // Create an array to store the selected keywords
+      const selectedKeywords = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+      // Proceed only if a file and keywords are provided
+      if (file && selectedKeywords.length > 0) {
+        // Rest of your code for processing the PDF and searching for keywords
+        // You can use the selectedKeywords array for searching in the PDF.
+        // Example: console.log(selectedKeywords);
+      }
+    }
+  </script>
+</body>
+</html>
