@@ -1,60 +1,58 @@
 // download.js
 
-// Function to download selected pages as a new PDF
+// Function to download selected pages
 function downloadSelectedPages(selectedPages) {
-  // Initialize a new PDF document
-  const pdfDoc = new PDFDocument();
+  const pdfDoc = window.pdfjsLib.getDocument(pdfData);
+  pdfDoc.promise
+    .then(function (pdf) {
+      const numPages = pdf.numPages;
+      const pageCount = selectedPages.length;
+      const pdfFileName = 'selected_pages.pdf';
 
-  // Add each selected page to the new PDF
-  selectedPages.forEach(async (pageNumber) => {
-    // Load the page from the original PDF (modify as needed)
-    const originalPage = await loadPageFromOriginalPDF(pageNumber);
+      const pdfDocument = window.pdfjsLib.getDocument(pdfData);
 
-    // Add the loaded page to the new PDF
-    pdfDoc.addPage(originalPage);
-  });
+      const promises = selectedPages.map((pageNumber) => {
+        return pdfDocument.promise.then((pdfDoc_) => {
+          return pdfDoc_.getPage(pageNumber);
+        });
+      });
 
-  // Create a writable stream to save the new PDF
-  const stream = pdfDoc.pipe(blobStream());
+      Promise.all(promises)
+        .then((pages) => {
+          return Promise.all(
+            pages.map((page, index) => {
+              const viewport = page.getViewport({ scale: 1.5 });
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+              return page.render({
+                canvasContext: ctx,
+                viewport: viewport,
+              }).promise.then(function () {
+                return canvas.toDataURL('image/jpeg');
+              });
+            })
+          );
+        })
+        .then((pageImages) => {
+          const pdf = new window.jspdf.jsPDF({
+            orientation: 'p',
+            unit: 'mm',
+            format: 'a4',
+          });
 
-  // End the PDF creation process
-  pdfDoc.end();
+          pageImages.forEach((imageData, index) => {
+            if (index > 0) {
+              pdf.addPage();
+            }
+            pdf.addImage(imageData, 'JPEG', 0, 0, 210, 297);
+          });
 
-  // Trigger the download of the new PDF
-  stream.on("finish", () => {
-    const blob = stream.toBlob("application/pdf");
-    const url = URL.createObjectURL(blob);
-
-    // Create a download link and trigger a click event to initiate the download
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "selected_pages.pdf";
-    a.style.display = "none";
-    document.body.appendChild(a);
-    a.click();
-
-    // Clean up
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  });
+          pdf.save(pdfFileName);
+        });
+    })
+    .catch(function (error) {
+      console.error('Error loading PDF:', error);
+    });
 }
-
-// Example function to load a page from the original PDF (replace with your implementation)
-async function loadPageFromOriginalPDF(pageNumber) {
-  // Replace this with code to load the specified page from the original PDF
-  // You might use pdf.js or any other library for this purpose
-  // Example using pdf.js:
-  const pdf = await pdfjsLib.getDocument({ url: 'original.pdf' }).promise;
-  const page = await pdf.getPage(pageNumber);
-  const viewport = page.getViewport({ scale: 1.0 });
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  canvas.width = viewport.width;
-  canvas.height = viewport.height;
-  await page.render({ canvasContext: context, viewport }).promise;
-  return pdfDocRef.embedPFB(new Uint8Array(buffer));
-}
-
-// Example usage
-const selectedPages = [1, 3, 5]; // Replace with the pages you want to download
-downloadSelectedPages(selectedPages);

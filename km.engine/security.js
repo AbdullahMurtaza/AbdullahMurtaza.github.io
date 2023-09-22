@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const enteredPassword = passwordInput.value;
 
         // Check the entered password (replace this with your own logic)
-        if (enteredPassword === "yourSecretPassword") {
+        if (enteredPassword === "") {
             alert("Access granted! You entered the correct password.");
         } else {
             alert("Access denied! Incorrect password.");
