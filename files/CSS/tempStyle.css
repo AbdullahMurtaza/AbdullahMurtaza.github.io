@@ -1,25 +1,71 @@
-body, html {
-    height: 100%;
+/* Global Styles */
+body {
     margin: 0;
     padding: 0;
-}
-
-.temp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font=size: 35px;
-    color: #A9A9A9,
-}
-
-.centered-text {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-}
+    padding: 20px 0;
+  }
+  
+  #logoWrapper {
+    text-align: center;
+  }
+  
+  #logo {
+    font-family: "Caveat Brush", cursive;
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    
+  }
+  
+  #online {
+    font-family: "Caveat Brush", cursive;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    top: -22px;
 
-/* Mobile View */
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column;
-    }
-}
+    background-color: orange;
+    border-radius: 100%;
+  }
+
+  nav {
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  #navListItemsWrapper {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+  }
+  
+  #navListItemsWrapper li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  #navListItemsWrapper li:last-child {
+    margin-right: 0;
+  }
+  
+  #navListItemsWrapper a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  #navListItemsWrapper a:hover {
+    color: #ff9900;
+  }
+  
