@@ -23,7 +23,7 @@ header {
   margin: 0;
   text-align: center;
   color: #fff;
-  
+
 }
 
 #online {
@@ -67,4 +67,62 @@ nav {
 
 #navListItemsWrapper a:hover {
   color: #ff9900;
+}
+
+/*
+    Drop Down # Projects
+    ****************/
+
+/* Dropdown Content (hidden by default) */
+
+.dropdown{
+
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 13%;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: 0px 8px 16px 0px grey;
+  z-index: 1;
+  text-align: center;
+  /* Adjust to your preference */
+  right: 30%;
+
+
+}
+
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+/* Style for the dropdown links */
+.dropdown-content a {
+  
+  display: block;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+  font-family: "Caveat Brush", cursive;
+  color: #fff;
+  background-color: #333;
+  opacity: 0;
+}
+
+.dropdown-content a:hover {
+  color: orange;
+  opacity: 1;
+  transition: 0.05s;
+  width: 50%;
+  top: 90%;
+
+  
 }
