@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Search</title>
+  <link rel="stylesheet" href="files/CSS/headerStyle.css">
+  <link rel="stylesheet" type="text/css" href="ste.css">
+</head>
+
+<header>
+    <nav>
+      <div id="logoWrapper">
+        <a href="http://abdullahmurtaza.live">
+          <h1 id="logo">
+            Abdullah Murtaza <br><span id="online"> .Live </span>
+          </h1>
+        </a>
+      </div>
+      <br>
+      <br>
+      <div id="navListItemsWrapper">
+        <ul>
+             
+          <li><a href="http://abdullahmurtaza.live">Home</a></li>
+          <li><a href="http://abdullahmurtaza.live/qualification">Qualification</a></li>
+          <li><a href="http://abdullahmurtaza.live/services">Services</a></li>
+          <li><a href="http/abdullahmurtaza.live/certifications">Certifications</a></li>
+          
+          
+          <li class="dropdown">
+            <a href="http://abdullahmurtaza.live/">Projects +</a>
+            <div class="dropdown-content">
+              <a href="http://abdullahmurtaza.live/Keyminer">Project Keyminer</a>
+              <a href="http://abdullahmurtaza.live/ste">Project STE</a>
+            </div>
+          </li>
+
+          <li><a href="http://abdullahmurtaza.live/contact">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<body>
+  <div class="container">
+    <h1>Sale Tax Invoices Extractor</h1>
+    <div class="form-group">
+      <label for="pdfFile">Select PDF File:</label>
+      <input type="file" id="pdfFile" accept=".pdf">
+    </div>
+    <div class="form-group">
+      <label>Select Keywords:</label>
+      <div class="keyword-group">
+
+
+        <label><input type="checkbox" name="keywords" value="Ajmair Foods"> Ajmair Foods</label>
+        <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+            SWEETS</label>
+        <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> M.D.S FOODS PVT.
+            LTD</label>
+        <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+            Warehouse</label>
+        <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+      </div>
+    </div>
+
+
+    <button class="btn-search" onclick="searchPDF()">Search</button>
+    <section id="results"></section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+  <script src="ste.js"></script>
+</body>
+</html>

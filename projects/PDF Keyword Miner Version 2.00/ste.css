@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="file"],
+  .btn-search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .btn-search {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #results {
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .keyword-group {
+    margin-bottom: 20px;
+  }
+
+  .keyword-group strong {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .keyword-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .keyword-result {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .keyword-result p {
+    margin: 0;
+  }
+
+  .keyword-result p strong {
+    font-weight: bold;
+    color: #4caf50;
+  }
+
+  .keyword-result span {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .copy-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .copy-all-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .copy-all-button:hover {
+    background-color: #45a049;
+  }
+
+  .no-results {
+    color: #f44336;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    input[type="file"],
+    .btn-search {
+      font-size: 14px;
+    }
+
+    .copy-button {
+      font-size: 12px;
+    }
+
+    .copy-all-button {
+      font-size: 14px;
+    }
+  }
