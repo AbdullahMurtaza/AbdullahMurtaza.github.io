@@ -37,9 +37,10 @@ body {
   }
 
   .btn-search {
-    background-color: #4caf50;
+    background-color: #333;
     color: #fff;
     cursor: pointer;
+    transition: 0.04s;
   }
 
   #results {
