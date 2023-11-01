@@ -45,7 +45,7 @@ body {
   }
   .btn-search:hover {
     color: orange;
-    transition: 1s;
+    transition: 0.3s;
   }
   #results {
     margin-top: 20px;
