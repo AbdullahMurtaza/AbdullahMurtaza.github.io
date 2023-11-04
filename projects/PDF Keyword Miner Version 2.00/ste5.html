@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Search and Page Extraction</title>
+</head>
+<body>
+    <h1>PDF Search and Page Extraction</h1>
+    <input type="file" id="pdfFile" accept=".pdf">
+    <p>Keywords:</p>
+    <label><input type="checkbox" name="keywords" value="Lahore">Keyword 1</label>
+    <label><input type="checkbox" name="keywords" value="Ajmair">Keyword 2</label>
+    <label><input type="checkbox" name="keywords" value="keyword3">Keyword 3</label>
+    <button onclick="searchPDF()">Search PDF</button>
+
+    <h2>Search Results</h2>
+    <div id="results"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.21.3/pdf-lib.js"></script>
+    
+  <script src="projects/PDF Keyword Miner Version 2.00/stePDF.js"></script>
+    <script>
+        // Include PDF.js library
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        // Function to create and download a PDF
+        async function createAndDownloadPDF(selectedPageNumbers) {
+            try {
+                // Load the original PDF file
+                const fileInput = document.getElementById('pdfFile');
+                if (!fileInput.files.length) {
+                    alert('Please select an original PDF file.');
+                    return;
+                }
+                const pdfBytes = await fileInput.files[0].arrayBuffer();
+                const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+
+                // Create a new PDF containing selected pages
+                const newPdf = await PDFLib.PDFDocument.create();
+                const copiedPages = await newPdf.copyPages(pdfDoc, selectedPageNumbers);
+
+                for (const page of copiedPages) {
+                    newPdf.addPage(page);
+                }
+
+                // Serialize the new PDF to bytes
+                const pdfDataUri = await newPdf.saveAsBase64({ dataUri: true });
+
+                // Create a temporary link for the new PDF
+                const a = document.createElement('a');
+                a.href = pdfDataUri;
+                a.download = 'selected_pages.pdf';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+
+                // Trigger download
+                a.click();
+
+                // Clean up
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Error creating PDF:', error);
+            }
+        }
+
+        // Function to add a button for creating a PDF of a keyword's output
+        function addCreatePDFButton(keyword, pages) {
+            const createPDFButton = document.createElement('button');
+            createPDFButton.textContent = `Create PDF for "${keyword}"`;
+            createPDFButton.addEventListener('click', async () => {
+                createAndDownloadPDF(pages);
+            });
+            return createPDFButton;
+        }
+
+        // Rest of your code (downloadPDF, addPDFButtons, searchPDF, displayResults, etc.)
+    </script>
+</body>
+</html>

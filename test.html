@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="files/CSS/headerStyle.css">
+    <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css">
+    <title>Abdullah Murtaza</title>
+    <title>Sale Tax Invoices Extractor</title>
+</head>
+<header>
+    <nav>
+        <div id="logoWrapper">
+            <a href="http://abdullahmurtaza.live">
+                <h1 id="logo">
+                    Abdullah Murtaza <br><span id="online"> .Live </span>
+                </h1>
+            </a>
+        </div>
+        <br>
+        <br>
+        <div id="navListItemsWrapper">
+            <ul>
+                <li><a href="http://abdullahmurtaza.live">Home</a></li>
+                <li><a href="http://abdullahmurtaza.live/qualification">Qualification</a></li>
+                <li><a href="http://abdullahmurtaza.live/services">Services</a></li>
+                <li><a href="http/abdullahmurtaza.live/certifications">Certifications</a></li>
+                <li class="dropdown">
+                    <a href="http://abdullahmurtaza.live/">Projects +</a>
+                    <div class="dropdown-content">
+                        <a href="http://abdullahmurtaza.live/Keyminer">Project Keyminer</a>
+                        <a href="http://abdullahmurtaza.live/ste">Project STE</a>
+                    </div>
+                </li>
+                <li><a href="http://abdullahmurtaza.live/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Sale Tax Invoices Extractor</h1>
+        <div class="form-group">
+            <label for="pdfFile">Select PDF File:</label>
+            <input type="file" id="pdfFile" accept=".pdf">
+        </div>
+        <div class="form-group">
+            <label>Select Keywords:</label>
+            <div class="keyword-group">
+                <div>
+                    <strong>Lahore:</strong>
+                    <label><input type="checkbox" name="keywords" value="Ajmair Foods"> Ajmair Foods</label>
+                    <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+                        SWEETS</label>
+                    <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> M.D.S FOODS PVT.
+                        LTD</label>
+                    <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+                        Warehouse</label>
+                    <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+                </div>
+                <br>
+                <div>
+                    <strong>Gujranwala Depot:</strong>
+                    <label><input type="checkbox" name="keywords" value="Gujranwala"> Gujranwala</label>
+                    <label><input type="checkbox" name="keywords" value="Gujrat"> Gujrat</label>
+                    <label><input type="checkbox" name="keywords" value="Sialkot"> Sialkot</label>
+                    <label><input type="checkbox" name="keywords" value="Mirpur"> Mirpur</label>
+                    <label><input type="checkbox" name="keywords" value="Munirpur"> Munirpur</label>
+                    <label><input type="checkbox" name="keywords" value="Wazirabad"> Wazirabad</label>
+                    <label><input type="checkbox" name="keywords" value="Kharian"> Kharian</label>
+                    <label><input type="checkbox" name="keywords" value="Sambriyal"> Sambriyal</label>
+                </div>
+                <br>
+                <div>
+                    <strong>Faisalabad Depot:</strong>
+                    <label><input type="checkbox" name="keywords" value="Faisalabad"> Faisalabad</label>
+                    <label><input type="checkbox" name="keywords" value="Sargodha"> Sargodha</label>
+                    <label><input type="checkbox" name="keywords" value="Samundari"> Samundari</label>
+                    <label><input type="checkbox" name="keywords" value="Toba Tek Singh"> Toba Tek Singh</label>
+                    <label><input type="checkbox" name="keywords" value="Jhang"> Jhang</label>
+                </div>
+                <br>
+                <div>
+                    <strong>Multan Depot:</strong>
+                    <label><input type="checkbox" name="keywords" value="Multan"> Multan</label>
+                    <label><input type="checkbox" name="keywords" value="Sahiwal"> Sahiwal</label>
+                    <label><input type="checkbox" name="keywords" value="Bahawalpur"> Bahawalpur</label>
+                    <label><input type="checkbox" name="keywords" value="Bahawalnagar"> Bahawalnagar</label>
+                    <label><input type="checkbox" name="keywords" value="Dera Ghazi Khan"> Dera Ghazi Khan</label>
+                    <label><input type="checkbox" name="keywords" value="Dera Ismail Khan"> Dera Ismail Khan</label>
+                    <label><input type="checkbox" name="keywords" value="Burewala"> Burewala</label>
+                    <label><input type="checkbox" name="keywords" value="Rahim Yar Khan"> Rahim Yar Khan</label>
+                    <label><input type="checkbox" name="keywords" value="Mian Channu"> Mian Channu</label>
+                </div>
+                <br>
+                <div>
+                    <strong>Karachi Depots:</strong>
+                    <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
+                    <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
+                    <label><input type="checkbox" name="keywords" value="IMTIAZ PROVISION STORE"> IMTIAZ PROVISION
+                        STORE</label>
+                </div>
+            </div>
+        </div>
+        <button class="btn-search" onclick="searchPDF()">Search</button>
+        <section id="results"></section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+    <script>
+        // Function to copy the text content of a given element
+        function copyText(element) {
+            const range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+        }
+
+        // Function to copy all search results
+        function copyAllResults() {
+            const resultsContainer = document.getElementById("results");
+            copyText(resultsContainer);
+        }
+
+        // Function to handle the search functionality
+        async function searchPDF() {
+            // Get the selected PDF file and selected keywords from the checkboxes
+            const fileInput = document.getElementById("pdfFile");
+            const file = fileInput.files[0];
+            const keywordCheckboxes = document.querySelectorAll('input[name="keywords"]:checked');
+            const keywords = Array.from(keywordCheckboxes).map(checkbox => checkbox.value);
+
+            // Proceed only if a file and keywords are selected
+            if (file && keywords.length > 0) {
+                // Create a FileReader object to read the file
+                const fileReader = new FileReader();
+
+                // When the file is loaded, process it
+                fileReader.onload = async function () {
+                    // Create a typed array from the file data
+                    const typedArray = new Uint8Array(this.result);
+
+                    // Load the PDF document using pdf.js library
+                    const pdf = await pdfjsLib.getDocument(typedArray).promise;
+
+                    // Object to store page numbers with their corresponding keywords and total page count
+                    const keywordData = {};
+
+                    // Iterate through each page of the PDF
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        // Get the page object
+                        const page = await pdf.getPage(i);
+
+                        // Extract the text content of the page
+                        const textContent = await page.getTextContent();
+
+                        // Convert the text content items into a single string
+                        const text = textContent.items.map(item => item.str).join('');
+
+                        // Check if any of the keywords exist in the page text
+                        const foundKeywords = keywords.filter(keyword => text.includes(keyword));
+
+                        // Add the page number and keyword to the result object if any keyword is found
+                        if (foundKeywords.length > 0) {
+                            foundKeywords.forEach(keyword => {
+                                if (!keywordData[keyword]) {
+                                    keywordData[keyword] = {
+                                        pageNumbers: [],
+                                        totalCount: 0
+                                    };
+                                }
+                                keywordData[keyword].pageNumbers.push(i);
+                                keywordData[keyword].totalCount++;
+                            });
+                        }
+                    }
+
+                    // Display the results on the webpage
+                    displayResults(keywordData);
+                };
+
+                // Read the file as an ArrayBuffer
+                fileReader.readAsArrayBuffer(file);
+            }
+        }
+
+        // Function to display the search results on the webpage
+        function displayResults(keywordData) {
+            // Get the results container element
+            const resultsContainer = document.getElementById("results");
+
+            // Clear previous results
+            resultsContainer.innerHTML = "";
+
+            // Create a dictionary to hold the output for each keyword
+            const keywordOutput = {};
+
+            // Populate the keywordOutput dictionary
+            for (const keyword in keywordData) {
+                if (keywordData.hasOwnProperty(keyword)) {
+                    const pageNumbers = keywordData[keyword].pageNumbers;
+                    keywordOutput[keyword] = pageNumbers.join(',');
+                }
+            }
+
+            // Create a table to display the output
+            const table = document.createElement("table");
+            table.classList.add("result-table");
+
+            // Create table headers
+            const headerRow = table.insertRow(0);
+            const headerKeywordCell = headerRow.insertCell(0);
+            headerKeywordCell.textContent = "Keywords";
+            const headerOutputCell = headerRow.insertCell(1);
+            headerOutputCell.textContent = "Output of each keyword";
+            const headerUnionCell = headerRow.insertCell(2);
+            headerUnionCell.textContent = "Union of least to greater Output";
+
+            // Create an array to store the output for sorting
+            const outputArray = [];
+            for (const keyword in keywordOutput) {
+                outputArray.push({ keyword, output: keywordOutput[keyword] });
+            }
+
+            // Sort the outputArray based on the output value
+            outputArray.sort((a, b) => {
+                return a.output.localeCompare(b.output);
+            });
+
+            // Create a dictionary to store the union of outputs
+            const unionOutput = {};
+
+            // Iterate through sorted outputArray and create rows in the table
+            for (const item of outputArray) {
+                const row = table.insertRow(-1);
+                const keywordCell = row.insertCell(0);
+                keywordCell.textContent = item.keyword;
+                const outputCell = row.insertCell(1);
+                outputCell.textContent = item.output;
+
+                // Calculate the union of least to greater Output
+                const currentOutput = item.output.split(",");
+                currentOutput.forEach((page) => {
+                    unionOutput[page] = true;
+                });
+
+                const unionCell = row.insertCell(2);
+                unionCell.textContent = Object.keys(unionOutput).sort((a, b) => a - b).join(',');
+            }
+
+            // Append the table to the results container
+            resultsContainer.appendChild(table);
+
+            if (outputArray.length === 0) {
+                // Display a message if no pages were found
+                const noResultsMsg = document.createElement("p");
+                noResultsMsg.textContent = "No pages found with the keyword(s).";
+                resultsContainer.appendChild(noResultsMsg);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -230,9 +230,9 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-  <script>
-    // JavaScript code for PDF search functionality
 
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <script>
     // Function to copy the text content of a given element
     function copyText(element) {
       const range = document.createRange();
@@ -245,8 +245,8 @@
 
     // Function to copy all search results
     function copyAllResults() {
-      const resultsDiv = document.getElementById("results");
-      copyText(resultsDiv);
+      const resultsContainer = document.getElementById("results-container");
+      copyText(resultsContainer);
     }
 
     // Function to handle the search functionality
@@ -314,84 +314,71 @@
     // Function to display the search results on the webpage
     function displayResults(keywordData) {
       // Get the results container element
-      const resultsDiv = document.getElementById("results");
+      const resultsContainer = document.getElementById("results-container");
 
       // Clear previous results
-      resultsDiv.innerHTML = "";
+      resultsContainer.innerHTML = "";
 
-      // Display the appropriate message based on the search results
-      if (Object.keys(keywordData).length > 0) {
-        // Create a heading for the results
-        const resultHeading = document.createElement("h2");
-        resultHeading.textContent = "Pages with the keyword(s):";
-        resultsDiv.appendChild(resultHeading);
+      // Create a dictionary to hold the output for each keyword
+      const keywordOutput = {};
 
-        // Iterate through each keyword and its corresponding data
-        for (const keyword in keywordData) {
-          if (keywordData.hasOwnProperty(keyword)) {
-            // Get the page numbers and total count for the keyword
-            const pageNumbers = keywordData[keyword].pageNumbers;
-            const totalCount = keywordData[keyword].totalCount;
-
-            // Create a div for the keyword result
-            const keywordDiv = document.createElement("div");
-            keywordDiv.classList.add("keyword-result");
-
-            // Create a paragraph for the keyword
-            const keywordParagraph = document.createElement("p");
-            keywordParagraph.innerHTML = `<strong>${keyword}:</strong>`;
-
-            // Create a paragraph for the keyword
-            //const keywordParagraph = document.createElement("p");
-
-            // Create a div for the keyword name and another for the results
-            //const keywordNameDiv = document.createElement("p");
-            //const keywordResultsDiv = document.createElement("p");
-
-            // ... (Rest of the code remains the same)
-
-
-            // Create a span element for the page numbers string
-            const span = document.createElement("span");
-
-            // Create a formatted string with comma-separated page numbers and total count
-            const formattedString = `${pageNumbers.join(', ')}`;
-
-            span.textContent = formattedString;
-
-            // Append the span to the keyword paragraph
-            keywordParagraph.appendChild(span);
-
-            // Append the keyword paragraph to the keyword div
-            keywordDiv.appendChild(keywordParagraph);
-
-            // Create a copy button for the individual keyword result
-            const copyButton = document.createElement("button");
-            copyButton.textContent = "Copy";
-            copyButton.addEventListener("click", () => {
-              copyText(keywordParagraph);
-            });
-
-            // Append the copy button to the keyword div
-            keywordDiv.appendChild(copyButton);
-
-            // Append the keyword div to the results container
-            resultsDiv.appendChild(keywordDiv);
-          }
+      // Populate the keywordOutput dictionary
+      for (const keyword in keywordData) {
+        if (keywordData.hasOwnProperty(keyword)) {
+          const pageNumbers = keywordData[keyword].pageNumbers;
+          keywordOutput[keyword] = pageNumbers.join(',');
         }
+      }
 
-        // Create a copy all button
-        const copyAllButton = document.createElement("button");
-        copyAllButton.textContent = "Copy All";
-        copyAllButton.addEventListener("click", copyAllResults);
+      // Create a table to display the output
+      const table = document.createElement("table");
+      table.classList.add("result-table");
 
-        // Append the copy all button to the results container
-        resultsDiv.appendChild(copyAllButton);
-      } else {
+      // Create table headers
+      const headerRow = table.insertRow(0);
+      const headerKeywordCell = headerRow.insertCell(0);
+      headerKeywordCell.textContent = "Keywords";
+      const headerOutputCell = headerRow.insertCell(1);
+      headerOutputCell.textContent = "Output of each keyword";
+      const headerUnionCell = headerRow.insertCell(2);
+      headerUnionCell.textContent = "Union of least to greater Output";
+
+      // Create an array to store the output for sorting
+      const outputArray = [];
+      for (const keyword in keywordOutput) {
+        outputArray.push({ keyword, output: keywordOutput[keyword] });
+      }
+
+      // Sort the outputArray based on the output value
+      outputArray.sort((a, b) => {
+        return a.output.localeCompare(b.output);
+      });
+
+      // Iterate through sorted outputArray and create rows in the table
+      for (const item of outputArray) {
+        const row = table.insertRow(-1);
+        const keywordCell = row.insertCell(0);
+        keywordCell.textContent = item.keyword;
+        const outputCell = row.insertCell(1);
+        outputCell.textContent = item.output;
+        const unionCell = row.insertCell(2);
+
+        // Calculate the union of least to greater Output
+        const unionOutput = outputArray
+          .filter((otherItem) => otherItem.output >= item.output)
+          .map((otherItem) => otherItem.keyword);
+
+        unionCell.textContent = unionOutput.join(',');
+      }
+
+      // Append the table to the results container
+      resultsContainer.appendChild(table);
+
+      if (outputArray.length === 0) {
         // Display a message if no pages were found
         const noResultsMsg = document.createElement("p");
         noResultsMsg.textContent = "No pages found with the keyword(s).";
-        resultsDiv.appendChild(noResultsMsg);
+        resultsContainer.appendChild(noResultsMsg);
       }
     }
   </script>
