@@ -26,15 +26,24 @@ async function extractPages(button) {
     const newPdfDoc = await PDFLib.PDFDocument.create();
 
     for (const pageRange of pageRanges) {
-        const [start, end] = pageRange.split('-').map(Number);
+        // Use a regular expression to match valid page ranges (e.g., "1-5")
+        const match = pageRange.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
 
-        if (start >= 1 && end <= pdfDoc.getPageCount() && start <= end) {
-            for (let pageNum = start; pageNum <= end; pageNum++) {
-                const [copiedPage] = await newPdfDoc.copyPages(pdfDoc, [pageNum - 1]);
-                newPdfDoc.addPage(copiedPage);
+        if (match) {
+            const start = Number(match[1]);
+            const end = Number(match[2]);
+
+            if (start >= 1 && end <= pdfDoc.getPageCount() && start <= end) {
+                for (let pageNum = start; pageNum <= end; pageNum++) {
+                    const [copiedPage] = await newPdfDoc.copyPages(pdfDoc, [pageNum - 1]);
+                    newPdfDoc.addPage(copiedPage);
+                }
+            } else {
+                alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+                return;
             }
         } else {
-            alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+            alert(`Invalid page range format: ${pageRange} for section with output file name: ${outputFileName}. Please use the format "1-5".`);
             return;
         }
     }
@@ -106,15 +115,23 @@ async function extractAll() {
         const newPdfDoc = await PDFLib.PDFDocument.create();
 
         for (const pageRange of pageRanges) {
-            const [start, end] = pageRange.split('-').map(Number);
+            const match = pageRange.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
 
-            if (start >= 1 && end <= pdfDoc.getPageCount() && start <= end) {
-                for (let pageNum = start; pageNum <= end; pageNum++) {
-                    const [copiedPage] = await newPdfDoc.copyPages(pdfDoc, [pageNum - 1]);
-                    newPdfDoc.addPage(copiedPage);
+            if (match) {
+                const start = Number(match[1]);
+                const end = Number(match[2]);
+
+                if (start >= 1 && end <= pdfDoc.getPageCount() && start <= end) {
+                    for (let pageNum = start; pageNum <= end; pageNum++) {
+                        const [copiedPage] = await newPdfDoc.copyPages(pdfDoc, [pageNum - 1]);
+                        newPdfDoc.addPage(copiedPage);
+                    }
+                } else {
+                    alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+                    return;
                 }
             } else {
-                alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+                alert(`Invalid page range format: ${pageRange} for section with output file name: ${outputFileName}. Please use the format "1-5".`);
                 return;
             }
         }
