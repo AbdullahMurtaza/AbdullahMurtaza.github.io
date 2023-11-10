@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +23,13 @@
     <br>
     <br>
     <div id="navListItemsWrapper">
+
       <ul>
            
         <li><a href="http://abdullahmurtaza.live">Home</a></li>
         <li><a href="http://abdullahmurtaza.live/qualification">Qualification</a></li>
         <li><a href="http://abdullahmurtaza.live/services">Services</a></li>
         <li><a href="http/abdullahmurtaza.live/certifications">Certifications</a></li>
-        
         
         <li class="dropdown">
           <a href="http://abdullahmurtaza.live/">Projects +</a>
@@ -41,6 +42,7 @@
         <li><a href="http://abdullahmurtaza.live/contact">Contact Us</a></li>
 
       </ul>
+
     </div>
   </nav>
 </header>
@@ -57,80 +59,98 @@
     <div class="form-group">
       <label>Select Keywords:</label>
       <div class="keyword-group">
-          <div>
-              <strong>Lahore:</strong>
-              <label><input type="checkbox" name="keywords" value="Ajmair Foods"> Ajmair Foods</label>
-              <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
-                  SWEETS</label>
-              <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> M.D.S FOODS PVT.
-                  LTD</label>
-              <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
-                  Warehouse</label>
-              <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
-          </div>
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Lahore:</strong>
+          <label><input type="checkbox" name="keywords" value="Ajmair Foods Pvt. Ltd."> Ajmair Foods</label>
+          <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+            SWEETS</label>
+          <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> M.D.S FOODS PVT.
+            LTD</label>
+          <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+            Warehouse</label>
+          <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+        </div>
 
-          <br>
+        <br>
 
-          <div>
-              <strong>Gujranwala Depot:</strong>
-              <label><input type="checkbox" name="keywords" value="Gujranwala"> Gujranwala</label>
-              <label><input type="checkbox" name="keywords" value="Gujrat"> Gujrat</label>
-              <label><input type="checkbox" name="keywords" value="Sialkot"> Sialkot</label>
-              <label><input type="checkbox" name="keywords" value="Mirpur"> Mirpur</label>
-              <label><input type="checkbox" name="keywords" value="Munirpur"> Munirpur</label>
-              <label><input type="checkbox" name="keywords" value="Wazirabad"> Wazirabad</label>
-              <label><input type="checkbox" name="keywords" value="Kharian"> Kharian</label>
-              <label><input type="checkbox" name="keywords" value="Sambriyal"> Sambriyal</label>
-          </div>
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Gujranwala Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Gujranwala"> Gujranwala</label>
+          <label><input type="checkbox" name="keywords" value="Gujrat"> Gujrat</label>
+          <label><input type="checkbox" name="keywords" value="Sialkot"> Sialkot</label>
+          <label><input type="checkbox" name="keywords" value="Mirpur"> Mirpur</label>
+          <label><input type="checkbox" name="keywords" value="Munirpur"> Munirpur</label>
+          <label><input type="checkbox" name="keywords" value="Wazirabad"> Wazirabad</label>
+          <label><input type="checkbox" name="keywords" value="Kharian"> Kharian</label>
+          <label><input type="checkbox" name="keywords" value="Sambriyal"> Sambriyal</label>
+        </div>
 
-          <br>
+        <br>
 
-          <div>
-              <strong>Faisalabad Depot:</strong>
-              <label><input type="checkbox" name="keywords" value="Faisalabad"> Faisalabad</label>
-              <label><input type="checkbox" name="keywords" value="Sargodha"> Sargodha</label>
-              <label><input type="checkbox" name="keywords" value="Samundari"> Samundari</label>
-              <label><input type="checkbox" name="keywords" value="Toba Tek Singh"> Toba Tek Singh</label>
-              <label><input type="checkbox" name="keywords" value="Jhang"> Jhang</label>
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Faisalabad Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Faisalabad"> Faisalabad</label>
+          <label><input type="checkbox" name="keywords" value="Sargodha"> Sargodha</label>
+          <label><input type="checkbox" name="keywords" value="Samundari"> Samundari</label>
+          <label><input type="checkbox" name="keywords" value="Toba Tek Singh"> Toba Tek Singh</label>
+          <label><input type="checkbox" name="keywords" value="Jhang"> Jhang</label>
+        </div>
 
-          </div>
+        <br>
 
-          <br>
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Multan Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Multan"> Multan</label>
+          <label><input type="checkbox" name="keywords" value="Sahiwal"> Sahiwal</label>
+          <label><input type="checkbox" name="keywords" value="Bahawalpur"> Bahawalpur</label>
+          <label><input type="checkbox" name="keywords" value="Bahawalnagar"> Bahawalnagar</label>
+          <label><input type="checkbox" name="keywords" value="Dera Ghazi Khan"> Dera Ghazi Khan</label>
+          <label><input type="checkbox" name="keywords" value="Dera Ismail Khan"> Dera Ismail Khan</label>
+          <label><input type="checkbox" name="keywords" value="Burewala"> Burewala</label>
+          <label><input type="checkbox" name="keywords" value="Rahim Yar Khan"> Rahim Yar Khan</label>
+          <label><input type="checkbox" name="keywords" value="Mian Channu"> Mian Channu</label>
+        </div>
 
-          <div>
-              <strong>Multan Depot:</strong>
-              <label><input type="checkbox" name="keywords" value="Multan"> Multan</label>
-              <label><input type="checkbox" name="keywords" value="Sahiwal"> Sahiwal</label>
-              <label><input type="checkbox" name="keywords" value="Bahawalpur"> Bahawalpur</label>
-              <label><input type="checkbox" name="keywords" value="Bahawalnagar"> Bahawalnagar</label>
-              <label><input type="checkbox" name="keywords" value="Dera Ghazi Khan"> Dera Ghazi Khan</label>
-              <label><input type="checkbox" name="keywords" value="Dera Ismail Khan"> Dera Ismail Khan</label>
-              <label><input type="checkbox" name="keywords" value="Burewala"> Burewala</label>
-              <label><input type="checkbox" name="keywords" value="Rahim Yar Khan"> Rahim Yar Khan</label>
-              <label><input type="checkbox" name="keywords" value="Mian Channu"> Mian Channu</label>
-          </div>
+        <br>
 
-          <br>
-
-          <div>
-              <strong>Karachi Depots:</strong>
-              <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
-              <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
-              <label><input type="checkbox" name="keywords" value="IMTIAZ PROVISION STORE"> IMTIAZ PROVISION
-                  STORE</label>
-          </div>
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
+          <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
+          <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
+          <label><input type="checkbox" name="keywords" value="IMTIAZ PROVISION STORE"> IMTIAZ PROVISION
+            STORE</label>
+        </div>
       </div>
-  </div>
+    </div>
+
     <button class="btn-search" onclick="searchPDF()">Lets Go.</button>
     <section id="results"></section>
 
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-  <!--<script src="projects/PDF Keyword Miner Version 2.00/ste2.js"></script>-->
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>
-  <script src="projects/PDF Keyword Miner Version 2.00/ste2.js"></script>
+  <!--<script src="projects/PDF Keyword Miner Version 2.00/ste2"></script>-->
+
+  <script src="KM.Engine.2/copyText.js"></script>
+  <script src="KM.Engine.2/copyAllResults.js"></script>
+  <script src="KM.Engine.2/searchPDF.js"></script>
+  <script src="KM.Engine.2/displayResults.js"></script>
+  <script src="KM.Engine.2/main.js"></script>
+  
+
+     <script>
+    function toggleCheckboxes(groupCaption) {
+      const checkboxes = groupCaption.parentNode.querySelectorAll('input[type="checkbox"]');
+      const isChecked = Array.from(checkboxes).some((checkbox) => checkbox.checked);
+  
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = !isChecked;
+      });
+    }
+  </script>
 
 </body>
+
 </html>

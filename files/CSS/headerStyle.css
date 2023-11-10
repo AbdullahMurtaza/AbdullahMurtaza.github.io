@@ -84,7 +84,7 @@ nav {
   display: none;
   position: absolute;
   background-color: #333;
-  min-width: 13%;
+  /*min-width: 13%;*/
   padding-left: 5%;
   padding-right: 5%;
   box-shadow: 0px 8px 16px 0px grey;
@@ -101,6 +101,7 @@ nav {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  width: 150px;
 
 }
 
@@ -114,15 +115,15 @@ nav {
   font-family: "Caveat Brush", cursive;
   color: #fff;
   background-color: #333;
-  opacity: 0;
+  opacity: 0.8;
 }
 
 .dropdown-content a:hover {
   color: orange;
   opacity: 1;
-  transition: 0.05s;
-  width: 50%;
-  top: 90%;
+  transition: 0.3s;
+
+
 
   
 }

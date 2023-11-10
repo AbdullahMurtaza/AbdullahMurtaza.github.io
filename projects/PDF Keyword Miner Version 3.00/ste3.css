@@ -1,0 +1,111 @@
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 16px;
+}
+
+input[type="file"],
+.btn-search {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'caveat brush', cursive;
+  font-weight: bold;
+}
+
+.btn-search:hover {
+  background: #ff9900;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#results {
+  margin-top: 20px;
+}
+
+.keyword-group, .keyword-group-ignore {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.keyword-group strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.keyword-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+}
+
+.keyword-group-ignore strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.keyword-group-ignore label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+}
+
+.keyword-group label:hover, .keyword-group-ignore label:hover {
+  background: #f2f2f2;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+  .keyword-group, .keyword-group-ignore {
+    width: 100%;
+    display: block;
+  }
+}
