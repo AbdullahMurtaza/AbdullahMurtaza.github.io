@@ -1,6 +1,22 @@
-//*************************New Func****************************
-// Function to display the search results on the webpage
-function displayResults(keywordData) {
+// Function to copy the text content
+function copyText(textContent) {
+    // Create a temporary textarea element
+    const textarea = document.createElement('textarea');
+    textarea.value = textContent;
+  
+    // Append the textarea to the document
+    document.body.appendChild(textarea);
+  
+    // Select and copy the text from the textarea
+    textarea.select();
+    document.execCommand('copy');
+  
+    // Remove the textarea from the document
+    document.body.removeChild(textarea);
+  }
+  
+  // Function to display the search results on the webpage
+  function displayResults(keywordData) {
     // Get the results container element
     const resultsDiv = document.getElementById("results");
   
@@ -32,6 +48,19 @@ function displayResults(keywordData) {
           const keywordNameH3 = document.createElement("h3");
           keywordNameH3.textContent = keyword;
   
+          // Create a copy button for the keyword name
+          const copyKeywordButton = document.createElement("button");
+          copyKeywordButton.textContent = "Copy Name";
+          copyKeywordButton.addEventListener("click", () => {
+            copyText(keyword);
+          });
+          // Style the copy button
+          copyKeywordButton.style.float = "right";
+          copyKeywordButton.style.marginRight = "10px";
+  
+          // Append the copy button to the keyword name h3
+          keywordNameH3.appendChild(copyKeywordButton);
+  
           // Create a div for the total results
           const totalResultsDiv = document.createElement("div");
           totalResultsDiv.classList.add("total-results");
@@ -57,9 +86,9 @@ function displayResults(keywordData) {
   
           // Create a copy button for the individual keyword result
           const copyButton = document.createElement("button");
-          copyButton.textContent = "Copy";
+          copyButton.textContent = "Copy All";
           copyButton.addEventListener("click", () => {
-            copyText(pageNumbersDiv);
+            copyText(pageNumbersDiv.innerHTML);
           });
   
           // Append the copy button to the keyword div
@@ -114,7 +143,7 @@ function displayResults(keywordData) {
       const copyAllAscButton = document.createElement("button");
       copyAllAscButton.textContent = "Copy Ascending";
       copyAllAscButton.addEventListener("click", () => {
-        copyText(sortedPageNumbersParagraph);
+        copyText(sortedPageNumbersParagraph.innerHTML);
       });
   
       // Append a line break before the copy all ascending button
