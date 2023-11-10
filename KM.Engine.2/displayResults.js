@@ -14,6 +14,9 @@ function displayResults(keywordData) {
       resultHeading.textContent = "Pages with the keyword(s):";
       resultsDiv.appendChild(resultHeading);
   
+      // Array to store all page numbers for sorting later
+      let allPageNumbers = [];
+  
       // Iterate through each keyword and its corresponding data
       for (const keyword in keywordData) {
         if (keywordData.hasOwnProperty(keyword)) {
@@ -25,9 +28,9 @@ function displayResults(keywordData) {
           const keywordDiv = document.createElement("div");
           keywordDiv.classList.add("keyword-result");
   
-          // Create an h2 for the keyword name
-          const keywordNameH2 = document.createElement("h3");
-          keywordNameH2.textContent = keyword;
+          // Create an h3 for the keyword name
+          const keywordNameH3 = document.createElement("h3");
+          keywordNameH3.textContent = keyword;
   
           // Create a div for the total results
           const totalResultsDiv = document.createElement("div");
@@ -40,8 +43,8 @@ function displayResults(keywordData) {
           // Set the innerHTML directly to avoid displaying "Page Numbers" text
           pageNumbersDiv.innerHTML = pageNumbers.join(', ');
   
-          // Append the keyword name h2 to the keyword div
-          keywordDiv.appendChild(keywordNameH2);
+          // Append the keyword name h3 to the keyword div
+          keywordDiv.appendChild(keywordNameH3);
   
           // Append the total results div to the keyword div
           keywordDiv.appendChild(totalResultsDiv);
@@ -64,19 +67,72 @@ function displayResults(keywordData) {
   
           // Append the keyword div to the results container
           resultsDiv.appendChild(keywordDiv);
+  
+          // Add the page numbers to the allPageNumbers array
+          allPageNumbers = allPageNumbers.concat(pageNumbers);
         }
       }
   
-      // Create a copy all button
-      const copyAllButton = document.createElement("button");
-      copyAllButton.textContent = "Copy All";
-      copyAllButton.addEventListener("click", copyAllResults);
+      // Create a div for total results before page numbers in ascending order
+      const totalResultsAscDiv = document.createElement("div");
+      totalResultsAscDiv.classList.add("total-results-asc");
   
-      // Append a line break before the copy all button
+      // Calculate the total results across all keywords
+      const totalResultsAcrossKeywords = allPageNumbers.length;
+  
+      // Create an h3 for the total results before page numbers in ascending order
+      const totalResultsAscH3 = document.createElement("h3");
+      totalResultsAscH3.innerHTML = `<strong>Total Results (Ascending):</strong> ${totalResultsAcrossKeywords}`;
+  
+      // Append a line break before the total results asc h3
       resultsDiv.appendChild(document.createElement("br"));
   
-      // Append the copy all button to the results container
-      resultsDiv.appendChild(copyAllButton);
+      // Append the total results asc h3 to the results container
+      resultsDiv.appendChild(totalResultsAscH3);
+  
+      // Create a div for all page numbers in ascending order
+      const allPageNumbersDiv = document.createElement("div");
+      allPageNumbersDiv.classList.add("all-page-numbers");
+  
+      // Sort all page numbers in ascending order
+      const sortedPageNumbers = allPageNumbers.sort((a, b) => a - b);
+  
+      // Create a paragraph to display sorted page numbers
+      const sortedPageNumbersParagraph = document.createElement("p");
+      sortedPageNumbersParagraph.textContent = sortedPageNumbers.join(', ');
+  
+      // Append the sorted page numbers paragraph to the all page numbers div
+      allPageNumbersDiv.appendChild(sortedPageNumbersParagraph);
+  
+      // Append a line break before the all page numbers div
+      resultsDiv.appendChild(document.createElement("br"));
+  
+      // Append the all page numbers div to the results container
+      resultsDiv.appendChild(allPageNumbersDiv);
+  
+      // Create a copy all button for the sorted page numbers
+      const copyAllAscButton = document.createElement("button");
+      copyAllAscButton.textContent = "Copy Ascending";
+      copyAllAscButton.addEventListener("click", () => {
+        copyText(sortedPageNumbersParagraph);
+      });
+  
+      // Append a line break before the copy all ascending button
+      resultsDiv.appendChild(document.createElement("br"));
+  
+      // Append the copy all ascending button to the results container
+      resultsDiv.appendChild(copyAllAscButton);
+  
+      // Create a copy grand button for all original page numbers
+      const copyGrandButton = document.createElement("button");
+      copyGrandButton.textContent = "Copy Grand";
+      copyGrandButton.addEventListener("click", copyAllResults);
+  
+      // Append a line break before the copy grand button
+      resultsDiv.appendChild(document.createElement("br"));
+  
+      // Append the copy grand button to the results container
+      resultsDiv.appendChild(copyGrandButton);
     } else {
       // Display a message if no pages were found
       const noResultsMsg = document.createElement("p");

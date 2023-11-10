@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pdfSplitter/pageSplitter.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.12.0/dist/pdf-lib.js"></script>
+    <title>PDF Page Extractor</title>
+</head>
+<body>
+    <div class="container">
+        <label for="pdfFileInput">Select PDF File:</label>
+        <input type="file" id="pdfFileInput" accept=".pdf">
+
+        <div id="sectionsContainer">
+            <!-- Dynamic sections appender -->
+        </div>
+
+        <button onclick="addSection()">Add Section</button>
+        <button onclick="extractAll()">Extract All</button>
+
+        <div id="outputContainer">
+            <!-- mutliple Dynamic sections appender -->
+        </div>
+    </div>
+
+    <script src="pdfSplitter/pdfSplitter.js"></script>
+</body>
+</html>
