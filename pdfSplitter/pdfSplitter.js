@@ -13,7 +13,7 @@ async function extractPages(button) {
 
     const file = pdfFileInput.files[0];
     const outputFileName = outputFileNameInput.value.trim();
-    const pageRanges = pageNumbersInput.value.split(',').map(range => range.trim());
+    const pageEntries = pageNumbersInput.value.split(',').map(entry => entry.trim());
 
     if (!outputFileName || !pageNumbersInput.value) {
         alert('Please fill in all the required fields for this section.');
@@ -25,13 +25,11 @@ async function extractPages(button) {
 
     const newPdfDoc = await PDFLib.PDFDocument.create();
 
-    for (const pageRange of pageRanges) {
-        // Use a regular expression to match valid page ranges (e.g., "1-5")
-        const match = pageRange.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
-
-        if (match) {
-            const start = Number(match[1]);
-            const end = Number(match[2]);
+    for (const entry of pageEntries) {
+        // Check if the entry is a single page or a range
+        if (entry.includes('-')) {
+            // Handle page range
+            const [start, end] = entry.split('-').map(Number);
 
             if (start >= 1 && end <= pdfDoc.getPageCount() && start <= end) {
                 for (let pageNum = start; pageNum <= end; pageNum++) {
@@ -39,12 +37,20 @@ async function extractPages(button) {
                     newPdfDoc.addPage(copiedPage);
                 }
             } else {
-                alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+                alert(`Invalid page range: ${entry} for section with output file name: ${outputFileName}.`);
                 return;
             }
         } else {
-            alert(`Invalid page range format: ${pageRange} for section with output file name: ${outputFileName}. Please use the format "1-5".`);
-            return;
+            // Handle single page
+            const pageNum = Number(entry);
+
+            if (pageNum >= 1 && pageNum <= pdfDoc.getPageCount()) {
+                const [copiedPage] = await newPdfDoc.copyPages(pdfDoc, [pageNum - 1]);
+                newPdfDoc.addPage(copiedPage);
+            } else {
+                alert(`Invalid page number: ${entry} for section with output file name: ${outputFileName}.`);
+                return;
+            }
         }
     }
 
@@ -102,7 +108,7 @@ async function extractAll() {
 
         const file = pdfFileInput.files[0];
         const outputFileName = outputFileNameInput.value.trim();
-        const pageRanges = pageNumbersInput.value.split(',').map(range => range.trim());
+        const pageEntries = pageNumbersInput.value.split(',').map(entry => entry.trim());
 
         if (!outputFileName || !pageNumbersInput.value) {
             alert('Please fill in all the required fields for each section.');
@@ -114,8 +120,8 @@ async function extractAll() {
 
         const newPdfDoc = await PDFLib.PDFDocument.create();
 
-        for (const pageRange of pageRanges) {
-            const match = pageRange.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
+        for (const entry of pageEntries) {
+            const match = entry.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
 
             if (match) {
                 const start = Number(match[1]);
@@ -127,11 +133,11 @@ async function extractAll() {
                         newPdfDoc.addPage(copiedPage);
                     }
                 } else {
-                    alert(`Invalid page range: ${pageRange} for section with output file name: ${outputFileName}.`);
+                    alert(`Invalid page range: ${entry} for section with output file name: ${outputFileName}.`);
                     return;
                 }
             } else {
-                alert(`Invalid page range format: ${pageRange} for section with output file name: ${outputFileName}. Please use the format "1-5".`);
+                alert(`Invalid page range format: ${entry} for section with output file name: ${outputFileName}. Please use the format "1-5".`);
                 return;
             }
         }
