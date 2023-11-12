@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="files/CSS/headerStyle.css">
+  <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css">
+
+  <title>Abdullah Murtaza</title>
+  <title>Sale Tax Invoices Extractor</title>
+</head>
+
+<header>
+  <nav>
+    <div id="logoWrapper">
+      <a href="http://abdullahmurtaza.live">
+        <h1 id="logo">
+          Abdullah Murtaza <br><span id="online"> .Live </span>
+        </h1>
+      </a>
+    </div>
+    <br>
+    <br>
+    <div id="navListItemsWrapper">
+
+      <ul>
+           
+        <li><a href="http://abdullahmurtaza.live">Home</a></li>
+        <li><a href="http://abdullahmurtaza.live/qualification">Qualification</a></li>
+        <li><a href="http://abdullahmurtaza.live/services">Services</a></li>
+        <li><a href="http/abdullahmurtaza.live/certifications">Certifications</a></li>
+        
+        <li class="dropdown">
+          <a href="http://abdullahmurtaza.live/">Projects +</a>
+          <div class="dropdown-content">
+            <a href="http://abdullahmurtaza.live/Keyminer">Project Keyminer</a>
+            <a href="http://abdullahmurtaza.live/ste">Project STE</a>
+            <a href="http://abdullahmurtaza.live/pdfSplitter">PDF Splitter</a>
+          </div>
+        </li>
+
+        <li><a href="http://abdullahmurtaza.live/contact">Contact Us</a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+
+<body>
+  <div class="container">
+    <h1>Sale Tax Invoices Extractor</h1>
+    <div class="form-group">
+      <label for="pdfFile">Select PDF File:</label>
+      <input type="file" id="pdfFile" accept=".pdf">
+    </div>
+    <div class="form-group">
+      <label>Select Keywords:</label>
+      <div class="keyword-group">
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Lahore:</strong>
+          <label><input type="checkbox" name="keywords" value="Ajmair Foods Pvt. Ltd."> Ajmair Foods</label>
+          <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+            SWEETS</label>
+          <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> Hardees</label>
+          <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+            Warehouse</label>
+          <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+        </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Gujranwala Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Gujranwala"> Gujranwala - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Gujrat"> Gujrat - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Sialkot"> Sialkot - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Mirpur"> Mirpur - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Munirpur"> Munirpur - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Wazirabad"> Wazirabad - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Kharian"> Kharian - GJW</label>
+          <label><input type="checkbox" name="keywords" value="Sambriyal"> Sambriyal - GJW</label>
+        </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Faisalabad Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Faisalabad"> Faisalabad - FSD</label>
+          <label><input type="checkbox" name="keywords" value="Sargodha"> Sargodha - FSD</label>
+          <label><input type="checkbox" name="keywords" value="Samundari"> Samundari - FSD</label>
+          <label><input type="checkbox" name="keywords" value="Toba Tek Singh"> Toba Tek Singh - FSD</label>
+          <label><input type="checkbox" name="keywords" value="Jhang"> Jhang - FSD</label>
+        </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Multan Depot:</strong>
+          <label><input type="checkbox" name="keywords" value="Multan"> Multan - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Sahiwal"> Sahiwal - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Bahawalpur"> Bahawalpur - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Bahawalnagar"> Bahawalnagar - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Dera Ghazi Khan"> Dera Ghazi Khan - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Dera Ismail Khan"> Dera Ismail Khan - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Burewala"> Burewala - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Rahim Yar Khan"> Rahim Yar Khan - MLT</label>
+          <label><input type="checkbox" name="keywords" value="Mian Channu"> Mian Channu - MLT</label>
+        </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
+          <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
+          <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
+          <label><input type="checkbox" name="keywords" value="IMTIAZ PROVISION STORE"> IMTIAZ PROVISION
+            STORE</label>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-search" onclick="searchPDF()">Lets Go.</button>
+    <section id="results"></section>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.10.0/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.12.0/dist/pdf-lib.js"></script>
+  <!--<script src="projects/PDF Keyword Miner Version 2.00/ste2"></script>-->
+
+  <script src="KM.Engine.2/copyText.js"></script>
+  <script src="KM.Engine.2/copyAllResults.js"></script>
+  <script src="KM.Engine.2/searchPDF.js"></script>
+  <script src="KM.Engine.2/displayResults.js"></script>
+  <script src="KM.Engine.2/main.js"></script>
+  
+
+     <script>
+    function toggleCheckboxes(groupCaption) {
+      const checkboxes = groupCaption.parentNode.querySelectorAll('input[type="checkbox"]');
+      const isChecked = Array.from(checkboxes).some((checkbox) => checkbox.checked);
+  
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = !isChecked;
+      });
+    }
+  </script>
+
+</body>
+
+</html>

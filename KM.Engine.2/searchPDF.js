@@ -1,4 +1,4 @@
-//*************************New Func****************************
+//*************************Search Func****************************
 // Function to handle the PDF search functionality.
 async function searchPDF() {
     // Get the selected PDF file and selected keywords from the checkboxes
