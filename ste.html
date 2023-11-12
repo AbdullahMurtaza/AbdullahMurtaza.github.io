@@ -25,12 +25,12 @@
     <div id="navListItemsWrapper">
 
       <ul>
-           
+
         <li><a href="http://abdullahmurtaza.live">Home</a></li>
         <li><a href="http://abdullahmurtaza.live/qualification">Qualification</a></li>
         <li><a href="http://abdullahmurtaza.live/services">Services</a></li>
         <li><a href="http/abdullahmurtaza.live/certifications">Certifications</a></li>
-        
+
         <li class="dropdown">
           <a href="http://abdullahmurtaza.live/">Projects +</a>
           <div class="dropdown-content">
@@ -120,6 +120,55 @@
           <label><input type="checkbox" name="keywords" value="IMTIAZ PROVISION STORE"> IMTIAZ PROVISION
             STORE</label>
         </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys:</strong>
+          <label><input type="checkbox" name="names" value="Amjad Mehmood"> Amjad Mehmood</label>
+          <label><input type="checkbox" name="names" value="Muhammad Jamshaid"> Muhammad Jamshaid</label>
+          <label><input type="checkbox" name="names" value="Rana Ijaz"> Rana Ijaz</label>
+          <label><input type="checkbox" name="names" value="Ghulam Abbas"> Ghulam Abbas</label>
+          <label><input type="checkbox" name="names" value="Sajid Hussain"> Sajid Hussain</label>
+          <label><input type="checkbox" name="names" value="Farooq Ahmad"> Farooq Ahmad</label>
+          <label><input type="checkbox" name="names" value="Ali Raza"> Ali Raza</label>
+          <label><input type="checkbox" name="names" value="Nabeel Shahzad"> Nabeel Shahzad</label>
+          <label><input type="checkbox" name="names" value="Ray Naveed"> Ray Naveed</label>
+          <label><input type="checkbox" name="names" value="Ghulam Mustafa"> Ghulam Mustafa</label>
+          <label><input type="checkbox" name="names" value="Muhammad Razzaq"> Muhammad Razzaq</label>
+          <label><input type="checkbox" name="names" value="Abdullah Munir"> Abdullah Munir</label>
+          <label><input type="checkbox" name="names" value="Hafeez ur Rehman"> Hafeez ur Rehman</label>
+          <label><input type="checkbox" name="names" value="Shahid Iqbal"> Shahid Iqbal</label>
+          <label><input type="checkbox" name="names" value="Sikandar Saleem"> Sikandar Saleem</label>
+          <label><input type="checkbox" name="names" value="Abid Hussain"> Abid Hussain</label>
+          <label><input type="checkbox" name="names" value="Muhammad Khalid"> Muhammad Khalid</label>
+          <label><input type="checkbox" name="names" value="Muhammad Ramzan"> Muhammad Ramzan</label>
+        </div>
+
+        <br>
+
+        <div>
+          <strong onclick="toggleCheckboxes(this)">Order Bookers:</strong>
+          <label><input type="checkbox" name="names" value="Muhammad Arfan"> Muhammad Arfan</label>
+          <label><input type="checkbox" name="names" value="Babar Hayat"> Babar Hayat</label>
+          <label><input type="checkbox" name="names" value="Tayyab Saleem"> Tayyab Saleem</label>
+          <label><input type="checkbox" name="names" value="Faisal Butt"> Faisal Butt</label>
+          <label><input type="checkbox" name="names" value="Zain Raza"> Zain Raza</label>
+          <label><input type="checkbox" name="names" value="Asim Iqbal"> Asim Iqbal</label>
+          <label><input type="checkbox" name="names" value="Nadir Ali"> Nadir Ali</label>
+          <label><input type="checkbox" name="names" value="Sajid Nawaz"> Sajid Nawaz</label>
+          <label><input type="checkbox" name="names" value="Muhammad Amin"> Muhammad Amin</label>
+          <label><input type="checkbox" name="names" value="Rehan Khan"> Rehan Khan</label>
+          <label><input type="checkbox" name="names" value="Ali Raza Iqbal"> Ali Raza Iqbal</label>
+          <label><input type="checkbox" name="names" value="Kamran Baig"> Kamran Baig</label>
+          <label><input type="checkbox" name="names" value="Muhammad Nadeem"> Muhammad Nadeem</label>
+          <label><input type="checkbox" name="names" value="Muhammad Zeeshan"> Muhammad Zeeshan</label>
+          <label><input type="checkbox" name="names" value="Sohail"> Sohail</label>
+          <label><input type="checkbox" name="names" value="Muhammad Ali Butt"> Muhammad Ali Butt</label>
+          <label><input type="checkbox" name="names" value="Muhammad Asif"> Muhammad Asif</label>
+          <label><input type="checkbox" name="names" value="Ameer Abbas"> Ameer Abbas</label>
+          <label><input type="checkbox" name="names" value="Naveed Ahmad Khan"> Naveed Ahmad Khan</label>
+        </div>
       </div>
     </div>
 
@@ -140,13 +189,13 @@
   <script src="KM.Engine.2/searchPDF.js"></script>
   <script src="KM.Engine.2/displayResults.js"></script>
   <script src="KM.Engine.2/main.js"></script>
-  
 
-     <script>
+
+  <script>
     function toggleCheckboxes(groupCaption) {
       const checkboxes = groupCaption.parentNode.querySelectorAll('input[type="checkbox"]');
       const isChecked = Array.from(checkboxes).some((checkbox) => checkbox.checked);
-  
+
       checkboxes.forEach((checkbox) => {
         checkbox.checked = !isChecked;
       });
