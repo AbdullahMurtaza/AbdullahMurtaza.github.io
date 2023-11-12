@@ -60,6 +60,7 @@ body{
     opacity: 1;
 }
 
+
 @keyframes top {
     from {
       top: -500px;
