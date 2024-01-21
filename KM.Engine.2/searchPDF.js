@@ -1,5 +1,6 @@
 //*************************Search Func****************************
 // Function to handle the PDF search functionality.
+
 async function searchPDF() {
     // Get the selected PDF file and selected keywords from the checkboxes
     const fileInput = document.getElementById("pdfFile");
@@ -60,6 +61,10 @@ async function searchPDF() {
   
       // Read the file as an ArrayBuffer
       fileReader.readAsArrayBuffer(file);
+    }
+    else{
+      alert("Please select a PDF file OR a keyword(s).")
+      //document.write("Please select a PDF file OR a keyword.")
     }
   }
   
