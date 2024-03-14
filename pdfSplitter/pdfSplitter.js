@@ -87,12 +87,12 @@ function addSection() {
         <label for="pageNumbers">Enter Page Numbers (comma-separated or ranges):</label>
         <textarea class="pageNumbers" rows="4"></textarea>
         <br>
-        <button onclick="extractPages(this)">Extract Pages</button>
+        <button onclick="extractPages(this)">Extract PDF File</button>
     `;
 
     sectionsContainer.appendChild(sectionDiv);
 }
-
+/*
 async function extractAll() {
     const pdfFileInput = document.getElementById('pdfFileInput');
     const sections = document.querySelectorAll('#sectionsContainer > div');
@@ -159,3 +159,4 @@ async function extractAll() {
         link.click();
     }
 }
+*/
