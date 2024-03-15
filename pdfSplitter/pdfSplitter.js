@@ -92,7 +92,7 @@ function addSection() {
 
     sectionsContainer.appendChild(sectionDiv);
 }
-
+<!--
 async function extractAll() {
     const pdfFileInput = document.getElementById('pdfFileInput');
     const sections = document.querySelectorAll('#sectionsContainer > div');
@@ -159,3 +159,4 @@ async function extractAll() {
         link.click();
     }
 }
+-->
