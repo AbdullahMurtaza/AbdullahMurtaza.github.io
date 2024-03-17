@@ -43,6 +43,11 @@ function copyText(textContent) {
           // Create a div for the keyword result
           const keywordDiv = document.createElement("div");
           keywordDiv.classList.add("keyword-result");
+            
+           //index Iterator
+            let ind = 1; 
+            ind++;
+            
   
           // Create an h3 for the keyword name
           const keywordNameH3 = document.createElement("h3");

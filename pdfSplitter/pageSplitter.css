@@ -52,10 +52,13 @@ button {
     cursor: pointer;
     border-radius: 4px;
     width: 100%;
+<<<<<<< HEAD
 }
 
 button:hover{
     color: orange;
+=======
+>>>>>>> cbd9fef18da937b06f5d6c0c8e5747bc345fb1a8
 }
 
 #outputContainer {
