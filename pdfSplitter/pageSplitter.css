@@ -18,6 +18,7 @@ label {
     margin: 10px 0 5px;
     font-size: 14px;
     color: #333;
+    
 }
 
 input[type="file"],
@@ -50,6 +51,11 @@ button {
     margin-bottom: 20px;
     cursor: pointer;
     border-radius: 4px;
+    width: 100%;
+}
+
+button:hover{
+    color: orange;
 }
 
 #outputContainer {
@@ -69,5 +75,5 @@ a {
 }
 
 a:hover {
-    background-color: #ddd;
+    background-color: orange;
 }

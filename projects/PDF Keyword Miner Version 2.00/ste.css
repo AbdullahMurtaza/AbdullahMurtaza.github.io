@@ -26,6 +26,10 @@ body {
     display: block;
     margin-bottom: 5px;
   }
+/*For Labels*/
+  .hidden {
+    display: none;
+  }
 
   input[type="file"],
   .btn-search {
