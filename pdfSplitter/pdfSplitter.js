@@ -92,11 +92,8 @@ function addSection() {
 
     sectionsContainer.appendChild(sectionDiv);
 }
-<<<<<<< HEAD
+
 /*
-=======
-<!--
->>>>>>> cbd9fef18da937b06f5d6c0c8e5747bc345fb1a8
 async function extractAll() {
     const pdfFileInput = document.getElementById('pdfFileInput');
     const sections = document.querySelectorAll('#sectionsContainer > div');
@@ -163,8 +160,7 @@ async function extractAll() {
         link.click();
     }
 }
-<<<<<<< HEAD
+
 */
-=======
--->
->>>>>>> cbd9fef18da937b06f5d6c0c8e5747bc345fb1a8
+
+
