@@ -2,8 +2,17 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:wght@100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="files/CSS/headerStyle.css">
     <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css">
 
@@ -59,6 +68,9 @@
         <div class="form-group">
             <label>Select Keywords:</label>
             <div class="keyword-group">
+
+                <button id="hideNSeekBtn" onclick="hideNSeek();">Hide/Show Keywords</button>
+
                 <div>
                     <strong onclick="toggleCheckboxes(this)">Delivery Boys:</strong>
                     <label><input type="checkbox" name="keywords" value="Amjad Mehmood"> Amjad Mehmood</label>
@@ -100,27 +112,27 @@
                     <label><input type="checkbox" name="keywords" value="Rashid Minhas"> Rashid Minhas</label>
                     <label><input type="checkbox" name="keywords" value="Naveed Ahmad Khan"> Naveed Ahmad Khan</label>
                 </div>
-                
+
                 </br>
-                
+
                 <div>
                     <strong onclick="toggleCheckboxes(this)">Spot Sellers:</strong>
-                    
+
                     <p>Use Format 2:</p>
-                    
+
                     <label><input type="checkbox" name="keywords" value="Muhammad Jamshaid"> Muhammad Jamshaid</label>
                     <label><input type="checkbox" name="keywords" value="Rana Ijaz"> Rana Ijaz</label>
                     <label><input type="checkbox" name="keywords" value="Shahid Iqbal"> Shahid Iqbal</label>
                     <label><input type="checkbox" name="keywords" value="Amir Ali"> Amir Ali</label>
                     <label><input type="checkbox" name="keywords" value="Raja Tayyab"> Raja Tayyab</label>
-                    
+
                 </div>
                 </br>
                 <div>
                     <strong onclick="toggleCheckboxes(this)">Shop Sellers:</strong>
                     <label><input type="checkbox" name="keywords" value="Zain Raza"> Zain Raza</label>
                     <label><input type="checkbox" name="keywords" value="Asim Iqbal"> Asim Iqbal</label>
-                    
+
                 </div>
 
                 <br>
@@ -145,6 +157,7 @@
     <script src="KM.Engine.2/copyAllResults.js"></script>
     <script src="KM.Engine.2/searchPDF.js"></script>
     <script src="KM.Engine.2/displayResults.js"></script>
+    <script src="KM.Engine.2/hideNSeekBtn.js"></script>
     <script src="KM.Engine.2/main.js"></script>
 
 

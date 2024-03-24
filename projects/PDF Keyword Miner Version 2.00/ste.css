@@ -22,6 +22,13 @@ body {
     margin-bottom: 20px;
   }
 
+  #hideNSeekBtn{
+    width: 20%;
+    height: 40px;
+    margin: auto;
+    float: right;
+  }
+
   label {
     display: block;
     margin-bottom: 5px;
@@ -40,7 +47,7 @@ body {
     font-size: 16px;
   }
 
-  .btn-search {
+  .btn-search,#hideNSeekBtn {
     background-color: #333;
     color: #fff;
     cursor: pointer;
