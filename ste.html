@@ -107,16 +107,22 @@
       <div class="keyword-group">
 
         <button id="hideNSeekBtn" onclick="hideNSeek();">Hide/Show Keywords</button>
+        
+
+        <br>
+        <br>
 
         <div id="lhr">
-          <strong  onclick="toggleCheckboxes(this)">Lahore:</strong>
-          <label><input type="checkbox" name="keywords" value="Ajmair Foods Pvt. Ltd."> Ajmair Foods</label>
-          <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
+          <strong onclick="toggleCheckboxes(this)">Lahore:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('lhr');">Hide / Show</button>
+
+          <label class="lhr"><input type="checkbox" name="keywords" value="Ajmair Foods Pvt. Ltd."> Ajmair Foods</label>
+          <label class="lhr"><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
             SWEETS</label>
-          <label><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> Hardees</label>
-          <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
+          <label class="lhr"><input type="checkbox" name="keywords" value="M.D.S FOODS PVT. LTD"> Hardees</label>
+          <label class="lhr"><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
             Warehouse</label>
-          <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+          <label class="lhr"><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
 
         </div>
 
@@ -163,10 +169,12 @@
         <br>
 -->
         <div id="khi">
-          <strong  onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
-          <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
-          <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
-          <label><input type="checkbox" name="keywords" value="Imtiaz Group SMC Pvt. Ltd"> Imtiaz Group SMC Pvt.
+          <strong onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('khi');">Hide / Show</button>
+
+          <label class="khi"><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
+          <label class="khi"><input type="checkbox" name="keywords" value="KHI"> KHI</label>
+          <label class="khi"><input type="checkbox" name="keywords" value="Imtiaz Group SMC Pvt. Ltd"> Imtiaz Group SMC Pvt.
             Ltd</label>
         </div>
 
@@ -175,224 +183,233 @@
         <div id="guj">
 
           <strong onclick="toggleCheckboxes(this)">Gujranwala Depot Extended:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('guj');">Hide / Show</button>
 
-          <label><input type="checkbox" name="keywords" value="Gujranwala">Gujranwala</label>
-          <label><input type="checkbox" name="keywords" value="Sialkot">Sialkot</label>
-          <label><input type="checkbox" name="keywords" value="Narowal">Narowal</label>
-          <label><input type="checkbox" name="keywords" value="Daska">Daska</label>
-          <label><input type="checkbox" name="keywords" value="Gujrat">Gujrat</label>
-          <label><input type="checkbox" name="keywords" value="Qila Didar Singh">Qila Didar Singh</label>
-          <label><input type="checkbox" name="keywords" value="Kamoki">Kamoki</label>
-          <label><input type="checkbox" name="keywords" value="JalalPur Jattan">JalalPur Jattan</label>
-          <label><input type="checkbox" name="keywords" value="Ghakhar">Ghakhar</label>
-          <label><input type="checkbox" name="keywords" value="Wazirabad">Wazirabad</label>
-          <label><input type="checkbox" name="keywords" value="Sadhoki">Sadhoki</label>
-          <label><input type="checkbox" name="keywords" value="Kharian">Kharian</label>
-          <label><input type="checkbox" name="keywords" value="LalaMusa">LalaMusa</label>
-          <label><input type="checkbox" name="keywords" value="Mandi Bahauddin">Mandi Bahauddin</label>
-          <label><input type="checkbox" name="keywords" value="Mirpur">Mirpur</label>
-          <label><input type="checkbox" name="keywords" value="Phalia">Phalia</label>
-          <label><input type="checkbox" name="keywords" value="Dinga">Dinga</label>
-          <label><input type="checkbox" name="keywords" value="Guliana">Guliana</label>
-          <label><input type="checkbox" name="keywords" value="Bhimber">Bhimber</label>
-          <label><input type="checkbox" name="keywords" value="Malakwal">Malakwal</label>
-          <label><input type="checkbox" name="keywords" value="Kotla">Kotla</label>
-          <label><input type="checkbox" name="keywords" value="Feroze Wattwan">Feroze Wattwan</label>
-          <label><input type="checkbox" name="keywords" value="Jalal Pur Sharif">Jalal Pur Sharif</label>
-          <label><input type="checkbox" name="keywords" value="Piswal">Piswal</label>
-          <label><input type="checkbox" name="keywords" value="Jhelum">Jhelum</label>
-          <label><input type="checkbox" name="keywords" value="Dolatnagar">Dolatnagar</label>
-          <label><input type="checkbox" name="keywords" value="Chiora">Chiora</label>
-          <label><input type="checkbox" name="keywords" value="Kunjah">Kunjah</label>
-          <label><input type="checkbox" name="keywords" value="Pinanwal">Pinanwal</label>
-          <label><input type="checkbox" name="keywords" value="Pind Dadan Khan">Pind Dadan Khan</label>
-          <label><input type="checkbox" name="keywords" value="Sambrial">Sambrial</label>
-          <label><input type="checkbox" name="keywords" value="Shakargarh">Shakargarh</label>
-          <label><input type="checkbox" name="keywords" value="Pasrur">Pasrur</label>
-          <label><input type="checkbox" name="keywords" value="Narang Mandi">Narang Mandi</label>
-          <label><input type="checkbox" name="keywords" value="Zafarwal">Zafarwal</label>
-          <label><input type="checkbox" name="keywords" value="Mangowal">Mangowal</label>
-          <label><input type="checkbox" name="keywords" value="Pharianwali">Pharianwali</label>
-          <label><input type="checkbox" name="keywords" value="Jamke Cheema">Jamke Cheema</label>
-          <label><input type="checkbox" name="keywords" value="Gojra - Mandi">Gojra - Mandi</label>
-          <label><input type="checkbox" name="keywords" value="Janu Chak">Janu Chak</label>
-          <label><input type="checkbox" name="keywords" value="Ugoki">Ugoki</label>
-          <label><input type="checkbox" name="keywords" value="Hafizabad">Hafizabad</label>
-          <label><input type="checkbox" name="keywords" value="Kot Ladha">Kot Ladha</label>
-          <label><input type="checkbox" name="keywords" value="Nokhar">Nokhar</label>
-          <label><input type="checkbox" name="keywords" value="Chiwinda">Chiwinda</label>
-          <label><input type="checkbox" name="keywords" value="Saroki">Saroki</label>
-          <label><input type="checkbox" name="keywords" value="Sarai Alamgir">Sarai Alamgir</label>
-          <label><input type="checkbox" name="keywords" value="Fateh Pur">Fateh Pur</label>
-          <label><input type="checkbox" name="keywords" value="Ladhewala">Ladhewala</label>
-          <label><input type="checkbox" name="keywords" value="Tatlewali">Tatlewali</label>
-          <label><input type="checkbox" name="keywords" value="More Eminabad">More Eminabad</label>
-          <label><input type="checkbox" name="keywords" value="Nowshehra Virkan">Nowshehra Virkan</label>
-          <label><input type="checkbox" name="keywords" value="Talwandi Bhindran">Talwandi Bhindran</label>
-          <label><input type="checkbox" name="keywords" value="Bhelowal">Bhelowal</label>
+
+          <label class="guj"><input type="checkbox" name="keywords" value="Gujranwala">Gujranwala</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Sialkot">Sialkot</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Narowal">Narowal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Daska">Daska</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Gujrat">Gujrat</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Qila Didar Singh">Qila Didar Singh</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Kamoki">Kamoki</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="JalalPur Jattan">JalalPur Jattan</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Ghakhar">Ghakhar</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Wazirabad">Wazirabad</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Sadhoki">Sadhoki</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Kharian">Kharian</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="LalaMusa">LalaMusa</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Mandi Bahauddin">Mandi Bahauddin</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Mirpur">Mirpur</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Phalia">Phalia</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Dinga">Dinga</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Guliana">Guliana</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Bhimber">Bhimber</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Malakwal">Malakwal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Kotla">Kotla</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Feroze Wattwan">Feroze Wattwan</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Jalal Pur Sharif">Jalal Pur Sharif</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Piswal">Piswal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Jhelum">Jhelum</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Dolatnagar">Dolatnagar</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Chiora">Chiora</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Kunjah">Kunjah</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Pinanwal">Pinanwal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Pind Dadan Khan">Pind Dadan Khan</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Sambrial">Sambrial</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Shakargarh">Shakargarh</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Pasrur">Pasrur</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Narang Mandi">Narang Mandi</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Zafarwal">Zafarwal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Mangowal">Mangowal</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Pharianwali">Pharianwali</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Jamke Cheema">Jamke Cheema</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Gojra - Mandi">Gojra - Mandi</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Janu Chak">Janu Chak</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Ugoki">Ugoki</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Hafizabad">Hafizabad</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Kot Ladha">Kot Ladha</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Nokhar">Nokhar</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Chiwinda">Chiwinda</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Saroki">Saroki</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Sarai Alamgir">Sarai Alamgir</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Fateh Pur">Fateh Pur</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Ladhewala">Ladhewala</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Tatlewali">Tatlewali</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="More Eminabad">More Eminabad</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Nowshehra Virkan">Nowshehra Virkan</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Talwandi Bhindran">Talwandi Bhindran</label>
+          <label class="guj"><input type="checkbox" name="keywords" value="Bhelowal">Bhelowal</label>
 
         </div>
 
         <br>
 
         <div id="mux">
-          <strong  onclick="toggleCheckboxes(this)">Multan Depot Extended:</strong>
-          <label><input type="checkbox" name="keywords" value="Multan">Multan</label>
-          <label><input type="checkbox" name="keywords" value="Ahmad Pur Sial">Ahmad Pur Sial</label>
-          <label><input type="checkbox" name="keywords" value="Ahmed Pur East">Ahmed Pur East</label>
-          <label><input type="checkbox" name="keywords" value="Alipur">Alipur</label>
-          <label><input type="checkbox" name="keywords" value="Arifwala">Arifwala</label>
-          <label><input type="checkbox" name="keywords" value="Bahawalnagar">Bahawalnagar</label>
-          <label><input type="checkbox" name="keywords" value="Bahawalpur">Bahawalpur</label>
-          <label><input type="checkbox" name="keywords" value="Baseera">Baseera</label>
-          <label><input type="checkbox" name="keywords" value="Basti Malook">Basti Malook</label>
-          <label><input type="checkbox" name="keywords" value="Burewala">Burewala</label>
-          <label><input type="checkbox" name="keywords" value="Chichawatni">Chichawatni</label>
-          <label><input type="checkbox" name="keywords" value="Chishtian">Chishtian</label>
-          <label><input type="checkbox" name="keywords" value="Chowk Azam">Chowk Azam</label>
-          <label><input type="checkbox" name="keywords" value="Dera Ghazi Khan">Dera Ghazi Khan</label>
-          <label><input type="checkbox" name="keywords" value="Dharki">Dharki</label>
-          <label><input type="checkbox" name="keywords" value="Donga Bonga">Donga Bonga</label>
-          <label><input type="checkbox" name="keywords" value="Duniyapur">Duniyapur</label>
-          <label><input type="checkbox" name="keywords" value="Faqirwali">Faqirwali</label>
-          <label><input type="checkbox" name="keywords" value="Gagumandi">Gagumandi</label>
-          <label><input type="checkbox" name="keywords" value="Haroonabad">Haroonabad</label>
-          <label><input type="checkbox" name="keywords" value="Hasilpur">Hasilpur</label>
-          <label><input type="checkbox" name="keywords" value="Jahania">Jahania</label>
-          <label><input type="checkbox" name="keywords" value="Jamman Shah">Jamman Shah</label>
-          <label><input type="checkbox" name="keywords" value="Jatoi">Jatoi</label>
-          <label><input type="checkbox" name="keywords" value="Kabirwala">Kabirwala</label>
-          <label><input type="checkbox" name="keywords" value="Kasso Wal">Kasso Wal</label>
-          <label><input type="checkbox" name="keywords" value="Khair Pur Tamay Wali">Khair Pur Tamay Wali</label>
-          <label><input type="checkbox" name="keywords" value="Khan Ghr">Khan Ghr</label>
-          <label><input type="checkbox" name="keywords" value="Khan Pur">Khan Pur</label>
-          <label><input type="checkbox" name="keywords" value="Khanewal">Khanewal</label>
-          <label><input type="checkbox" name="keywords" value="Khichi Wala">Khichi Wala</label>
-          <label><input type="checkbox" name="keywords" value="Kot Addu">Kot Addu</label>
-          <label><input type="checkbox" name="keywords" value="Larh">Larh</label>
-          <label><input type="checkbox" name="keywords" value="Liquatpur">Liquatpur</label>
-          <label><input type="checkbox" name="keywords" value="Lodhran">Lodhran</label>
-          <label><input type="checkbox" name="keywords" value="Machi Got">Machi Got</label>
-          <label><input type="checkbox" name="keywords" value="Mailsi">Mailsi</label>
-          <label><input type="checkbox" name="keywords" value="Makhdoom Aali">Makhdoom Aali</label>
-          <label><input type="checkbox" name="keywords" value="Makhdoom Rashid">Makhdoom Rashid</label>
-          <label><input type="checkbox" name="keywords" value="Mian Channu">Mian Channu</label>
-          <label><input type="checkbox" name="keywords" value="Muradabad">Muradabad</label>
-          <label><input type="checkbox" name="keywords" value="Muzaffargarh">Muzaffargarh</label>
-          <label><input type="checkbox" name="keywords" value="Qadir Pur Rawan">Qadir Pur Rawan</label>
-          <label><input type="checkbox" name="keywords" value="Qasba Gujrat">Qasba Gujrat</label>
-          <label><input type="checkbox" name="keywords" value="Rahim Yar Khan">Rahim Yar Khan</label>
-          <label><input type="checkbox" name="keywords" value="Raja Ram">Raja Ram</label>
-          <label><input type="checkbox" name="keywords" value="Rangpur">Rangpur</label>
-          <label><input type="checkbox" name="keywords" value="Rawan">Rawan</label>
-          <label><input type="checkbox" name="keywords" value="Rohillanwali">Rohillanwali</label>
-          <label><input type="checkbox" name="keywords" value="Sadiqabad">Sadiqabad</label>
-          <label><input type="checkbox" name="keywords" value="Sahiwal">Sahiwal</label>
-          <label><input type="checkbox" name="keywords" value="Sanawan">Sanawan</label>
-          <label><input type="checkbox" name="keywords" value="Shahjamal">Shahjamal</label>
-          <label><input type="checkbox" name="keywords" value="Shujabad">Shujabad</label>
-          <label><input type="checkbox" name="keywords" value="Tounsa Sharif">Tounsa Sharif</label>
-          <label><input type="checkbox" name="keywords" value="Vehari">Vehari</label>
-          <label><input type="checkbox" name="keywords" value="Yazman">Yazman</label>
-          <label><input type="checkbox" name="keywords" value="Layyah">Layyah</label>
-          <label><input type="checkbox" name="keywords" value="Jampur">Jampur</label>
-          <label><input type="checkbox" name="keywords" value="Abdul Hakeem">Abdul Hakeem</label>
-          <label><input type="checkbox" name="keywords" value="Choti Zareen">Choti Zareen</label>
-          <label><input type="checkbox" name="keywords" value="Bhakkar">Bhakkar</label>
-          <label><input type="checkbox" name="keywords" value="Dahranwala">Dahranwala</label>
-          <label><input type="checkbox" name="keywords" value="Jahanian">Jahanian</label>
-          <label><input type="checkbox" name="keywords" value="Machiwal">Machiwal</label>
-          <label><input type="checkbox" name="keywords" value="Kot Chutta">Kot Chutta</label>
-          <label><input type="checkbox" name="keywords" value="DG Khan">DG Khan</label>
-          <label><input type="checkbox" name="keywords" value="Minchanabad">Minchanabad</label>
-          <label><input type="checkbox" name="keywords" value="Sukkur">Sukkur</label>
-          <label><input type="checkbox" name="keywords" value="Daharki">Daharki</label>
-          <label><input type="checkbox" name="keywords" value="Mirpur Mathelo">Mirpur Mathelo</label>
-          <label><input type="checkbox" name="keywords" value="Janpur">Janpur</label>
-          <label><input type="checkbox" name="keywords" value="Perowal">Perowal</label>
-          <label><input type="checkbox" name="keywords" value="Thingi">Thingi</label>
-          <label><input type="checkbox" name="keywords" value="Rajanpur">Rajanpur</label>
-          <label><input type="checkbox" name="keywords" value="Kot Mithan">Kot Mithan</label>
-          <label><input type="checkbox" name="keywords" value="Muhammad Pur">Muhammad Pur</label>
-          <label><input type="checkbox" name="keywords" value="Madrasa">Madrasa</label>
-          <label><input type="checkbox" name="keywords" value="Chowk Munda">Chowk Munda</label>
-          <label><input type="checkbox" name="keywords" value="Rohri">Rohri</label>
-          <label><input type="checkbox" name="keywords" value="Fort Munro">Fort Munro</label>
-          <label><input type="checkbox" name="keywords" value="Karoor Lal Esan">Karoor Lal Esan</label>
-          <label><input type="checkbox" name="keywords" value="Tulamba">Tulamba</label>
-          <label><input type="checkbox" name="keywords" value="Mehmood Kot">Mehmood Kot</label>
-          <label><input type="checkbox" name="keywords" value="Harappa">Harappa</label>
-          <label><input type="checkbox" name="keywords" value="Jalalpur Pirwala">Jalalpur Pirwala</label>
-          <label><input type="checkbox" name="keywords" value="Qabula">Qabula</label>
-          <label><input type="checkbox" name="keywords" value="Fateh Pur">Fateh Pur</label>
-          <label><input type="checkbox" name="keywords" value="Kot Sultan">Kot Sultan</label>
+          <strong onclick="toggleCheckboxes(this)">Multan Depot Extended:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('mux');">Hide / Show</button>
+
+          <label class="mux"><input type="checkbox" name="keywords" value="Multan">Multan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Ahmad Pur Sial">Ahmad Pur Sial</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Ahmed Pur East">Ahmed Pur East</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Alipur">Alipur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Arifwala">Arifwala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Bahawalnagar">Bahawalnagar</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Bahawalpur">Bahawalpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Baseera">Baseera</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Basti Malook">Basti Malook</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Burewala">Burewala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Chichawatni">Chichawatni</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Chishtian">Chishtian</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Chowk Azam">Chowk Azam</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Dera Ghazi Khan">Dera Ghazi Khan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Dharki">Dharki</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Donga Bonga">Donga Bonga</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Duniyapur">Duniyapur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Faqirwali">Faqirwali</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Gagumandi">Gagumandi</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Haroonabad">Haroonabad</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Hasilpur">Hasilpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jahania">Jahania</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jamman Shah">Jamman Shah</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jatoi">Jatoi</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kabirwala">Kabirwala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kasso Wal">Kasso Wal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Khair Pur Tamay Wali">Khair Pur Tamay Wali</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Khan Ghr">Khan Ghr</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Khan Pur">Khan Pur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Khanewal">Khanewal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Khichi Wala">Khichi Wala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kot Addu">Kot Addu</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Larh">Larh</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Liquatpur">Liquatpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Lodhran">Lodhran</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Machi Got">Machi Got</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Mailsi">Mailsi</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Makhdoom Aali">Makhdoom Aali</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Makhdoom Rashid">Makhdoom Rashid</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Mian Channu">Mian Channu</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Muradabad">Muradabad</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Muzaffargarh">Muzaffargarh</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Qadir Pur Rawan">Qadir Pur Rawan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Qasba Gujrat">Qasba Gujrat</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rahim Yar Khan">Rahim Yar Khan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Raja Ram">Raja Ram</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rangpur">Rangpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rawan">Rawan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rohillanwali">Rohillanwali</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Sadiqabad">Sadiqabad</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Sahiwal">Sahiwal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Sanawan">Sanawan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Shahjamal">Shahjamal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Shujabad">Shujabad</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Tounsa Sharif">Tounsa Sharif</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Vehari">Vehari</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Yazman">Yazman</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Layyah">Layyah</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jampur">Jampur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Abdul Hakeem">Abdul Hakeem</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Choti Zareen">Choti Zareen</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Bhakkar">Bhakkar</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Dahranwala">Dahranwala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jahanian">Jahanian</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Machiwal">Machiwal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kot Chutta">Kot Chutta</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="DG Khan">DG Khan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Minchanabad">Minchanabad</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Sukkur">Sukkur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Daharki">Daharki</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Mirpur Mathelo">Mirpur Mathelo</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Janpur">Janpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Perowal">Perowal</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Thingi">Thingi</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rajanpur">Rajanpur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kot Mithan">Kot Mithan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Muhammad Pur">Muhammad Pur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Madrasa">Madrasa</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Chowk Munda">Chowk Munda</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Rohri">Rohri</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Fort Munro">Fort Munro</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Karoor Lal Esan">Karoor Lal Esan</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Tulamba">Tulamba</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Mehmood Kot">Mehmood Kot</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Harappa">Harappa</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Jalalpur Pirwala">Jalalpur Pirwala</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Qabula">Qabula</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Fateh Pur">Fateh Pur</label>
+          <label class="mux"><input type="checkbox" name="keywords" value="Kot Sultan">Kot Sultan</label>
         </div>
 
         <br>
 
         <div id="fsd">
-          <strong  onclick="toggleCheckboxes(this)">Faisalabad Depot Extended:</strong>
-          <label><input type="checkbox" name="keywords" value="Faisalabad">Faisalabad</label>
-          <label><input type="checkbox" name="keywords" value="Khaurianwala">Khaurianwala</label>
-          <label><input type="checkbox" name="keywords" value="Shahkot">Shahkot</label>
-          <label><input type="checkbox" name="keywords" value="Shorkot">Shorkot</label>
-          <label><input type="checkbox" name="keywords" value="Jaranwala">Jaranwala</label>
-          <label><input type="checkbox" name="keywords" value="Warbarton">Warbarton</label>
-          <label><input type="checkbox" name="keywords" value="Pir Mahal">Pir Mahal</label>
-          <label><input type="checkbox" name="keywords" value="Sangla Hill">Sangla Hill</label>
-          <label><input type="checkbox" name="keywords" value="Chenab Nagar">Chenab Nagar</label>
-          <label><input type="checkbox" name="keywords" value="Sargodha">Sargodha</label>
-          <label><input type="checkbox" name="keywords" value="Gojra">Gojra</label>
-          <label><input type="checkbox" name="keywords" value="Chiniot">Chiniot</label>
-          <label><input type="checkbox" name="keywords" value="Pindi Bhattiyan">Pindi Bhattiyan</label>
-          <label><input type="checkbox" name="keywords" value="Bhalwal">Bhalwal</label>
-          <label><input type="checkbox" name="keywords" value="Bhera">Bhera</label>
-          <label><input type="checkbox" name="keywords" value="Rabwah">Rabwah</label>
-          <label><input type="checkbox" name="keywords" value="Kot Momin">Kot Momin</label>
-          <label><input type="checkbox" name="keywords" value="Jauharabad">Jauharabad</label>
-          <label><input type="checkbox" name="keywords" value="Jang">Jang</label>
-          <label><input type="checkbox" name="keywords" value="Pansara">Pansara</label>
-          <label><input type="checkbox" name="keywords" value="Mureed Wala">Mureed Wala</label>
-          <label><input type="checkbox" name="keywords" value="Manawala">Manawala</label>
-          <label><input type="checkbox" name="keywords" value="Kamalia">Kamalia</label>
-          <label><input type="checkbox" name="keywords" value="Toba Tek Singh">Toba Tek Singh</label>
-          <label><input type="checkbox" name="keywords" value="Samundri">Samundri</label>
-          <label><input type="checkbox" name="keywords" value="Khurianwala">Khurianwala</label>
-          <label><input type="checkbox" name="keywords" value="Kalor kot">Kalor kot</label>
-          <label><input type="checkbox" name="keywords" value="Piplan">Piplan</label>
-          <label><input type="checkbox" name="keywords" value="Kamar Mushani">Kamar Mushani</label>
-          <label><input type="checkbox" name="keywords" value="Iskandar Abad">Iskandar Abad</label>
-          <label><input type="checkbox" name="keywords" value="Wan Bhachran">Wan Bhachran</label>
-          <label><input type="checkbox" name="keywords" value="Jandanwala">Jandanwala</label>
-          <label><input type="checkbox" name="keywords" value="Satiana">Satiana</label>
-          <label><input type="checkbox" name="keywords" value="Isa Khel">Isa Khel</label>
-          <label><input type="checkbox" name="keywords" value="Jouharabad">Jouharabad</label>
-          <label><input type="checkbox" name="keywords" value="Kalabagh">Kalabagh</label>
-          <label><input type="checkbox" name="keywords" value="Khushab">Khushab</label>
-          <label><input type="checkbox" name="keywords" value="Kallar Kahar">Kallar Kahar</label>
-          <label><input type="checkbox" name="keywords" value="Mianwali">Mianwali</label>
-          <label><input type="checkbox" name="keywords" value="Tandlianwala">Tandlianwala</label>
-          <label><input type="checkbox" name="keywords" value="Dullewala">Dullewala</label>
-          <label><input type="checkbox" name="keywords" value="Noor Pur Thal">Noor Pur Thal</label>
-          <label><input type="checkbox" name="keywords" value="Rooda">Rooda</label>
-          <label><input type="checkbox" name="keywords" value="Sahianwala">Sahianwala</label>
-          <label><input type="checkbox" name="keywords" value="Kamar Mushani">Kamar Mushani</label>
-          <label><input type="checkbox" name="keywords" value="Sandhilianwali">Sandhilianwali</label>
-          <label><input type="checkbox" name="keywords" value="Garh Moor">Garh Moor</label>
-          <label><input type="checkbox" name="keywords" value="Targ sharif">Targ sharif</label>
-          <label><input type="checkbox" name="keywords" value="Garh Maharaja">Garh Maharaja</label>
-          <label><input type="checkbox" name="keywords" value="Adda Phalore">Adda Phalore</label>
-          <label><input type="checkbox" name="keywords" value="Dijkot">Dijkot</label>
-          <label><input type="checkbox" name="keywords" value="Khiderwala">Khiderwala</label>
-          <label><input type="checkbox" name="keywords" value="Bhawana">Bhawana</label>
-          <label><input type="checkbox" name="keywords" value="Salawara">Salawara</label>
-          <label><input type="checkbox" name="keywords" value="Harnoli">Harnoli</label>
-          <label><input type="checkbox" name="keywords" value="Sillanwali">Sillanwali</label>
-          <label><input type="checkbox" name="keywords" value="Mureedwala">Mureedwala</label>
-          <label><input type="checkbox" name="keywords" value="Mamukanjan">Mamukanjan</label>
-          <label><input type="checkbox" name="keywords" value="Naushehra">Naushehra</label>
-          <label><input type="checkbox" name="keywords" value="Pindi Sheikh Musa">Pindi Sheikh Musa</label>
-          <label><input type="checkbox" name="keywords" value="Athara Hazari">Athara Hazari</label>
+          <strong onclick="toggleCheckboxes(this)">Faisalabad Depot Extended:</strong>
+
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('fsd');">Hide/Show</button>
+
+
+          <label class="fsd"><input type="checkbox" name="keywords" value="Faisalabad">Faisalabad</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Khaurianwala">Khaurianwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Shahkot">Shahkot</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Shorkot">Shorkot</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Jaranwala">Jaranwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Warbarton">Warbarton</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Pir Mahal">Pir Mahal</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Sangla Hill">Sangla Hill</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Chenab Nagar">Chenab Nagar</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Sargodha">Sargodha</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Gojra">Gojra</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Chiniot">Chiniot</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Pindi Bhattiyan">Pindi Bhattiyan</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Bhalwal">Bhalwal</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Bhera">Bhera</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Rabwah">Rabwah</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kot Momin">Kot Momin</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Jauharabad">Jauharabad</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Jang">Jang</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Pansara">Pansara</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Mureed Wala">Mureed Wala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Manawala">Manawala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kamalia">Kamalia</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Toba Tek Singh">Toba Tek Singh</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Samundri">Samundri</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Khurianwala">Khurianwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kalor kot">Kalor kot</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Piplan">Piplan</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kamar Mushani">Kamar Mushani</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Iskandar Abad">Iskandar Abad</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Wan Bhachran">Wan Bhachran</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Jandanwala">Jandanwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Satiana">Satiana</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Isa Khel">Isa Khel</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Jouharabad">Jouharabad</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kalabagh">Kalabagh</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Khushab">Khushab</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kallar Kahar">Kallar Kahar</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Mianwali">Mianwali</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Tandlianwala">Tandlianwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Dullewala">Dullewala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Noor Pur Thal">Noor Pur Thal</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Rooda">Rooda</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Sahianwala">Sahianwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Kamar Mushani">Kamar Mushani</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Sandhilianwali">Sandhilianwali</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Garh Moor">Garh Moor</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Targ sharif">Targ sharif</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Garh Maharaja">Garh Maharaja</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Adda Phalore">Adda Phalore</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Dijkot">Dijkot</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Khiderwala">Khiderwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Bhawana">Bhawana</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Salawara">Salawara</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Harnoli">Harnoli</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Sillanwali">Sillanwali</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Mureedwala">Mureedwala</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Mamukanjan">Mamukanjan</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Naushehra">Naushehra</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Pindi Sheikh Musa">Pindi Sheikh Musa</label>
+          <label class="fsd"><input type="checkbox" name="keywords" value="Athara Hazari">Athara Hazari</label>
+
           
 
         </div>
@@ -403,9 +420,9 @@
     <button class="btn-search" onclick="searchPDF()">Lets Go.</button>
     <section id="results"></section>
 
-
+    
   </div>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
   <!--<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>-->
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>-->
@@ -433,6 +450,10 @@
       });
     }
   </script>
+
+<script>
+  hideNSeek();
+</script>
 
 </body>
 
