@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css">
 
     <title>Abdullah Murtaza</title>
-    <title>Sale Tax Invoices Extractor</title>
+    <title>Bills Miner</title>
 </head>
 
 <header>
@@ -60,83 +60,100 @@
 
 <body>
     <div class="container">
-        <h1>Sale Tax Invoices Extractor</h1>
+        <h1>Bills Miner</h1>
         <div class="form-group">
             <label for="pdfFile">Select PDF File:</label>
             <input type="file" id="pdfFile" accept=".pdf">
         </div>
         <div class="form-group">
             <label>Select Keywords:</label>
+
+            <button id="hideNSeekBtn" onclick="hideNSeek();">Hide/Show All</button>
+
             <div class="keyword-group">
 
-                <button id="hideNSeekBtn" onclick="hideNSeek();">Hide/Show Keywords</button>
+
 
                 <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">Hide/Show</button>
                     <strong onclick="toggleCheckboxes(this)">Delivery Boys:</strong>
-                    <label><input type="checkbox" name="keywords" value="Amjad Mehmood"> Amjad Mehmood</label>
-                    <label><input type="checkbox" name="keywords" value="Noor Mahi"> Noor Mahi</label>
-                    <label><input type="checkbox" name="keywords" value="Sajid Hussain"> Sajid Hussain</label>
-                    <label><input type="checkbox" name="keywords" value="Farooq Ahmad"> Farooq Ahmad</label>
-                    <label><input type="checkbox" name="keywords" value="Nadir Ali"> Nadir Ali</label>
-                    <label><input type="checkbox" name="keywords" value="Ali Raza"> Ali Raza</label>
-                    <label><input type="checkbox" name="keywords" value="Nabeel Shahzad"> Nabeel Shahzad</label>
-                    <label><input type="checkbox" name="keywords" value="Ray Naveed"> Ray Naveed</label>
-                    <label><input type="checkbox" name="keywords" value="Ghulam Mustafa"> Ghulam Mustafa</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Razzaq"> Muhammad Razzaq</label>
-                    <label><input type="checkbox" name="keywords" value="Abdullah Munir"> Abdullah Munir</label>
-                    <label><input type="checkbox" name="keywords" value="Hafeez ur Rehman"> Hafeez ur Rehman</label>
-                    <label><input type="checkbox" name="keywords" value="Sikandar Saleem"> Sikandar Saleem</label>
-                    <label><input type="checkbox" name="keywords" value="Abid Hussain"> Abid Hussain</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Khalid"> Muhammad Khalid</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Ramzan"> Muhammad Ramzan</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Amjad Mehmood"> Amjad Mehmood</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Noor Mahi"> Noor Mahi</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Sajid Hussain"> Sajid Hussain</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Farooq Ahmad"> Farooq Ahmad</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Nadir Ali"> Nadir Ali</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Ali Raza"> Ali Raza</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Nabeel Shahzad"> Nabeel Shahzad</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Ray Naveed"> Ray Naveed</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Ghulam Mustafa"> Ghulam Mustafa</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Razzaq"> Muhammad Razzaq</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Abdullah Munir"> Abdullah Munir</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Hafeez ur Rehman"> Hafeez ur Rehman</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Sikandar Saleem"> Sikandar Saleem</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Abid Hussain"> Abid Hussain</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Khalid"> Muhammad Khalid</label>
+                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Ramzan"> Muhammad Ramzan</label>
                 </div>
 
+                <br>
                 <br>
 
                 <div>
                     <strong onclick="toggleCheckboxes(this)">Order Bookers:</strong>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Arfan"> Muhammad Arfan</label>
-                    <label><input type="checkbox" name="keywords" value="Babar Hayat"> Babar Hayat</label>
-                    <label><input type="checkbox" name="keywords" value="Tayyab Saleem"> Tayyab Saleem</label>
-                    <label><input type="checkbox" name="keywords" value="Faisal Butt"> Faisal Butt</label>
-                    <label><input type="checkbox" name="keywords" value="Ali Saghir"> Ali Saghir</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Amin"> Muhammad Amin</label>
-                    <label><input type="checkbox" name="keywords" value="Rehan Khan"> Rehan Khan</label>
-                    <label><input type="checkbox" name="keywords" value="Ali Raza Iqbal"> Ali Raza Iqbal</label>
-                    <label><input type="checkbox" name="keywords" value="Kamran Baig"> Kamran Baig</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Nadeem"> Muhammad Nadeem</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Zeeshan"> Muhammad Zeeshan</label>
-                    <label><input type="checkbox" name="keywords" value="Sohail"> Sohail</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Ali Butt"> Muhammad Ali Butt</label>
-                    <label><input type="checkbox" name="keywords" value="Muhammad Asif"> Muhammad Asif</label>
-                    <label><input type="checkbox" name="keywords" value="Rashid Minhas"> Rashid Minhas</label>
-                    <label><input type="checkbox" name="keywords" value="Naveed Ahmad Khan"> Naveed Ahmad Khan</label>
-                </div>
+                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('ob');">Hide/Show</button>
 
-                </br>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Arfan"> Muhammad Arfan</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Babar Hayat"> Babar Hayat</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Tayyab Saleem"> Tayyab Saleem</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Faisal Butt"> Faisal Butt</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Ali Saghir"> Ali Saghir</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Amin"> Muhammad Amin</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Rehan Khan"> Rehan Khan</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Ali Raza Iqbal"> Ali Raza Iqbal</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Kamran Baig"> Kamran Baig</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Nadeem"> Muhammad Nadeem</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Zeeshan"> Muhammad Zeeshan</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Sohail"> Sohail</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Ali Butt"> Muhammad Ali Butt</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Asif"> Muhammad Asif</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Rashid Minhas"> Rashid Minhas</label>
+                    <label class="ob"><input type="checkbox" name="keywords" value="Naveed Ahmad Khan"> Naveed Ahmad Khan</label>
+                <br>
+                </div>
+                <br>
+                <br>
 
                 <div>
+                    
+                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('rso');">Hide/Show</button>
+
                     <strong onclick="toggleCheckboxes(this)">Spot Sellers:</strong>
 
                     <p>Use Format 2:</p>
 
-                    <label><input type="checkbox" name="keywords" value="Muhammad Jamshaid"> Muhammad Jamshaid</label>
-                    <label><input type="checkbox" name="keywords" value="Rana Ijaz"> Rana Ijaz</label>
-                    <label><input type="checkbox" name="keywords" value="Shahid Iqbal"> Shahid Iqbal</label>
-                    <label><input type="checkbox" name="keywords" value="Amir Ali"> Amir Ali</label>
-                    <label><input type="checkbox" name="keywords" value="Raja Tayyab"> Raja Tayyab</label>
+                    <label class="rso"><input type="checkbox" name="keywords" value="Muhammad Jamshaid"> Muhammad Jamshaid</label>
+                    <label class="rso"><input type="checkbox" name="keywords" value="Rana Ijaz"> Rana Ijaz</label>
+                    <label class="rso"><input type="checkbox" name="keywords" value="Shahid Iqbal"> Shahid Iqbal</label>
+                    <label class="rso"><input type="checkbox" name="keywords" value="Amir Ali"> Amir Ali</label>
+                    <label class="rso"><input type="checkbox" name="keywords" value="Raja Tayyab"> Raja Tayyab</label>
 
                 </div>
-                </br>
+
                 <div>
+                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('ss');">Hide/Show</button>
+
                     <strong onclick="toggleCheckboxes(this)">Shop Sellers:</strong>
-                    <label><input type="checkbox" name="keywords" value="Zain Raza"> Zain Raza</label>
-                    <label><input type="checkbox" name="keywords" value="Asim Iqbal"> Asim Iqbal</label>
+                    <label class="ss"><input type="checkbox" name="keywords" value="Zain Raza"> Zain Raza</label>
+                    <label class="ss"><input type="checkbox" name="keywords" value="Asim Iqbal"> Asim Iqbal</label>
 
                 </div>
 
                 <br>
-
                 <br>
             </div>
         </div>
@@ -171,6 +188,9 @@
             });
         }
     </script>
+    <script>
+        hideNSeek();
+      </script>
 
 </body>
 
