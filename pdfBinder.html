@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Binder</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #pdfList {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pdfItem {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .pdfItem:hover {
+            transform: translateY(-5px);
+        }
+
+        .pdfPreview {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin: auto;
+            /* Add margin to separate each preview */
+        }
+
+        .pdfPreview canvas {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+
+        .pdfInfo {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .removeBtn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 4px;
+            background-color: #fff;
+            color: #f44336;
+            border: 1px solid #f44336;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+
+
+        }
+
+        .pdfItem {
+            margin-bottom: 20px;
+        }
+
+        .pdfPreviewContainer {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdfPreviewContainer canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PDF Binder</h1>
+        <div id="pdfList">
+
+            <div class="pdfItem">
+                <label for="pdf1">PDF 1:</label>
+                <input type="file" id="pdf1" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf2">PDF 2:</label>
+                <input type="file" id="pdf2" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf3">PDF 3:</label>
+                <input type="file" id="pdf3" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf4">PDF 4:</label>
+                <input type="file" id="pdf4" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf5">PDF 5:</label>
+                <input type="file" id="pdf5" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf6">PDF 6:</label>
+                <input type="file" id="pdf6" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf7">PDF 7:</label>
+                <input type="file" id="pdf7" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf8">PDF 8:</label>
+                <input type="file" id="pdf8" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf9">PDF 9:</label>
+                <input type="file" id="pdf9" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf10">PDF 10:</label>
+                <input type="file" id="pdf10" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf11">PDF 11:</label>
+                <input type="file" id="pdf11" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf12">PDF 12:</label>
+                <input type="file" id="pdf12" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf13">PDF 13:</label>
+                <input type="file" id="pdf13" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf14">PDF 14:</label>
+                <input type="file" id="pdf14" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf15">PDF 15:</label>
+                <input type="file" id="pdf15" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf16">PDF 16:</label>
+                <input type="file" id="pdf16" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf17">PDF 17:</label>
+                <input type="file" id="pdf17" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf18">PDF 18:</label>
+                <input type="file" id="pdf18" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf19">PDF 19:</label>
+                <input type="file" id="pdf19" accept=".pdf" multiple>
+            </div>
+            <div class="pdfItem">
+                <label for="pdf20">PDF 20:</label>
+                <input type="file" id="pdf20" accept=".pdf" multiple>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="bindBtn">Bind PDFs</button>
+    <div id="output">Output.</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.272/pdf.min.js"></script>
+    <script>
+        const pdfList = document.getElementById('pdfList');
+        const bindBtn = document.getElementById('bindBtn');
+        const outputDiv = document.getElementById('output');
+        const pdfs = [];
+
+        bindBtn.addEventListener('click', async () => {
+            try {
+                const mergedPdf = await PDFLib.PDFDocument.create();
+                for (let i = 0; i < pdfs.length; i++) {
+                    const { pdfBytes } = pdfs[i];
+                    const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
+                    const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+                    copiedPages.forEach((page) => {
+                        mergedPdf.addPage(page);
+                    });
+                }
+
+                const mergedPdfBytes = await mergedPdf.save();
+                const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+
+                outputDiv.textContent = 'PDFs merged successfully. Click to download: ';
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.textContent = 'Download Merged PDF';
+                downloadLink.setAttribute('download', 'merged.pdf');
+                outputDiv.appendChild(downloadLink);
+            } catch (error) {
+                console.error('Error merging PDFs:', error);
+                outputDiv.textContent = 'Error merging PDFs. Please try again.';
+            }
+        });
+
+        function addPdfPreview(file, pdfItem) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const pdfBytes = e.target.result;
+                const pdfDoc = PDFLib.PDFDocument.load(pdfBytes);
+                pdfs.push({ name: file.name, pdfBytes });
+
+                const pdfPreview = document.createElement('div');
+                pdfPreview.classList.add('pdfPreview');
+                pdfPreview.innerHTML = `
+            <canvas></canvas>
+            <span class="removeBtn" onclick="removePdf(this)">X</span>
+        `;
+
+                pdfItem.appendChild(pdfPreview);
+
+                // Render the PDF preview
+                const canvas = pdfPreview.querySelector('canvas');
+                pdfjsLib.getDocument({ data: pdfBytes }).promise.then(pdf => {
+                    pdf.getPage(1).then(page => {
+                        const viewport = page.getViewport({ scale: 0.5 });
+                        const canvasContext = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        page.render({ canvasContext, viewport });
+                    });
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        pdfList.addEventListener('change', function (e) {
+            const files = e.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const pdfItem = e.target.parentElement;
+                addPdfPreview(files[i], pdfItem);
+            }
+        });
+
+        function previewPdf(input) {
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const pdfBytes = e.target.result;
+
+                pdfjsLib.getDocument({ data: pdfBytes }).promise.then(pdf => {
+                    pdf.getPage(1).then(page => {
+                        const scale = 1.5;
+                        const viewport = page.getViewport({ scale });
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+
+                        page.render(renderContext).promise.then(() => {
+                            const previewContainer = input.parentElement.querySelector('.pdfPreviewContainer');
+                            previewContainer.innerHTML = '';
+                            previewContainer.appendChild(canvas);
+                        });
+                    });
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+
+    </script>
+</body>
+
+</html>
