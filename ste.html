@@ -108,8 +108,8 @@
 
         <button id="hideNSeekBtn" onclick="hideNSeek();">Hide/Show Keywords</button>
 
-        <div>
-          <strong onclick="toggleCheckboxes(this)">Lahore:</strong>
+        <div id="lhr">
+          <strong  onclick="toggleCheckboxes(this)">Lahore:</strong>
           <label><input type="checkbox" name="keywords" value="Ajmair Foods Pvt. Ltd."> Ajmair Foods</label>
           <label><input type="checkbox" name="keywords" value="MALMO BAKERS & SWEETS"> MALMO BAKERS &
             SWEETS</label>
@@ -117,6 +117,7 @@
           <label><input type="checkbox" name="keywords" value="Clinix Central Warehouse"> Clinix Central
             Warehouse</label>
           <label><input type="checkbox" name="keywords" value="Mahmood Pharmacy"> Mahmood Pharmacy</label>
+
         </div>
 
         <br>
@@ -161,8 +162,8 @@
 
         <br>
 -->
-        <div>
-          <strong onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
+        <div id="khi">
+          <strong  onclick="toggleCheckboxes(this)">Karachi Depots:</strong>
           <label><input type="checkbox" name="keywords" value="Karachi"> Karachi</label>
           <label><input type="checkbox" name="keywords" value="KHI"> KHI</label>
           <label><input type="checkbox" name="keywords" value="Imtiaz Group SMC Pvt. Ltd"> Imtiaz Group SMC Pvt.
@@ -171,7 +172,7 @@
 
         <br>
 
-        <div>
+        <div id="guj">
 
           <strong onclick="toggleCheckboxes(this)">Gujranwala Depot Extended:</strong>
 
@@ -234,8 +235,8 @@
 
         <br>
 
-        <div>
-          <strong onclick="toggleCheckboxes(this)">Multan Depot Extended:</strong>
+        <div id="mux">
+          <strong  onclick="toggleCheckboxes(this)">Multan Depot Extended:</strong>
           <label><input type="checkbox" name="keywords" value="Multan">Multan</label>
           <label><input type="checkbox" name="keywords" value="Ahmad Pur Sial">Ahmad Pur Sial</label>
           <label><input type="checkbox" name="keywords" value="Ahmed Pur East">Ahmed Pur East</label>
@@ -329,8 +330,8 @@
 
         <br>
 
-        <div>
-          <strong onclick="toggleCheckboxes(this)">Faisalabad Depot Extended:</strong>
+        <div id="fsd">
+          <strong  onclick="toggleCheckboxes(this)">Faisalabad Depot Extended:</strong>
           <label><input type="checkbox" name="keywords" value="Faisalabad">Faisalabad</label>
           <label><input type="checkbox" name="keywords" value="Khaurianwala">Khaurianwala</label>
           <label><input type="checkbox" name="keywords" value="Shahkot">Shahkot</label>
@@ -392,6 +393,7 @@
           <label><input type="checkbox" name="keywords" value="Naushehra">Naushehra</label>
           <label><input type="checkbox" name="keywords" value="Pindi Sheikh Musa">Pindi Sheikh Musa</label>
           <label><input type="checkbox" name="keywords" value="Athara Hazari">Athara Hazari</label>
+          
 
         </div>
       </div>
@@ -401,8 +403,9 @@
     <button class="btn-search" onclick="searchPDF()">Lets Go.</button>
     <section id="results"></section>
 
-  </div>
 
+  </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
   <!--<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>-->
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>-->
