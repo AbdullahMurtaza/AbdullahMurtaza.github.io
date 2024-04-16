@@ -80,7 +80,7 @@ function displayResults(keywordData) {
         const pageNumbersDiv = document.createElement("div");
         pageNumbersDiv.classList.add("page-numbers");
         // Set the innerHTML directly to avoid displaying "Page Numbers" text
-        pageNumbersDiv.innerHTML = pageNumbers.join(',');
+        pageNumbersDiv.innerHTML = pageNumbers.join(', ');
 
         // Append the keyword name h3 to the keyword div
         keywordDiv.appendChild(keywordNameH3);
