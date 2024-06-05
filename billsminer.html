@@ -2,238 +2,274 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:wght@100&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="files/CSS/headerStyle.css" />
-    <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:wght@100&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="files/CSS/headerStyle.css" />
+  <link rel="stylesheet" href="projects/PDF Keyword Miner Version 2.00/ste.css" />
 
-    <title>Abdullah Murtaza</title>
-    <title>Bills Miner</title>
+  <title>Abdullah Murtaza</title>
+  <title>Bills Miner</title>
 </head>
 
 <header>
-    <nav>
-        <div id="logoWrapper">
-            <a href="http://abdullahmurtaza.com">
-                <h1 id="logo">
-                    Abdullah Murtaza <br /><span id="online"> .com </span>
-                </h1>
-            </a>
-        </div>
-        <br />
-        <br />
-        <div id="navListItemsWrapper">
-            <ul>
-                <li><a href="http://abdullahmurtaza.com">Home</a></li>
-                <li>
-                    <a href="http://abdullahmurtaza.com/qualification">Qualification</a>
-                </li>
-                <li><a href="http://abdullahmurtaza.com/services">Services</a></li>
-                <li>
-                    <a href="http://abdullahmurtaza.live/certifications">Certifications</a>
-                </li>
+  <nav>
+    <div id="logoWrapper">
+      <a href="http://abdullahmurtaza.com">
+        <h1 id="logo">
+          Abdullah Murtaza <br /><span id="online"> .com </span>
+        </h1>
+      </a>
+    </div>
+    <br />
+    <br />
+    <div id="navListItemsWrapper">
+      <ul>
+        <li><a href="http://abdullahmurtaza.com">Home</a></li>
+        <li>
+          <a href="http://abdullahmurtaza.com/qualification">Qualification</a>
+        </li>
+        <li><a href="http://abdullahmurtaza.com/services">Services</a></li>
+        <li>
+          <a href="http://abdullahmurtaza.live/certifications">Certifications</a>
+        </li>
 
-                <li class="dropdown">
-                    <a href="http://abdullahmurtaza.com/">Projects +</a>
-                    <div class="dropdown-content">
-                        <a href="http://abdullahmurtaza.com/Keyminer">Project Keyminer</a>
-                        <a href="http://abdullahmurtaza.com/ste">Project STE</a>
-                        <a href="http://abdullahmurtaza.com/billsminer">Bills Miner</a>
-                        <a href="http://abdullahmurtaza.com/pdfSplitter">PDF Splitter</a>
-                    </div>
-                </li>
+        <li class="dropdown">
+          <a href="http://abdullahmurtaza.com/">Projects +</a>
+          <div class="dropdown-content">
+            <a href="http://abdullahmurtaza.com/Keyminer">Project Keyminer</a>
+            <a href="http://abdullahmurtaza.com/ste">Project STE</a>
+            <a href="http://abdullahmurtaza.com/billsminer">Bills Miner</a>
+            <a href="http://abdullahmurtaza.com/pdfSplitter">PDF Splitter</a>
+          </div>
+        </li>
 
-                <li><a href="http://abdullahmurtaza.com/contact">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
+        <li><a href="http://abdullahmurtaza.com/contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <body>
-    <div class="container">
-        <h1>Bills Miner</h1>
-        <div class="form-group">
-            <label for="pdfFile">Select PDF File:</label>
-            <input type="file" id="pdfFile" accept=".pdf" />
+  <div class="container">
+    <h1>Bills Miner</h1>
+    <div class="form-group">
+      <label for="pdfFile">Select PDF File:</label>
+      <input type="file" id="pdfFile" accept=".pdf" />
+    </div>
+    <div class="form-group">
+      <label>Select Keywords:</label>
+
+      <button id="hideNSeekBtn" onclick="hideNSeek();">
+        Hide / Show All
+      </button>
+
+      <div class="keyword-group">
+        <div>
+          <br />
+          <br />
+          <br />
+
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_lhr');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys LHR:</strong>
+
+          <!-- Updated DBs -->
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Hamid Ali" /> Hamid Ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Muhammad Javaid Iqbal" />
+            Muhammad Javaid Iqbal
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Qamar Abbas" /> Qamar Abbas
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Shehryar ali" />
+            Shehryar ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Faizan Ali" /> Faizan Ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Hassan Ali 2" />
+            Hassan Ali 2
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Ahsan Shabbir" />
+            Ahsan Shabbir
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Wajahat Aslam" />
+            Wajahat Aslam
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Muhammad Usama" />
+            Muhammad Usama
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Muhammad Asim" />
+            Muhammad Asim
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Zabi Ullah" /> Zabi Ullah
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Noman Haider" />
+            Noman Haider
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Ali Hassan" /> Ali Hassan
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Rashid Ali" /> Rashid Ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Fahad Hafeez" />
+            Fahad Hafeez
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Gulshair Ali" />
+            Gulshair Ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Zia Ur Rehman" />
+            Zia Ur Rehman
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Usama Ali" /> Usama Ali
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Mutahir Butt" />
+            Mutahir Butt
+          </label>
+          <label class="db_lhr">
+            <input type="checkbox" name="keywords" value="Amjad Mehmood" />
+            Amjad Mehmood
+          </label>
         </div>
-        <div class="form-group">
-            <label>Select Keywords:</label>
 
-            <button id="hideNSeekBtn" onclick="hideNSeek();">
-                Hide / Show All
-            </button>
 
-            <div class="keyword-group">
-                <div>
-                    <br />
-                    <br />
-                    <br />
+        <div>
+          <br />
+          <br />
+          <hr />
 
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys LHR:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_fsd');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys FSD:</strong>
 
-                    <!--Updated DBs-->
-                    <label class="db"><input type="checkbox" name="keywords" value="Hamid Ali" /> Hamid
-                        Ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Javaid Iqbal" />
-                        Muhammad Javaid Iqbal</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Qamar Abbas" />
-                        Qamar Abbas</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Shehryar ali" />
-                        Shehryar ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Faizan Ali" />
-                        Faizan Ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Hassan Ali 2" />
-                        Hassan Ali 2</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Ahsan Shabbir" />
-                        Ahsan Shabbir</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Wajahat Aslam" />
-                        Wajahat Aslam</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Usama" />
-                        Muhammad Usama</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Muhammad Asim" />
-                        Muhammad Asim</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Zabi Ullah" /> Zabi
-                        Ullah</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Noman Haider" />
-                        Noman Haider</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Ali Hassan" /> Ali
-                        Hassan</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Rashid Ali" />
-                        Rashid Ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Fahad Hafeez" />
-                        Fahad Hafeez</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Gulshair Ali" />
-                        Gulshair Ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Zia Ur Rehman" />
-                        Zia Ur Rehman</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Usama Ali" /> Usama
-                        Ali</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Mutahir Butt" />
-                        Mutahir Butt</label>
-                    <label class="db"><input type="checkbox" name="keywords" value="Amjad Mehmood" />
-                        Amjad Mehmood</label>
-                </div>
+          <!--Updated DBs-->
+        </div>
 
-                <div>
-                    <br />
-                    <br />
-                    <hr />
+        <div>
+          <br />
+          <br />
+          <hr />
 
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys FSD:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_mux');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys MUX:</strong>
 
-                    <!--Updated DBs-->
-                </div>
+          <!--Updated DBs-->
+        </div>
+        <div>
+          <br />
+          <br />
+          <hr />
 
-                <div>
-                    <br />
-                    <br />
-                    <hr />
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_guj');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys GUJ:</strong>
 
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys MUX:</strong>
+          <!--Updated DBs-->
+        </div>
+        <div>
+          <br />
+          <br />
+          <hr />
 
-                    <!--Updated DBs-->
-                </div>
-                <div>
-                    <br />
-                    <br />
-                    <hr />
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_isb');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys ISB:</strong>
 
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys GUJ:</strong>
+          <!--Updated DBs-->
+        </div>
+        <div>
+          <br />
+          <br />
+          <hr />
 
-                    <!--Updated DBs-->
-                </div>
-                <div>
-                    <br />
-                    <br />
-                    <hr />
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('db_khi');">
+            Hide / Show
+          </button>
+          <strong onclick="toggleCheckboxes(this)">Delivery Boys KHI:</strong>
 
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys ISB:</strong>
+          <!--Updated DBs-->
+        </div>
 
-                    <!--Updated DBs-->
-                </div>
-                <div>
-                    <br />
-                    <br />
-                    <hr />
-
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('db');">
-                        Hide / Show
-                    </button>
-                    <strong onclick="toggleCheckboxes(this)">Delivery Boys KHI:</strong>
-
-                    <!--Updated DBs-->
-                </div>
+        <hr />
+        <div>
+          <br />
+          <br />
+          <hr />
+          <strong onclick="toggleCheckboxes(this)">Order Bookers LHR:</strong>
+          <button class="hideNSeekByClass" onclick="hideNSeekByClass('lhr_ob');">
+            Hide / Show
+          </button>
         
-                <div>
-                    <br />
-                    <br />
-                    <hr />
-                    <strong onclick="toggleCheckboxes(this)">Order Bookers:</strong>
-                    <button class="hideNSeekByClass" onclick="hideNSeekByClass('ob');">
-                        Hide / Show
-                    </button>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Tayyab Saleem" />
+            Tayyab Saleem - Lahore Local 1</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Kashif Tahir" />
+            Muhammad Kashif Tahir - Lahore Local 2</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Numan" />
+            Muhammad Numan - Lahore Local 3</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Amin" />
+            Muhammad Amin - Lahore Local 4</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Naveed Ahmad Khan" />
+            Naveed Ahmad Khan - Lahore Local 5</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Zahid Asghar" />
+            Zahid Asghar - Lahore Local 6</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Faisal Butt" />
+            Faisal Butt - Lahore Local 7</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Zeeshan" />
+            Muhammad Zeeshan - Lahore Local 8</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Rehan Khan" />
+            Rehan Khan - Lahore Local 9</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Ali Butt" />
+            Muhammad Ali Butt - Lahore Local 10</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Hafiz Zeeshan Nusrat" />
+            Hafiz Zeeshan Nusrat - Lahore Local 11</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Kamal Bakhat" />
+            Muhammad Kamal Bakhat - Lahore Local 12</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Umar Javed" />
+            Muhammad Umar Javed - Lahore Local 13</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Ali Saghir" />
+            Ali Saghir - Lahore OOH 1</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Muhammad Nadeem" />
+            Muhammad Nadeem - Lahore OOH 2</label>
+          <label class="lhr_ob"><input type="checkbox" name="keywords" value="Sohail" />
+            Sohail - Lahore OOH 3</label>
+          <br />
+          <br />
+        </div>
+        
 
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Arfan" />
-                        Muhammad Arfan</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Babar Hayat" />
-                        Babar Hayat</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Tayyab Saleem" />
-                        Tayyab Saleem</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Faisal Butt" />
-                        Faisal Butt</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Ali Saghir" /> Ali
-                        Saghir</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Amin" />
-                        Muhammad Amin</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Rehan Khan" />
-                        Rehan Khan</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Ali Raza Iqbal" />
-                        Ali Raza Iqbal</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Kamran Baig" />
-                        Kamran Baig</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Nadeem" />
-                        Muhammad Nadeem</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Zeeshan" />
-                        Muhammad Zeeshan</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Sohail" />
-                        Sohail</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Ali Butt" />
-                        Muhammad Ali Butt</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Muhammad Asif" />
-                        Muhammad Asif</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Rashid Minhas" />
-                        Rashid Minhas</label>
-                    <label class="ob"><input type="checkbox" name="keywords" value="Naveed Ahmad Khan" />
-                        Naveed Ahmad Khan</label>
-                    <br />
-                    <br />
-                </div>
-                <hr />
 
-                <div>
+        <!--       <div>
                     <small>
                         <p>Use Format 2:</p>
                     </small>
@@ -272,44 +308,45 @@
                 </div>
             </div>
         </div>
+      -->
 
         <button class="btn-search" onclick="searchPDF()">Lets Go.</button>
         <section id="results"></section>
-    </div>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.10.0/pdf-lib.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.12.0/dist/pdf-lib.js"></script>
-    <script src="projects/PDF Keyword Miner Version 2.00/ste2"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.10.0/dist/pdf-lib.js"></script>-->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.119/pdf.worker.min.js"></script>-->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.10.0/pdf-lib.min.js"></script>-->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.12.0/dist/pdf-lib.js"></script-->
+      <script src="projects/PDF Keyword Miner Version 2.00/ste2"></script>
 
-    <script src="KM.Engine.2/copyText.js"></script>
-    <script src="KM.Engine.2/copyAllResults.js"></script>
-    <script src="KM.Engine.2/searchPDF.js"></script>
+      <script src="KM.Engine.2/copyText.js"></script>
+      <script src="KM.Engine.2/copyAllResults.js"></script>
+      <script src="KM.Engine.2/searchPDF.js"></script>
 
-    <script src="KM.Engine.2/displayResults.js"></script>
-    <script src="KM.Engine.2/hideNSeekBtn.js"></script>
+      <script src="KM.Engine.2/displayResults.js"></script>
+      <script src="KM.Engine.2/hideNSeekBtn.js"></script>
 
-    <script src="KM.Engine.2/main.js"></script>
+      <script src="KM.Engine.2/main.js"></script>
 
-    <script>
+      <script>
         function toggleCheckboxes(groupCaption) {
-            const checkboxes = groupCaption.parentNode.querySelectorAll(
-                'input[type="checkbox"]'
-            );
-            const isChecked = Array.from(checkboxes).some(
-                (checkbox) => checkbox.checked
-            );
+          const checkboxes = groupCaption.parentNode.querySelectorAll(
+            'input[type="checkbox"]'
+          );
+          const isChecked = Array.from(checkboxes).some(
+            (checkbox) => checkbox.checked
+          );
 
-            checkboxes.forEach((checkbox) => {
-                checkbox.checked = !isChecked;
-            });
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = !isChecked;
+          });
         }
-    </script>
-    <script>
+      </script>
+      <script>
         hideNSeek();
-    </script>
+      </script>
 </body>
 
 </html>
