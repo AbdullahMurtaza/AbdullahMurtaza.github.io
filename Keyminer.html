@@ -1,161 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF Search</title>
   <style>
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
-}
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
-}
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
 
-.form-group {
-  margin-bottom: 20px;
-}
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
+    input[type="file"],
+    input[type="text"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-input[type="file"],
-input[type="text"],
-.btn-search {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .btn-search {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
 
-.btn-search {
-  background-color: #4caf50;
-  color: #fff;
-  cursor: pointer;
-}
+    .btn-search:hover {
+      background-color: #45a049;
+    }
 
-#results {
-  margin-top: 20px;
-}
+    .keyword-result {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-h2 {
-  margin-bottom: 10px;
-}
+    .keyword-name {
+      margin-bottom: 10px;
+    }
 
-.keyword-result {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    .page-numbers {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
 
-.keyword-result p {
-  margin: 0;
-}
+    .total-results {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
 
-.keyword-result p strong {
-  font-weight: bold;
-  color: #4caf50;
-}
+    .copy-button {
+      padding: 5px 10px;
+      margin-left: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-.keyword-result span {
-  font-weight: bold;
-  color: #000;
-}
+    .copy-button:hover {
+      background-color: #45a049;
+    }
 
-.copy-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  font-size: 14px;
-  cursor: pointer;
-}
+    .no-results {
+      color: #f44336;
+    }
 
-.copy-all-button {
-  display: block;
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.copy-all-button:hover {
-  background-color: #45a049;
-}
-
-.no-results {
-  color: #f44336;
-}
-
-@media only screen and (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  input[type="file"],
-  input[type="text"],
-  .btn-search {
-    font-size: 14px;
-  }
-
-  .copy-button {
-    font-size: 12px;
-  }
-
-  .copy-all-button {
-    font-size: 14px;
-  }
-}
-
+    .grand-total-section {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>PDF Search</h1>
-    <div class="form-group">
-      <label for="pdfFile">Select PDF File:</label>
-      <input type="file" id="pdfFile" accept=".pdf">
-    </div>
-    <div class="form-group">
-      <label for="searchKeyword">Enter Keywords (comma-separated):</label>
-      <input type="text" id="searchKeyword">
-    </div>
+    <label for="pdfFile">Select PDF File:</label>
+    <input type="file" id="pdfFile" accept=".pdf">
+    <label for="searchKeyword">Enter Keywords (comma-separated):</label>
+    <input type="text" id="searchKeyword">
     <button class="btn-search" onclick="searchPDF()">Search</button>
-    <section id="results"></section>
+    <div id="results"></div>
+    <div class="grand-total-section" id="grandTotalSection"></div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
-  
+
   <script>
-    // JavaScript code
+    // Global variables to store total counts
+    let totalUniquePages = 0;
+    let totalActualResults = 0;
 
     // Function to copy the text content of a given element
     function copyText(element) {
@@ -173,45 +141,47 @@ h2 {
       copyText(resultsDiv);
     }
 
+    // Function to calculate the grand total of unique page results and actual total results found
+    function calculateGrandTotal(keywordData) {
+      const uniquePagesSet = new Set();
+      let actualResultsCount = 0;
+
+      for (const keyword in keywordData) {
+        if (keywordData.hasOwnProperty(keyword)) {
+          keywordData[keyword].pageNumbers.forEach(page => {
+            uniquePagesSet.add(page);
+            actualResultsCount++;
+          });
+        }
+      }
+
+      totalUniquePages = uniquePagesSet.size;
+      totalActualResults = actualResultsCount;
+    }
+
     // Function to handle the search functionality
     async function searchPDF() {
-      // Get the selected PDF file and search keywords from the inputs
       const fileInput = document.getElementById("pdfFile");
       const keywordInput = document.getElementById("searchKeyword");
       const file = fileInput.files[0];
       const keywords = keywordInput.value.split(",").map(keyword => keyword.trim());
 
-      // Proceed only if a file and keywords are provided
       if (file && keywords.length > 0) {
-        // Create a FileReader object to read the file
         const fileReader = new FileReader();
 
-        // When the file is loaded, process it
         fileReader.onload = async function () {
-          // Create a typed array from the file data
           const typedArray = new Uint8Array(this.result);
-
-          // Load the PDF document using pdf.js library
           const pdf = await pdfjsLib.getDocument(typedArray).promise;
 
-          // Object to store page numbers with their corresponding keywords and total page count
           const keywordData = {};
 
-          // Iterate through each page of the PDF
           for (let i = 1; i <= pdf.numPages; i++) {
-            // Get the page object
             const page = await pdf.getPage(i);
-
-            // Extract the text content of the page
             const textContent = await page.getTextContent();
-
-            // Convert the text content items into a single string
             const text = textContent.items.map(item => item.str).join('');
 
-            // Check if any of the keywords exist in the page text
             const foundKeywords = keywords.filter(keyword => text.includes(keyword));
 
-            // Add the page number and keyword to the result object if any keyword is found
             if (foundKeywords.length > 0) {
               foundKeywords.forEach(keyword => {
                 if (!keywordData[keyword]) {
@@ -220,188 +190,136 @@ h2 {
                     totalCount: 0
                   };
                 }
-                keywordData[keyword].pageNumbers.push(i);
-                keywordData[keyword].totalCount++;
+                if (!keywordData[keyword].pageNumbers.includes(i)) {
+                  keywordData[keyword].pageNumbers.push(i);
+                  keywordData[keyword].totalCount++;
+                }
               });
             }
           }
 
-          // Display the results on the webpage
+          calculateGrandTotal(keywordData);
           displayResults(keywordData);
+          displayGrandTotal(keywordData);
         };
 
-        // Read the file as an ArrayBuffer
         fileReader.readAsArrayBuffer(file);
       }
     }
 
     // Function to display the search results on the webpage
     function displayResults(keywordData) {
-      // Get the results container element
       const resultsDiv = document.getElementById("results");
-
-      // Clear previous results
       resultsDiv.innerHTML = "";
 
-      // Display the appropriate message based on the search results
       if (Object.keys(keywordData).length > 0) {
-        // Create a heading for the results
         const resultHeading = document.createElement("h2");
         resultHeading.textContent = "Pages with the keyword(s):";
         resultsDiv.appendChild(resultHeading);
 
-        // Iterate through each keyword and its corresponding data
         for (const keyword in keywordData) {
           if (keywordData.hasOwnProperty(keyword)) {
-            // Get the page numbers and total count for the keyword
             const pageNumbers = keywordData[keyword].pageNumbers;
             const totalCount = keywordData[keyword].totalCount;
 
-            // Create a div for the keyword result
             const keywordDiv = document.createElement("div");
             keywordDiv.classList.add("keyword-result");
 
-            // Create a paragraph for the keyword
-            const keywordParagraph = document.createElement("p");
-            keywordParagraph.innerHTML = `<strong>${keyword}:</strong>`;
+            // Keyword Name Section
+            const keywordNameDiv = document.createElement("div");
+            keywordNameDiv.classList.add("keyword-name");
+            const keywordNameStrong = document.createElement("strong");
+            keywordNameStrong.textContent = keyword;
+            keywordNameDiv.appendChild(keywordNameStrong);
+            keywordDiv.appendChild(keywordNameDiv);
 
-            // Create a span element for the page numbers string
-            const span = document.createElement("span");
+            // Page Numbers Section
+            const pageNumbersDiv = document.createElement("div");
+            pageNumbersDiv.classList.add("page-numbers");
+            const pageNumberSpan = document.createElement("span");
+            pageNumberSpan.textContent = pageNumbers.join(', ');
+            pageNumbersDiv.appendChild(pageNumberSpan);
+            keywordDiv.appendChild(pageNumbersDiv);
 
-            // Create a formatted string with comma-separated page numbers and total count
-            const formattedString = `${pageNumbers.join(', ')}, Total Pages: ${totalCount}`;
-
-            span.textContent = formattedString;
-
-            // Append the span to the keyword paragraph
-            keywordParagraph.appendChild(span);
-
-            // Append the keyword paragraph to the keyword div
-            keywordDiv.appendChild(keywordParagraph);
-
-            // Create a copy button for the individual keyword result
-            const copyButton = document.createElement("button");
-            copyButton.textContent = "Copy";
-            copyButton.addEventListener("click", () => {
-              copyText(keywordParagraph);
+            // Copy Buttons
+            const copyPageNumbersButton = document.createElement("button");
+            copyPageNumbersButton.textContent = "Copy Page Numbers";
+            copyPageNumbersButton.addEventListener("click", () => {
+              copyText(pageNumbersDiv);
             });
+            keywordDiv.appendChild(copyPageNumbersButton);
 
-            // Append the copy button to the keyword div
-            keywordDiv.appendChild(copyButton);
+            const copyKeywordButton = document.createElement("button");
+            copyKeywordButton.textContent = "Copy Keyword";
+            copyKeywordButton.addEventListener("click", () => {
+              copyText(keywordNameStrong);
+            });
+            keywordDiv.appendChild(copyKeywordButton);
 
-            // Append the keyword div to the results container
+            // Total Results Section
+            const totalResultsDiv = document.createElement("div");
+            totalResultsDiv.classList.add("total-results");
+            totalResultsDiv.textContent = `Total Results: ${totalCount}`;
+            keywordDiv.appendChild(totalResultsDiv);
+
             resultsDiv.appendChild(keywordDiv);
           }
         }
-
-        // Create a copy all button
-        const copyAllButton = document.createElement("button");
-        copyAllButton.textContent = "Copy All";
-        copyAllButton.addEventListener("click", copyAllResults);
-
-        // Append the copy all button to the results container
-        resultsDiv.appendChild(copyAllButton);
       } else {
-        // Display a message if no pages were found
         const noResultsMsg = document.createElement("p");
         noResultsMsg.textContent = "No pages found with the keyword(s).";
+        noResultsMsg.classList.add("no-results");
         resultsDiv.appendChild(noResultsMsg);
       }
     }
-  </script>
-<!--<script>
-  // Function to display the search results on the webpage
-function displayResults(keywordData) {
-  // Get the results container element
-  const resultsDiv = document.getElementById("results");
 
-  // Clear previous results
-  resultsDiv.innerHTML = "";
+    // Function to display the Grand Total Results section
+function displayGrandTotal(keywordData) {
+  const grandTotalSection = document.getElementById("grandTotalSection");
+  grandTotalSection.innerHTML = "";
 
-  // Object to store all page numbers
-  const allPageNumbers = [];
+  const grandTotalHeading = document.createElement("h2");
+  grandTotalHeading.textContent = "Grand Total Results (Ascending Order):";
+  grandTotalSection.appendChild(grandTotalHeading);
 
-  // Display individual keyword results
-  if (Object.keys(keywordData).length > 0) {
-    // Create a heading for the individual results
-    const individualHeading = document.createElement("h2");
-    individualHeading.textContent = "Individual Keyword Results:";
-    resultsDiv.appendChild(individualHeading);
-
-    // Iterate through each keyword and its corresponding data
-    for (const keyword in keywordData) {
-      if (keywordData.hasOwnProperty(keyword)) {
-        // Get the page numbers and total count for the keyword
-        const pageNumbers = keywordData[keyword].pageNumbers;
-        const totalCount = keywordData[keyword].totalCount;
-
-        // Create a div for the keyword result
-        const keywordDiv = document.createElement("div");
-        keywordDiv.classList.add("keyword-result");
-
-        // Create a paragraph for the keyword
-        const keywordParagraph = document.createElement("p");
-        keywordParagraph.innerHTML = `<strong>${keyword}:</strong>`;
-
-        // Create a span element for the page numbers string
-        const span = document.createElement("span");
-        const formattedString = `${pageNumbers.join(', ')}, Total Pages: ${totalCount}`;
-        span.textContent = formattedString;
-
-        // Append the span to the keyword paragraph
-        keywordParagraph.appendChild(span);
-
-        // Append the keyword paragraph to the keyword div
-        keywordDiv.appendChild(keywordParagraph);
-
-        // Create a copy button for the individual keyword result
-        const copyButton = document.createElement("button");
-        copyButton.textContent = "Copy";
-        copyButton.addEventListener("click", () => {
-          copyText(keywordParagraph);
-        });
-
-        // Append the copy button to the keyword div
-        keywordDiv.appendChild(copyButton);
-
-        // Append the keyword div to the results container
-        resultsDiv.appendChild(keywordDiv);
-
-        // Add page numbers to the grand results
-        allPageNumbers.push(...pageNumbers);
-      }
+  const allPages = [];
+  for (const keyword in keywordData) {
+    if (keywordData.hasOwnProperty(keyword)) {
+      keywordData[keyword].pageNumbers.forEach(page => {
+        allPages.push(page);
+      });
     }
-
-    // Sort all page numbers in ascending order
-    allPageNumbers.sort((a, b) => a - b);
-
-    // Create a heading for the grand results
-    const grandHeading = document.createElement("h2");
-    grandHeading.textContent = "Grand Results (Ascending Order):";
-    resultsDiv.appendChild(grandHeading);
-
-    // Create a paragraph to display grand results
-    const grandParagraph = document.createElement("p");
-    grandParagraph.textContent = "All Page Numbers: " + allPageNumbers.join(', ');
-    resultsDiv.appendChild(grandParagraph);
-
-    // Create a copy button for the grand results
-    const copyGrandButton = document.createElement("button");
-    copyGrandButton.textContent = "Copy Grand Results";
-    copyGrandButton.addEventListener("click", () => {
-      copyText(grandParagraph);
-    });
-    resultsDiv.appendChild(copyGrandButton);
-  } else {
-    // Display a message if no pages were found
-    const noResultsMsg = document.createElement("p");
-    noResultsMsg.textContent = "No pages found with the keyword(s).";
-    resultsDiv.appendChild(noResultsMsg);
   }
+  // Sort and get unique page numbers
+  const uniquePages = [...new Set(allPages)];
+  uniquePages.sort((a, b) => a - b);
+
+  // Prepare comma-separated string of page numbers
+  const pageNumbersString = uniquePages.join(', ');
+
+  // Create a single div element for all page numbers
+  const pageDiv = document.createElement("div");
+  pageDiv.textContent = pageNumbersString;
+  grandTotalSection.appendChild(pageDiv);
+
+  // Copy Button for Grand Total Page Numbers
+  const copyGrandTotalButton = document.createElement("button");
+  document.createElement("br");
+  copyGrandTotalButton.textContent = "Copy Grand Results";
+  document.createElement("br");
+  copyGrandTotalButton.classList.add("copy-button");
+  copyGrandTotalButton.addEventListener("click", () => {
+    copyText(pageDiv);
+  });
+  grandTotalSection.appendChild(copyGrandTotalButton);
+
+  const grandTotalCountsDiv = document.createElement("div");
+  grandTotalCountsDiv.classList.add("total-results");
+  grandTotalCountsDiv.textContent = `Total Unique Pages: ${totalUniquePages} | Total Results Found: ${totalActualResults}`;
+  grandTotalSection.appendChild(grandTotalCountsDiv);
 }
 
-</script>-->
- 
-
+  </script>
 </body>
+
 </html>

@@ -1,20 +1,325 @@
-<div class="pdfItem">
-    <label for="pdf1">PDF 1:</label>
-    <input type="file" id="pdf1" accept=".pdf" multiple>
-</div>
-<div class="pdfItem">
-    <label for="pdf2">PDF 2:</label>
-    <input type="file" id="pdf2" accept=".pdf" multiple>
-</div>
-<div class="pdfItem">
-    <label for="pdf3">PDF 3:</label>
-    <input type="file" id="pdf3" accept=".pdf" multiple>
-</div>
-<div class="pdfItem">
-    <label for="pdf4">PDF 4:</label>
-    <input type="file" id="pdf4" accept=".pdf" multiple>
-</div>
-<div class="pdfItem">
-    <label for="pdf5">PDF 5:</label>
-    <input type="file" id="pdf5" accept=".pdf" multiple>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .btn-search {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .btn-search:hover {
+      background-color: #45a049;
+    }
+
+    .keyword-result {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .keyword-name {
+      margin-bottom: 10px;
+    }
+
+    .page-numbers {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .total-results {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .copy-button {
+      padding: 5px 10px;
+      margin-left: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .copy-button:hover {
+      background-color: #45a049;
+    }
+
+    .no-results {
+      color: #f44336;
+    }
+
+    .grand-total-section {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PDF Search</h1>
+    <label for="pdfFile">Select PDF File:</label>
+    <input type="file" id="pdfFile" accept=".pdf">
+    <label for="searchKeyword">Enter Keywords (comma-separated):</label>
+    <input type="text" id="searchKeyword">
+    <button class="btn-search" onclick="searchPDF()">Search</button>
+    <div id="results"></div>
+    <div class="grand-total-section" id="grandTotalSection"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+
+  <script>
+    // Global variables to store total counts
+    let totalUniquePages = 0;
+    let totalActualResults = 0;
+
+    // Function to copy the text content of a given element
+    function copyText(element) {
+      const range = document.createRange();
+      range.selectNode(element);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+    }
+
+    // Function to copy all search results
+    function copyAllResults() {
+      const resultsDiv = document.getElementById("results");
+      copyText(resultsDiv);
+    }
+
+    // Function to calculate the grand total of unique page results and actual total results found
+    function calculateGrandTotal(keywordData) {
+      const uniquePagesSet = new Set();
+      let actualResultsCount = 0;
+
+      for (const keyword in keywordData) {
+        if (keywordData.hasOwnProperty(keyword)) {
+          keywordData[keyword].pageNumbers.forEach(page => {
+            uniquePagesSet.add(page);
+            actualResultsCount++;
+          });
+        }
+      }
+
+      totalUniquePages = uniquePagesSet.size;
+      totalActualResults = actualResultsCount;
+    }
+
+    // Function to handle the search functionality
+    async function searchPDF() {
+      const fileInput = document.getElementById("pdfFile");
+      const keywordInput = document.getElementById("searchKeyword");
+      const file = fileInput.files[0];
+      const keywords = keywordInput.value.split(",").map(keyword => keyword.trim());
+
+      if (file && keywords.length > 0) {
+        const fileReader = new FileReader();
+
+        fileReader.onload = async function () {
+          const typedArray = new Uint8Array(this.result);
+          const pdf = await pdfjsLib.getDocument(typedArray).promise;
+
+          const keywordData = {};
+
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const textContent = await page.getTextContent();
+            const text = textContent.items.map(item => item.str).join('');
+
+            const foundKeywords = keywords.filter(keyword => text.includes(keyword));
+
+            if (foundKeywords.length > 0) {
+              foundKeywords.forEach(keyword => {
+                if (!keywordData[keyword]) {
+                  keywordData[keyword] = {
+                    pageNumbers: [],
+                    totalCount: 0
+                  };
+                }
+                if (!keywordData[keyword].pageNumbers.includes(i)) {
+                  keywordData[keyword].pageNumbers.push(i);
+                  keywordData[keyword].totalCount++;
+                }
+              });
+            }
+          }
+
+          calculateGrandTotal(keywordData);
+          displayResults(keywordData);
+          displayGrandTotal(keywordData);
+        };
+
+        fileReader.readAsArrayBuffer(file);
+      }
+    }
+
+    // Function to display the search results on the webpage
+    function displayResults(keywordData) {
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = "";
+
+      if (Object.keys(keywordData).length > 0) {
+        const resultHeading = document.createElement("h2");
+        resultHeading.textContent = "Pages with the keyword(s):";
+        resultsDiv.appendChild(resultHeading);
+
+        for (const keyword in keywordData) {
+          if (keywordData.hasOwnProperty(keyword)) {
+            const pageNumbers = keywordData[keyword].pageNumbers;
+            const totalCount = keywordData[keyword].totalCount;
+
+            const keywordDiv = document.createElement("div");
+            keywordDiv.classList.add("keyword-result");
+
+            // Keyword Name Section
+            const keywordNameDiv = document.createElement("div");
+            keywordNameDiv.classList.add("keyword-name");
+            const keywordNameStrong = document.createElement("strong");
+            keywordNameStrong.textContent = keyword;
+            keywordNameDiv.appendChild(keywordNameStrong);
+            keywordDiv.appendChild(keywordNameDiv);
+
+            // Page Numbers Section
+            const pageNumbersDiv = document.createElement("div");
+            pageNumbersDiv.classList.add("page-numbers");
+            const pageNumberSpan = document.createElement("span");
+            pageNumberSpan.textContent = pageNumbers.join(', ');
+            pageNumbersDiv.appendChild(pageNumberSpan);
+            keywordDiv.appendChild(pageNumbersDiv);
+
+            // Copy Buttons
+            const copyPageNumbersButton = document.createElement("button");
+            copyPageNumbersButton.textContent = "Copy Page Numbers";
+            copyPageNumbersButton.addEventListener("click", () => {
+              copyText(pageNumbersDiv);
+            });
+            keywordDiv.appendChild(copyPageNumbersButton);
+
+            const copyKeywordButton = document.createElement("button");
+            copyKeywordButton.textContent = "Copy Keyword";
+            copyKeywordButton.addEventListener("click", () => {
+              copyText(keywordNameStrong);
+            });
+            keywordDiv.appendChild(copyKeywordButton);
+
+            // Total Results Section
+            const totalResultsDiv = document.createElement("div");
+            totalResultsDiv.classList.add("total-results");
+            totalResultsDiv.textContent = `Total Results: ${totalCount}`;
+            keywordDiv.appendChild(totalResultsDiv);
+
+            resultsDiv.appendChild(keywordDiv);
+          }
+        }
+      } else {
+        const noResultsMsg = document.createElement("p");
+        noResultsMsg.textContent = "No pages found with the keyword(s).";
+        noResultsMsg.classList.add("no-results");
+        resultsDiv.appendChild(noResultsMsg);
+      }
+    }
+
+    // Function to display the Grand Total Results section
+function displayGrandTotal(keywordData) {
+  const grandTotalSection = document.getElementById("grandTotalSection");
+  grandTotalSection.innerHTML = "";
+
+  const grandTotalHeading = document.createElement("h2");
+  grandTotalHeading.textContent = "Grand Total Results (Ascending Order):";
+  grandTotalSection.appendChild(grandTotalHeading);
+
+  const allPages = [];
+  for (const keyword in keywordData) {
+    if (keywordData.hasOwnProperty(keyword)) {
+      keywordData[keyword].pageNumbers.forEach(page => {
+        allPages.push(page);
+      });
+    }
+  }
+  // Sort and get unique page numbers
+  const uniquePages = [...new Set(allPages)];
+  uniquePages.sort((a, b) => a - b);
+
+  // Prepare comma-separated string of page numbers
+  const pageNumbersString = uniquePages.join(', ');
+
+  // Create a single div element for all page numbers
+  const pageDiv = document.createElement("div");
+  pageDiv.textContent = pageNumbersString;
+  grandTotalSection.appendChild(pageDiv);
+
+  // Copy Button for Grand Total Page Numbers
+  const copyGrandTotalButton = document.createElement("button");
+  document.createElement("br");
+  copyGrandTotalButton.textContent = "Copy Grand Results";
+  document.createElement("br");
+  copyGrandTotalButton.classList.add("copy-button");
+  copyGrandTotalButton.addEventListener("click", () => {
+    copyText(pageDiv);
+  });
+  grandTotalSection.appendChild(copyGrandTotalButton);
+
+  const grandTotalCountsDiv = document.createElement("div");
+  grandTotalCountsDiv.classList.add("total-results");
+  grandTotalCountsDiv.textContent = `Total Unique Pages: ${totalUniquePages} | Total Results Found: ${totalActualResults}`;
+  grandTotalSection.appendChild(grandTotalCountsDiv);
+}
+
+  </script>
+</body>
+
+</html>
