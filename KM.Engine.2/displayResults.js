@@ -24,8 +24,6 @@ function copyText(textContent) {
 /************************************************ */
 
 
-
-
 // Function to display the search results on the webpage
 function displayResults(keywordData) {
   // Get the results container element
@@ -80,18 +78,17 @@ function displayResults(keywordData) {
         // Create a div for the page numbers
         const pageNumbersDiv = document.createElement("div");
         pageNumbersDiv.classList.add("page-numbers");
-
-        // Get unique page numbers by using Set
-        const uniquePageNumbers = [...new Set(pageNumbers)];
-
-        // Set the innerHTML to display unique page numbers
-        pageNumbersDiv.innerHTML = uniquePageNumbers.join(',');
+        // Set the innerHTML directly to avoid displaying "Page Numbers" text
+        pageNumbersDiv.innerHTML = pageNumbers.join(',');
 
         // Append the keyword name h3 to the keyword div
         keywordDiv.appendChild(keywordNameH3);
 
         // Append the total results div to the keyword div
         keywordDiv.appendChild(totalResultsDiv);
+
+        //Append Section To Download PDFs
+        //sectionsContainer.appendChild(sectionDiv);
 
         // Append a line break for clean output
         keywordDiv.appendChild(document.createElement("br"));
@@ -112,22 +109,9 @@ function displayResults(keywordData) {
         // Append the keyword div to the results container
         resultsDiv.appendChild(keywordDiv);
 
-        // Add the page numbers to the allPageNumbers array (with uniqueness ensured)
-        allPageNumbers = allPageNumbers.concat(uniquePageNumbers);
+        // Add the page numbers to the allPageNumbers array
+        allPageNumbers = allPageNumbers.concat(pageNumbers);
       }
-    }
-
-    // Optional: If you want to sort the combined unique page numbers across all keywords
-    allPageNumbers = [...new Set(allPageNumbers)].sort((a, b) => a - b);  // Sorting numerically
-
-    console.log("Unique page numbers from all results:", allPageNumbers); // For debugging
-  } else {
-    // Handle the case where no results are found
-    const noResultsMessage = document.createElement("p");
-    noResultsMessage.textContent = "No results found for your search.";
-    resultsDiv.appendChild(noResultsMessage);
-  }
-}
 
 
 
