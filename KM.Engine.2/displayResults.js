@@ -113,7 +113,7 @@ function displayResults(keywordData) {
         allPageNumbers = allPageNumbers.concat(pageNumbers);
       }
 
-
+    }
 
       //-----------------------------------------
 
